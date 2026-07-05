@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Lorestage Gaming</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo-lorestage.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header id="main-header" style="position: relative; z-index: 1000;">
+    <nav class="navbar">
+      <div class="logo">
+        <!-- Wrapped in an anchor tag pointing to the current page -->
+        <a href="about.html" style="display: flex; align-items: center; gap: inherit; text-decoration: none; color: inherit;">
+          <img id="nav-brand-logo" src="assets/logo/logo-lorestage.png" alt="Dynamic Game Logo">
+          <span id="nav-brand-title">Lorestage Gaming - Игроказ</span>
+        </a>
+      </div>
+      
+      <div class="nav-right-group">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+        </ul>
+        <div class="search-icon" id="search-trigger" style="cursor: pointer; padding: 5px;">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="search-dropdown-panel" id="search-dropdown">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search search-panel-icon"></i>
+        <input type="text" id="game-search-input" placeholder="Search games we've covered" autocomplete="off">
+        <i class="fas fa-times search-close-icon" id="search-clear-btn"></i>
+      </div>
+      <div class="search-results-container" id="search-results-display"></div>
+    </div>
+  </header>
+
+  <main class="about-container">
+    
+    <div class="section-divider">
+      <h2>Team</h2>
+      <span class="divider-line"></span>
+    </div>
+
+    <section class="about-row">
+      <div class="about-image">
+        <img src="assets/about/about-sashko.png" alt="Team Lead Portrait">
+      </div>
+      <div class="about-text">
+        <span class="about-subtitle">Lead Analyst & Creator</span>
+        <h3>The Mind Behind the Lore</h3>
+        <p class="about-description">
+          Diving deep into the architectural structures of fallen utopias and existential dread within gaming narratives. Our mission is to dissect the hidden philosophy, symbolism, and scripts that turn standard game designs into timeless interactive literature.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-row row-reverse">
+      <div class="about-image">
+        <img src="assets/about/about-michko.png" alt="Production Studio">
+      </div>
+      <div class="about-text">
+        <span class="about-subtitle">Production & Aesthetic Direction</span>
+        <h3>Crafting the Atmosphere</h3>
+        <p class="about-description">
+          Every video analysis and written editorial is built with precise attention to mood and visual presentation. By fusing dark, atmospheric gaming aesthetics with rigorous research, we create experiences that resonate with true lore enthusiasts.
+        </p>
+      </div>
+    </section>
+
+    <div class="section-divider">
+      <h2>Assistants</h2>
+      <span class="divider-line"></span>
+    </div>
+
+    <section class="assistants-gallery-section">
+      <div class="assistants-grid">
+        <div class="assistant-card">
+          <img src="https://via.placeholder.com/350x400" alt="Assistant 1">
+        </div>
+        <div class="assistant-card">
+          <img src="https://via.placeholder.com/350x400" alt="Assistant 2">
+        </div>
+        <div class="assistant-card">
+          <img src="https://via.placeholder.com/350x400" alt="Assistant 3">
+        </div>
+      </div>
+      
+      <div class="gallery-footer-meta">
+        <h3>Our Research & Creative Council</h3>
+        <span class="about-subtitle">The dedicated forces archiving histories, refining scripts, and managing the community.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lorestage Gaming - Игроказ. All rights reserved.</p>
+  </footer>
+
+  <style>
+    /* --- Incorporated Dropdown Search Component Styles --- */
+    :root {
+      --accent-gold: #ff4500;
+    }
+
+    .search-dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #0d0d0d;
+      border-bottom: 1px solid #222;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-sizing: border-box;
+    }
+
+    .search-dropdown-panel.show {
+      max-height: 480px;
+    }
+
+    .search-input-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 20px 10px 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .search-panel-icon {
+      position: absolute;
+      left: 35px;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    #game-search-input {
+      width: 100%;
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 4px;
+      padding: 12px 45px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #game-search-input:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .search-close-icon {
+      position: absolute;
+      right: 35px;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .search-close-icon:hover {
+      color: #fff;
+    }
+
+    .search-results-container {
+      max-width: 800px;
+      margin: 0 auto;
+      max-height: 360px;
+      overflow-y: auto;
+      padding: 0 20px 20px 20px;
+      box-sizing: border-box;
+    }
+
+    .search-results-container::-webkit-scrollbar { width: 5px; }
+    .search-results-container::-webkit-scrollbar-track { background: #0d0d0d; }
+    .search-results-container::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+
+    .search-result-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #161616;
+      text-decoration: none;
+      transition: background 0.2s;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+
+    .search-result-row:hover {
+      background: rgba(255, 69, 0, 0.05);
+    }
+
+    .search-result-thumb {
+      width: 45px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 3px;
+      background: #161616;
+      border: 1px solid #222;
+    }
+
+    .search-result-info {
+      text-align: left;
+    }
+
+    .search-result-title {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 2px 0;
+    }
+
+    .search-result-meta {
+      font-size: 0.75rem;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 1024px) {
+      .topic-vertical-card { flex: 0 0 calc(33.333% - 14px); min-height: 350px; padding: 24px 16px; }
+      .linked-games-showcase { padding: 0 30px; }
+    }
+    @media (max-width: 768px) {
+      .logo span {font-size: 1.3rem; }
+      #nav-brand-title {font-size: 1.7rem; }
+      .nav-links a { font-size: 1rem; }
+      .topic-vertical-card { flex: 0 0 calc(50% - 10px); min-height: 340px; }
+      .linked-games-showcase { padding: 0 15px; }
+      .boxart-grid-display { justify-content: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .topic-vertical-card { flex: 0 0 100%; min-height: 320px; }
+      .carousel-outer-container { gap: 6px; padding: 0; }
+      .nav-arrow { width: 34px; height: 34px; font-size: 1.1rem; }
+      .card-topic-desc { -webkit-line-clamp: 5; line-clamp: 5; min-height: 90px; }
+    }
+  </style>
+
+  <script src="data/game-presentation-database.js"></script>
+
+  <script>
+    /* --- Shared Live Dropdown Search Logic Implementation --- */
+    const searchTrigger = document.getElementById('search-trigger');
+    const searchDropdown = document.getElementById('search-dropdown');
+    const searchInput = document.getElementById('game-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    const searchResultsDisplay = document.getElementById('search-results-display');
+
+    searchTrigger.onclick = (e) => {
+      e.stopPropagation();
+      searchDropdown.classList.toggle('show');
+      if (searchDropdown.classList.contains('show')) {
+        searchInput.focus();
+      }
+    };
+
+    document.addEventListener('click', (e) => {
+      if (!searchDropdown.contains(e.target) && !searchTrigger.contains(e.target)) {
+        searchDropdown.classList.remove('show');
+      }
+    });
+
+    searchClearBtn.onclick = () => {
+      searchInput.value = '';
+      searchResultsDisplay.innerHTML = '';
+      searchInput.focus();
+    };
+
+    // Sub-Profile Context Matching Engine
+    searchInput.oninput = function() {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResultsDisplay.innerHTML = '';
+
+      if (!query) return;
+
+      const database = window.GAME_PRESENTATION_DIRECTORY || {};
+      let matchedItemsHtml = '';
+
+      Object.keys(database).forEach(key => {
+        const game = database[key];
+        if (!game) return;
+
+        const hasSubProfiles = game.subProfiles && Array.isArray(game.subProfiles) && game.subProfiles.length > 0;
+        const parentNameMatches = (game.shortName && game.shortName.toLowerCase().includes(query)) || 
+                                  (game.name && game.name.toLowerCase().includes(query));
+
+        // Case A: Root game does NOT have sub-profiles
+        if (!hasSubProfiles) {
+          if (parentNameMatches) {
+            matchedItemsHtml += buildSearchRowHtml(game.shortName || game.name, game.boxart, game.dedicatedPageUrl, game.status);
+          }
+        }
+
+        // Case B: Game HAS sub-profiles -> Map child perspectives automatically on parent hits
+        if (hasSubProfiles) {
+          game.subProfiles.forEach(subProfile => {
+            const subNameMatches = subProfile.name && subProfile.name.toLowerCase().includes(query);
+            
+            if (parentNameMatches || subNameMatches) {
+              matchedItemsHtml += buildSearchRowHtml(subProfile.name, subProfile.boxart, subProfile.dedicatedPageUrl, subProfile.status);
+            }
+          });
+        }
+      });
+
+      if (matchedItemsHtml) {
+        searchResultsDisplay.innerHTML = matchedItemsHtml;
+      } else {
+        searchResultsDisplay.innerHTML = `<p style="color: #555; font-size: 0.9rem; padding: 15px 10px; margin: 0;">No matching entries found for "${searchInput.value}"</p>`;
+      }
+    };
+
+    function buildSearchRowHtml(title, boxartImg, targetUrl, executionStatus) {
+      const statusStr = (executionStatus || 'completed').toLowerCase();
+      const visualThumb = boxartImg || 'assets/boxart/default-cover.png';
+      
+      if (statusStr === 'completed') {
+        return `
+          <a href="${targetUrl}" class="search-result-row">
+            <img src="${visualThumb}" class="search-result-thumb" alt="${title}">
+            <div class="search-result-info">
+              <h4 class="search-result-title">${title}</h4>
+              <span class="search-result-meta" style="color: var(--accent-gold);">Available Now</span>
+            </div>
+          </a>
+        `;
+      } else {
+        return `
+          <div class="search-result-row" style="cursor: not-allowed; opacity: 0.5;">
+            <img src="${visualThumb}" class="search-result-thumb" alt="${title}">
+            <div class="search-result-info">
+              <h4 class="search-result-title">${title}</h4>
+              <span class="search-result-meta">${statusStr}</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

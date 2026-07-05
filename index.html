@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorestage Gaming - Игроказ</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo-lorestage.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header id="main-header" style="position: relative; z-index: 1000;">
+    <nav class="navbar">
+      <div class="logo">
+        <!-- Wrapped in an anchor tag pointing to the current page -->
+        <a href="index.html" style="display: flex; align-items: center; gap: inherit; text-decoration: none; color: inherit;">
+          <img id="nav-brand-logo" src="assets/logo/logo-lorestage.png" alt="Dynamic Game Logo">
+          <span id="nav-brand-title">Lorestage Gaming - Игроказ</span>
+        </a>
+      </div>
+      
+      <div class="nav-right-group">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="search-icon" id="search-trigger" style="cursor: pointer; padding: 5px;">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="search-dropdown-panel" id="search-dropdown">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search search-panel-icon"></i>
+        <input type="text" id="game-search-input" placeholder="Search games we've covered" autocomplete="off">
+        <i class="fas fa-times search-close-icon" id="search-clear-btn"></i>
+      </div>
+      <div class="search-results-container" id="search-results-display"></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero-intro" style="
+      position: relative;
+      background: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.90)), url('assets/banner/lorestage-banner.png') no-repeat center top;
+      background-size: cover;
+      min-height: 300px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+    ">
+      <div class="hero-content" style="max-width: 900px; width: 100%; z-index: 2; display: flex; flex-direction: column; align-items: center;">
+        
+        <div class="channel-badge-container" style="position: relative; padding: 6px 24px; margin-top: 0; margin-bottom: 1.2rem;">
+          <div style="position: absolute; top: 0; left: 0; width: 12px; height: 12px; border-top: 2px solid #ff4500; border-left: 2px solid #ff4500;"></div>
+          <div style="position: absolute; top: 0; right: 0; width: 12px; height: 12px; border-top: 2px solid #ff4500; border-right: 2px solid #ff4500;"></div>
+          <div style="position: absolute; bottom: 0; left: 0; width: 6px; height: 6px; border-bottom: 2px solid #ff4500; border-left: 2px solid #ff4500;"></div>
+          <div style="position: absolute; bottom: 0; right: 0; width: 6px; height: 6px; border-bottom: 2px solid #ff4500; border-right: 2px solid #ff4500;"></div>
+          
+          <span style="color: #ff4500; font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">
+            The Official Channel
+          </span>
+        </div>
+
+        <h1 style="color: #ffffff; font-size: clamp(1.8rem, 5vw, 3.0rem); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 1rem 0; line-height: 1.2; text-shadow: 0 3px 15px rgba(0,0,0,0.8);">
+          Welcome to<br><span style="color: #ffffff;">Lorestage Gaming - Игроказ</span>
+        </h1>
+
+        <div style="width: 120px; height: 2px; background: linear-gradient(to right, transparent, #ff4500, transparent); margin-bottom: 1rem;"></div>
+
+        <p style="color: #dddddd; font-size: clamp(1.0rem, 3vw, 1.25rem); font-weight: 400; line-height: 1.6; max-width: 750px; margin: 0 0 1.5rem 0; text-shadow: 0 2px 10px rgba(0,0,0,0.9);">
+          We go beyond gaming itself, exploring the narrative, symbolism, and philosophy behind games we love.
+        </p>
+
+        <div class="hero-btn-group" style="display: flex; justify-content: center; margin-bottom: 0;">
+          <a href="games.html" class="btn" style="padding: 12px 28px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Explore Games</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics-section" class="content-section" style="scroll-margin-top: 20px; text-align: center; padding-top: 1.5rem;">
+      <h2 style="font-size: clamp(1.3rem, 4vw, 1.6rem); letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; margin-top: 0;">Themes & Concepts Matrix</h2>
+      <p class="section-subtitle" style="color: #888888; font-size: clamp(0.85rem, 2.5vw, 0.95rem); margin-bottom: 1.8rem; margin-top: 0;">Select a topic you'd like to explore</p>
+      
+      <style>
+        :root {
+          --panel-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+          --text-primary: #ffffff;
+          --text-secondary: #aaaaaa;
+          --accent-gold: #ff4500;
+          --card-radius: 8px;
+          --card-bg: #111111;
+          --card-border: 1px solid #222222;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* --- Dropdown Search Styles --- */
+        .search-dropdown-panel {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: #0d0d0d;
+          border-bottom: 1px solid #222;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          box-sizing: border-box;
+        }
+
+        .search-dropdown-panel.show {
+          max-height: 480px; /* Comfortably holds input and several results */
+        }
+
+        .search-input-wrapper {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px 20px 10px 20px;
+          display: flex;
+          align-items: center;
+          position: relative;
+        }
+
+        .search-panel-icon {
+          position: absolute;
+          left: 35px;
+          color: #555;
+          font-size: 1.1rem;
+        }
+
+        #game-search-input {
+          width: 100%;
+          background: #141414;
+          border: 1px solid #222;
+          border-radius: 4px;
+          padding: 12px 45px;
+          color: #fff;
+          font-size: 1rem;
+          outline: none;
+          transition: border-color 0.2s;
+        }
+
+        #game-search-input:focus {
+          border-color: var(--accent-gold);
+        }
+
+        .search-close-icon {
+          position: absolute;
+          right: 35px;
+          color: #555;
+          cursor: pointer;
+          transition: color 0.2s;
+        }
+
+        .search-close-icon:hover {
+          color: #fff;
+        }
+
+        .search-results-container {
+          max-width: 800px;
+          margin: 0 auto;
+          max-height: 360px;
+          overflow-y: auto;
+          padding: 0 20px 20px 20px;
+          box-sizing: border-box;
+        }
+
+        /* Scrollbar styles for results track */
+        .search-results-container::-webkit-scrollbar { width: 5px; }
+        .search-results-container::-webkit-scrollbar-track { background: #0d0d0d; }
+        .search-results-container::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+
+        .search-result-row {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding: 10px;
+          border-bottom: 1px solid #161616;
+          text-decoration: none;
+          transition: background 0.2s;
+          border-radius: 4px;
+          margin-bottom: 4px;
+        }
+
+        .search-result-row:hover {
+          background: rgba(255, 69, 0, 0.05);
+        }
+
+        .search-result-thumb {
+          width: 45px;
+          height: 60px;
+          object-fit: cover;
+          border-radius: 3px;
+          background: #161616;
+          border: 1px solid #222;
+        }
+
+        .search-result-info {
+          text-align: left;
+        }
+
+        .search-result-title {
+          color: #fff;
+          font-size: 0.95rem;
+          font-weight: 600;
+          margin: 0 0 2px 0;
+        }
+
+        .search-result-meta {
+          font-size: 0.75rem;
+          color: #777;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        /* ----------------------------------- */
+
+        .carousel-outer-container {
+          max-width: 1140px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          position: relative;
+          padding: 0 10px;
+        }
+
+        .slider-cards-viewport {
+          width: 100%;
+          overflow: hidden;
+          box-sizing: border-box;
+          padding: 4px 0; 
+        }
+
+        .slider-cards-track {
+          display: flex;
+          gap: 20px;
+          transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+          width: 100%;
+          will-change: transform;
+        }
+
+        .topic-vertical-card {
+          flex: 0 0 calc(25% - 15px); 
+          flex-shrink: 0; 
+          background: var(--card-bg);
+          border: var(--card-border);
+          border-radius: var(--card-radius);
+          padding: 32px 24px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          cursor: pointer;
+          min-height: 380px;
+          transition: border-color 0.25s ease, box-shadow 0.25s ease;
+          user-select: none;
+        }
+        
+        .topic-vertical-card:hover {
+          border-color: #444444;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+
+        .topic-vertical-card.active {
+          border-color: var(--accent-gold);
+          box-shadow: inset 0 0 0 1px var(--accent-gold), 0 8px 24px rgba(255, 69, 0, 0.15);
+        }
+
+        .card-topic-icon {
+          font-size: clamp(2.8rem, 8vw, 3.8rem);
+          color: var(--accent-gold);
+          margin-bottom: 24px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .card-topic-title {
+          color: var(--text-primary);
+          font-size: clamp(1.0rem, 3vw, 1.15rem);
+          font-weight: 700;
+          line-height: 1.4;
+          margin: 0 0 12px 0;
+          min-height: 48px; 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .card-topic-desc {
+          color: var(--text-secondary);
+          font-size: clamp(0.8rem, 2.5vw, 0.85rem);
+          line-height: 1.5;
+          margin: 0 0 16px 0;
+          min-height: 108px; 
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 6; 
+          line-clamp: 6; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .card-games-counter {
+          margin-top: auto;
+          font-size: 0.75rem;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--accent-gold);
+        }
+
+        .nav-arrow {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: #555555;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #222222;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+          user-select: none;
+          flex-shrink: 0;
+        }
+
+        .nav-arrow:hover {
+          color: var(--text-primary);
+          border-color: #444444;
+          background: rgba(255,255,255,0.02);
+        }
+
+        .controls-row-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 20px auto 0 auto;
+          max-width: 400px;
+          padding: 0 10px;
+        }
+
+        .slider-bar-input {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 100%;
+          height: 4px;
+          background: #222222;
+          border-radius: 2px;
+          outline: none;
+          transition: background 0.3s;
+        }
+
+        .slider-bar-input::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 40px;
+          height: 6px;
+          border-radius: 3px;
+          background: var(--accent-gold);
+          cursor: pointer;
+          transition: transform 0.15s ease;
+        }
+
+        .slider-bar-input::-webkit-slider-thumb:hover {
+          transform: scaleY(1.5);
+        }
+
+        .slider-bar-input::-moz-range-thumb {
+          width: 40px;
+          height: 6px;
+          border: none;
+          border-radius: 3px;
+          background: var(--accent-gold);
+          cursor: pointer;
+          transition: transform 0.15s ease;
+        }
+
+        .slider-bar-input::-moz-range-thumb:hover {
+          transform: scaleY(1.5);
+        }
+
+        .linked-games-showcase { 
+          max-width: 1140px; 
+          margin: 2.2rem auto 4rem auto; 
+          padding: 0 45px; 
+          text-align: center;
+          box-sizing: border-box;
+          width: 100%;
+        }
+        
+        .showcase-header-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          margin-bottom: 24px;
+        }
+        .showcase-header-icon {
+          color: var(--accent-gold);
+          font-size: 1.2rem;
+        }
+        .linked-games-showcase h3 { 
+          font-size: clamp(1.0rem, 3vw, 1.25rem); 
+          color: #fff; 
+          text-transform: uppercase; 
+          letter-spacing: 1.5px; 
+          font-weight: 700; 
+          margin: 0; 
+        }
+        
+        .boxart-grid-display { 
+          display: flex; 
+          flex-wrap: nowrap; 
+          justify-content: flex-start; 
+          gap: 16px; 
+          width: 100%; 
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          padding: 10px 4px 20px 4px;
+          box-sizing: border-box;
+          scrollbar-width: thin;
+          scrollbar-color: var(--accent-gold) #161616;
+        }
+
+        .boxart-grid-display::-webkit-scrollbar {
+          height: 6px;
+        }
+        .boxart-grid-display::-webkit-scrollbar-track {
+          background: #161616;
+          border-radius: 3px;
+        }
+        .boxart-grid-display::-webkit-scrollbar-thumb {
+          background: var(--accent-gold);
+          border-radius: 3px;
+        }
+
+        .linked-game-link-wrapper { 
+          text-decoration: none; 
+          display: block; 
+          flex-shrink: 0;
+          scroll-snap-align: start;
+        }
+        
+        .showcase-boxart-card {
+          width: 135px; 
+          height: 190px; 
+          background: #161616; 
+          border: 1px solid #222222; 
+          border-radius: 4px;
+          overflow: hidden; 
+          position: relative; 
+          cursor: pointer; 
+          transition: all 0.2s ease;
+        }
+        .showcase-boxart-card:hover { border-color: var(--accent-gold); transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.7); }
+        .showcase-boxart-img { width: 100%; height: 100%; object-fit: cover; }
+        .showcase-card-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.4) 100%); padding: 20px 8px 8px 8px; z-index: 3; }
+        .showcase-card-overlay h4 { margin: 0; color: #fff; font-size: 0.75rem; font-weight: 600; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .showcase-boxart-card.in-development-card { cursor: not-allowed; }
+        .showcase-boxart-card.in-development-card .showcase-boxart-img { filter: grayscale(0.5) sepia(0.3) brightness(0.6); }
+        .showcase-boxart-card.in-development-card::after {
+          content: "\f013"; 
+          font-family: "Font Awesome 6 Free"; 
+          font-weight: 900; 
+          position: absolute; 
+          top: 50%; 
+          left: 50%; 
+          transform: translate(-50%, -50%);
+          background: rgba(0, 0, 0, 0.75); 
+          border: 2px solid #ffaa00; 
+          color: #ffaa00; 
+          width: 44px; 
+          height: 44px; 
+          border-radius: 50%; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          font-size: 1.3rem; 
+          box-shadow: 0 4px 12px rgba(0,0,0,0.5); 
+          animation: spinGear 5s linear infinite; 
+          z-index: 5;
+        }
+        @keyframes spinGear { 
+          0% { transform: translate(-50%, -50%) rotate(0deg); } 
+          100% { transform: translate(-50%, -50%) rotate(360deg); } 
+        }
+
+        .showcase-boxart-card.planned-card { cursor: not-allowed; }
+        .showcase-boxart-card.planned-card .showcase-boxart-img { filter: grayscale(1) brightness(0.4); }
+        .showcase-boxart-card.planned-card::after {
+          content: "PLANNED"; 
+          position: absolute; 
+          top: 50%; 
+          left: 50%; 
+          transform: translate(-50%, -50%) rotate(-12deg); 
+          background: rgba(180, 0, 0, 0.9); 
+          color: #fff; 
+          font-size: 0.7rem; 
+          font-weight: 900; 
+          padding: 3px 8px; 
+          border-radius: 3px; 
+          letter-spacing: 1px; 
+          border: 1px solid rgba(255,255,255,0.2); 
+          z-index: 5;
+        }
+
+        @media (max-width: 1024px) {
+          .topic-vertical-card { flex: 0 0 calc(33.333% - 14px); min-height: 350px; padding: 24px 16px; }
+          .linked-games-showcase { padding: 0 30px; }
+        }
+        @media (max-width: 768px) {
+          .logo span {font-size: 1.3rem; }
+          #nav-brand-title {font-size: 1.7rem; }
+          .nav-links a { font-size: 1rem; }
+          .topic-vertical-card { flex: 0 0 calc(50% - 10px); min-height: 340px; }
+          .linked-games-showcase { padding: 0 15px; }
+          .boxart-grid-display { justify-content: flex-start; }
+        }
+        @media (max-width: 480px) {
+          .topic-vertical-card { flex: 0 0 100%; min-height: 320px; }
+          .carousel-outer-container { gap: 6px; padding: 0; }
+          .nav-arrow { width: 34px; height: 34px; font-size: 1.1rem; }
+          .card-topic-desc { -webkit-line-clamp: 5; line-clamp: 5; min-height: 90px; }
+        }
+      </style>
+
+      <div class="carousel-outer-container">
+        <button class="nav-arrow" id="topic-prev-trigger">❮</button>
+        
+        <div class="slider-cards-viewport">
+          <div class="slider-cards-track" id="vertical-cards-track"></div>
+        </div>
+        
+        <button class="nav-arrow" id="topic-next-trigger">❯</button>
+      </div>
+
+      <div class="controls-row-container">
+        <input type="range" min="0" max="0" value="0" class="slider-bar-input" id="topic-slider-bar">
+      </div>
+
+      <div class="linked-games-showcase">
+        <div class="showcase-header-wrap">
+          <i class="fa-solid fa-gamepad showcase-header-icon"></i>
+          <h3>Featured Games</h3>
+        </div>
+        <div class="boxart-grid-display" id="topic-boxart-grid"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lorestage Gaming - Игроказ. All rights reserved.</p>
+  </footer>
+
+  <script src="data/game-presentation-database.js"></script>
+  <script src="data/topics-database.js"></script>
+
+  <script>
+  (function() {
+    let currentActiveIdx = 0; 
+    
+    const topicsDb = window.LORESTAGE_TOPICS_DIRECTORY || {};
+    const gamesDb = window.GAME_PRESENTATION_DIRECTORY || {};
+    const topicKeys = Object.keys(topicsDb);
+
+    const cardsTrack = document.getElementById('vertical-cards-track');
+    const sliderBar = document.getElementById('topic-slider-bar');
+    const boxartGrid = document.getElementById('topic-boxart-grid');
+
+    /* --- Live Dropdown Search Logic Integration --- */
+    const searchTrigger = document.getElementById('search-trigger');
+    const searchDropdown = document.getElementById('search-dropdown');
+    const searchInput = document.getElementById('game-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    const searchResultsDisplay = document.getElementById('search-results-display');
+
+    // Toggle dropdown UI visibility
+    searchTrigger.onclick = (e) => {
+      e.stopPropagation();
+      searchDropdown.classList.toggle('show');
+      if (searchDropdown.classList.contains('show')) {
+        searchInput.focus();
+      }
+    };
+
+    // Close search interface if user clicks anywhere else outside header layout
+    document.addEventListener('click', (e) => {
+      if (!searchDropdown.contains(e.target) && !searchTrigger.contains(e.target)) {
+        searchDropdown.classList.remove('show');
+      }
+    });
+
+    // Reset interface
+    searchClearBtn.onclick = () => {
+      searchInput.value = '';
+      searchResultsDisplay.innerHTML = '';
+      searchInput.focus();
+    };
+
+    // Global Key-Matching Engine
+    searchInput.oninput = function() {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResultsDisplay.innerHTML = '';
+
+      if (!query) return;
+
+      let matchedItemsHtml = '';
+
+      // Loop through all data entities in GAME_PRESENTATION_DIRECTORY
+      Object.keys(gamesDb).forEach(key => {
+        const game = gamesDb[key];
+        if (!game) return;
+
+        const hasSubProfiles = game.subProfiles && Array.isArray(game.subProfiles) && game.subProfiles.length > 0;
+        const parentNameMatches = (game.shortName && game.shortName.toLowerCase().includes(query)) || 
+                                  (game.name && game.name.toLowerCase().includes(query));
+
+        // Case A: Root game does NOT have sub-profiles -> normal match evaluation
+        if (!hasSubProfiles) {
+          if (parentNameMatches) {
+            matchedItemsHtml += buildSearchRowHtml(game.shortName || game.name, game.boxart, game.dedicatedPageUrl, game.status);
+          }
+        }
+
+        // Case B: Game HAS sub-profiles -> if parent name matches OR sub-profile name matches, return sub-profiles
+        if (hasSubProfiles) {
+          game.subProfiles.forEach(subProfile => {
+            const subNameMatches = subProfile.name && subProfile.name.toLowerCase().includes(query);
+            
+            // If user typed "Warcraft" (parent match) or "Arthas" (child match), render the sub-profile card
+            if (parentNameMatches || subNameMatches) {
+              matchedItemsHtml += buildSearchRowHtml(subProfile.name, subProfile.boxart, subProfile.dedicatedPageUrl, subProfile.status);
+            }
+          });
+        }
+      });
+
+      if (matchedItemsHtml) {
+        searchResultsDisplay.innerHTML = matchedItemsHtml;
+      } else {
+        searchResultsDisplay.innerHTML = `<p style="color: #555; font-size: 0.9rem; padding: 15px 10px; margin: 0;">No matching entries found for "${searchInput.value}"</p>`;
+      }
+    };
+
+    // HTML Generator helper for search hits
+    function buildSearchRowHtml(title, boxartImg, targetUrl, executionStatus) {
+      const statusStr = (executionStatus || 'completed').toLowerCase();
+      const visualThumb = boxartImg || 'assets/boxart/default-cover.png';
+      
+      // Keep UX constraints identical to your existing grid status loops
+      if (statusStr === 'completed') {
+        return `
+          <a href="${targetUrl}" class="search-result-row">
+            <img src="${visualThumb}" class="search-result-thumb" alt="${title}">
+            <div class="search-result-info">
+              <h4 class="search-result-title">${title}</h4>
+              <span class="search-result-meta" style="color: var(--accent-gold);">Available Now</span>
+            </div>
+          </a>
+        `;
+      } else {
+        return `
+          <div class="search-result-row" style="cursor: not-allowed; opacity: 0.5;">
+            <img src="${visualThumb}" class="search-result-thumb" alt="${title}">
+            <div class="search-result-info">
+              <h4 class="search-result-title">${title}</h4>
+              <span class="search-result-meta">${statusStr}</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+    /* ----------------------------------------------- */
+
+    if (topicKeys.length === 0) return;
+
+    function getVisibleCardsCount() {
+      const width = window.innerWidth;
+      if (width <= 480) return 1;
+      if (width <= 768) return 2;
+      if (width <= 1024) return 3;
+      return 4;
+    }
+
+    function getMaxScrollPageIdx() {
+      const visibleCount = getVisibleCardsCount();
+      return Math.max(0, topicKeys.length - visibleCount);
+    }
+
+    topicKeys.forEach((key, idx) => {
+      const topic = topicsDb[key];
+      const itemsCount = topic.linkedGames ? topic.linkedGames.length : 0;
+
+      const cardEl = document.createElement('div');
+      cardEl.className = `topic-vertical-card ${idx === 0 ? 'active' : ''}`;
+      cardEl.setAttribute('data-index', idx);
+      cardEl.onclick = () => {
+        selectActiveTopic(idx);
+      };
+      
+      cardEl.innerHTML = `
+        <div class="card-topic-icon"><i class="${topic.symbol}"></i></div>
+        <h3 class="card-topic-title">${topic.name}</h3>
+        <p class="card-topic-desc">${topic.description}</p>
+        <div class="card-games-counter">${itemsCount} Games Explored</div>
+      `;
+      cardsTrack.appendChild(cardEl);
+    });
+
+    function updateSliderRangeLimits() {
+      const maxScroll = getMaxScrollPageIdx();
+      sliderBar.max = maxScroll;
+      
+      const currentScrollIdx = Math.min(currentActiveIdx, maxScroll);
+      sliderBar.value = currentScrollIdx;
+    }
+
+    function scrollToTrackPosition(scrollIdx) {
+      const cards = cardsTrack.querySelectorAll('.topic-vertical-card');
+      if (cards.length === 0) return;
+      
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const trackGap = 20; 
+      const maxScroll = getMaxScrollPageIdx();
+
+      let safeScrollIdx = Math.max(0, Math.min(scrollIdx, maxScroll));
+      const translationOffset = safeScrollIdx * (cardWidth + trackGap);
+      cardsTrack.style.transform = `translateX(-${translationOffset}px)`;
+    }
+
+    function scrollToKeepIndexVisible(idx) {
+      const maxScroll = getMaxScrollPageIdx();
+      let scrollTargetIndex = idx;
+      if (scrollTargetIndex > maxScroll) {
+        scrollTargetIndex = maxScroll;
+      }
+      
+      sliderBar.value = scrollTargetIndex;
+      scrollToTrackPosition(scrollTargetIndex);
+    }
+
+    function selectActiveTopic(idx) {
+      currentActiveIdx = idx;
+      
+      const cards = cardsTrack.querySelectorAll('.topic-vertical-card');
+      cards.forEach((card, i) => card.classList.toggle('active', i === currentActiveIdx));
+
+      const targetThemeKey = topicKeys[currentActiveIdx];
+      renderConnectedGames(targetThemeKey);
+    }
+
+    function renderConnectedGames(activeTopicKey) {
+      boxartGrid.innerHTML = '';
+      const activeTopic = topicsDb[activeTopicKey];
+      
+      if (!activeTopic || !activeTopic.linkedGames || activeTopic.linkedGames.length === 0) {
+        boxartGrid.innerHTML = '<p style="color:#666; font-style:italic; width:100%; margin-top:10px;">No logged games tied directly to this topic yet.</p>';
+        return;
+      }
+
+      activeTopic.linkedGames.forEach(rawGameKey => {
+        let gameData = null;
+        let displayTitle = "";
+        let displayBoxart = "";
+        let redirectionUrl = "";
+
+        // Case 1: Explicit parent:child syntax remains supported (e.g., "warcraft-3:arthas")
+        if (rawGameKey.includes(':')) {
+          const parts = rawGameKey.split(':');
+          const parentKey = parts[0];
+          const childId = parts[1];
+          
+          const parentData = gamesDb[parentKey];
+          if (parentData && parentData.subProfiles) {
+            const childData = parentData.subProfiles.find(profile => profile.id === childId);
+            if (childData) {
+              gameData = childData;
+              displayTitle = childData.name;
+              displayBoxart = childData.boxart;
+              redirectionUrl = childData.dedicatedPageUrl;
+            }
+          }
+        } 
+        // Case 2: Direct match in the root database (e.g., "bioshock")
+        else if (gamesDb[rawGameKey]) {
+          gameData = gamesDb[rawGameKey];
+          displayTitle = gameData.shortName;
+          displayBoxart = gameData.boxart;
+          redirectionUrl = gameData.dedicatedPageUrl;
+        } 
+        // Case 3: Fallback deep search across all subProfiles for a matching child ID (e.g., "arthas")
+        else {
+          for (const parentKey in gamesDb) {
+            const parentData = gamesDb[parentKey];
+            if (parentData && parentData.subProfiles) {
+              const childData = parentData.subProfiles.find(profile => profile.id === rawGameKey);
+              if (childData) {
+                gameData = childData;
+                displayTitle = childData.name;
+                displayBoxart = childData.boxart;
+                redirectionUrl = childData.dedicatedPageUrl;
+                break; // Match found, stop searching through other parent records
+              }
+            }
+          }
+        }
+
+        // Render pass utilizing the discovered game target data
+        if (gameData) {
+          const status = (gameData.status || "completed").toLowerCase();
+
+          if (status === "completed") {
+            boxartGrid.innerHTML += `
+              <a href="${redirectionUrl}" class="linked-game-link-wrapper">
+                <div class="showcase-boxart-card">
+                  <img class="showcase-boxart-img" src="${displayBoxart}" alt="${displayTitle} Box Art">
+                  <div class="showcase-card-overlay">
+                    <h4>${displayTitle}</h4>
+                  </div>
+                </div>
+              </a>
+            `;
+          } else if (status === "in development") {
+            boxartGrid.innerHTML += `
+              <div class="linked-game-link-wrapper" style="cursor: not-allowed;">
+                <div class="showcase-boxart-card in-development-card">
+                  <img class="showcase-boxart-img" src="${displayBoxart}" alt="${displayTitle} Box Art">
+                  <div class="showcase-card-overlay">
+                    <h4>${displayTitle}</h4>
+                  </div>
+                </div>
+              </div>
+            `;
+          } else if (status === "planned") {
+            boxartGrid.innerHTML += `
+              <div class="linked-game-link-wrapper" style="cursor: not-allowed;">
+                <div class="showcase-boxart-card planned-card">
+                  <img class="showcase-boxart-img" src="${displayBoxart}" alt="${displayTitle} Box Art">
+                  <div class="showcase-card-overlay">
+                    <h4>${displayTitle}</h4>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+        } else {
+          boxartGrid.innerHTML += `
+            <div class="showcase-boxart-card" style="opacity: 0.4; cursor: not-allowed;">
+              <img class="showcase-boxart-img" src="assets/boxart/default-cover.png" alt="Coming Soon">
+              <div class="showcase-card-overlay">
+                <h4>${rawGameKey.replace(/-/g, ' ')}</h4>
+              </div>
+            </div>
+          `;
+        }
+      });
+      
+      boxartGrid.scrollLeft = 0;
+    }
+
+    sliderBar.oninput = (e) => {
+      const targetScrollIdx = parseInt(e.target.value, 10);
+      scrollToTrackPosition(targetScrollIdx);
+    };
+
+    document.getElementById('topic-prev-trigger').onclick = () => {
+      let targetIdx = currentActiveIdx - 1;
+      if (targetIdx < 0) {
+        targetIdx = topicKeys.length - 1; 
+      }
+      selectActiveTopic(targetIdx);
+      scrollToKeepIndexVisible(targetIdx);
+    };
+
+    document.getElementById('topic-next-trigger').onclick = () => {
+      let targetIdx = currentActiveIdx + 1;
+      if (targetIdx >= topicKeys.length) {
+        targetIdx = 0; 
+      }
+      selectActiveTopic(targetIdx);
+      scrollToKeepIndexVisible(targetIdx);
+    };
+
+    window.addEventListener('resize', () => {
+      updateSliderRangeLimits();
+      scrollToKeepIndexVisible(currentActiveIdx);
+    });
+
+    updateSliderRangeLimits();
+    selectActiveTopic(0);
+    scrollToKeepIndexVisible(0);
+
+    /* --- Mobile-Only Touch Swipe Functionality --- */
+    function initMobileSwipe() {
+      const viewport = document.querySelector('.slider-cards-viewport');
+      let isDragging = false;
+      let startX = 0;
+      let currentTranslate = 0;
+      let prevTranslate = 0;
+      let animationId = 0;
+
+      // Helper: Get exact width of a card + gap dynamically
+      function getStepWidth() {
+        const cards = cardsTrack.querySelectorAll('.topic-vertical-card');
+        if (cards.length === 0) return 0;
+        return cards[0].getBoundingClientRect().width + 20; // 20 matches your CSS track gap
+      }
+
+      // Check if viewport is in mobile dimensions (matches your @media query)
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+
+      // Touch Event Listeners
+      viewport.addEventListener('touchstart', (e) => {
+        if (!isMobile()) return;
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        
+        // Grab current style offset
+        const style = window.getComputedStyle(cardsTrack);
+        const matrix = new WebKitCSSMatrix(style.transform);
+        prevTranslate = matrix.m41;
+        currentTranslate = prevTranslate;
+        
+        cardsTrack.style.transition = 'none';
+        animationId = requestAnimationFrame(animation);
+      }, { passive: true });
+
+      viewport.addEventListener('touchmove', (e) => {
+        if (!isDragging || !isMobile()) return;
+        const currentX = e.touches[0].clientX;
+        const diff = currentX - startX;
+        
+        const maxScroll = getMaxScrollPageIdx();
+        const stepWidth = getStepWidth();
+        const minTranslate = 0;
+        const maxTranslate = -(maxScroll * stepWidth);
+
+        let targetTranslate = prevTranslate + diff;
+        
+        // Elastic drag factor at boundaries
+        if (targetTranslate > minTranslate) {
+          targetTranslate = minTranslate + (diff * 0.2); 
+        } else if (targetTranslate < maxTranslate) {
+          targetTranslate = maxTranslate + ((targetTranslate - maxTranslate) * 0.2);
+        }
+
+        currentTranslate = targetTranslate;
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        cancelAnimationFrame(animationId);
+
+        // Snap back smoothly
+        cardsTrack.style.transition = 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
+
+        const stepWidth = getStepWidth();
+        const maxScroll = getMaxScrollPageIdx();
+
+        // Find the nearest card math index to snap onto
+        let nearestIndex = Math.round(-currentTranslate / stepWidth);
+        nearestIndex = Math.max(0, Math.min(nearestIndex, maxScroll));
+
+        scrollToTrackPosition(nearestIndex);
+        sliderBar.value = nearestIndex;
+      });
+
+      function animation() {
+        if (isDragging && isMobile()) {
+          cardsTrack.style.transform = `translateX(${currentTranslate}px)`;
+          animationId = requestAnimationFrame(animation);
+        }
+      }
+    }
+
+    // Execute the module initialization
+    initMobileSwipe();
+
+  })();
+  </script>
+</body>
+</html>

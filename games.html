@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games Hub - Lorestage Gaming</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo-lorestage.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header id="main-header" style="position: relative; z-index: 1000;">
+    <nav class="navbar">
+      <div class="logo">
+        <!-- Wrap the logo image and text inside a dynamic link -->
+        <a id="nav-brand-link" href="games.html" style="display: flex; align-items: center; gap: inherit; text-decoration: none; color: inherit;">
+          <img id="navbar-logo" src="assets/logo/logo-lorestage.png" alt="Lorestage Gaming Logo">
+          <span>Lorestage Gaming - Игроказ</span>
+        </a>
+      </div>
+      
+      <div class="nav-right-group">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="games.html" class="active">Games</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="search-icon" id="search-trigger" style="cursor: pointer; padding: 5px;">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </nav>
+
+    <div class="search-dropdown-panel" id="search-dropdown">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search search-panel-icon"></i>
+        <input type="text" id="game-search-input" placeholder="Search games we've covered" autocomplete="off">
+        <i class="fas fa-times search-close-icon" id="search-clear-btn"></i>
+      </div>
+      <div class="search-results-container" id="search-results-display"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section" style="padding-top: 10px !important; padding-bottom: 0px !important; margin-bottom: 0px !important;">
+      <h2 id="carousel-section-title" style="margin: 0 0 4px 0; font-size: 2rem; text-align: center;">Games We've Covered</h2>
+      <p id="carousel-section-subtitle" class="section-subtitle" style="margin: 0 0 2px 0; font-size: 0.95rem; text-align: center;">Select a game below to see its profile.</p>
+      
+      <div class="games-carousel-container">
+        <div class="games-carousel-window" id="games-scroll-window" style="padding: 10px 5px 15px 5px;">
+          <div class="games-grid" id="dynamic-games-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="dynamic-preview-frame" class="preview-panel-active">
+      <section id="dynamic-hero-view" class="game-media-layout hub-preview-banner">
+        <div class="hero-inner-wrapper" id="preview-inner-wrapper">
+          
+          <div class="quote-row" id="preview-quote-row">
+            <blockquote id="preview-quote"></blockquote>
+          </div>
+
+          <div class="media-row" id="preview-split-row">
+            <div class="thumbnail-aspect-ratio-box" id="preview-media-container">
+              <img id="preview-image" src="" alt="Game Narrative Preview">
+            </div>
+
+            <div class="game-meta-details" id="preview-meta-details">
+              <h2 id="preview-title">Loading...</h2>
+              <p id="preview-description" class="game-description"></p>
+              
+              <div class="action-button-group">
+                <a id="preview-buy-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn affiliate-btn">
+                  <i class="fas fa-shopping-cart"></i> Buy Game
+                </a>
+                <a id="preview-page-btn" href="#" class="btn universe-btn">
+                  <i class="fas fa-journal-whills"></i> Deep Universe
+                </a>
+                <a id="preview-youtube-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn youtube-btn">
+                  <i class="fab fa-youtube"></i> Watch Analysis
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lorestage Gaming - Игроказ. All rights reserved.</p>
+  </footer>
+
+  <style>
+    /* --- Incorporated Dropdown Search Component Styles --- */
+    :root {
+      --accent-gold: #ff4500;
+    }
+
+    .search-dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #0d0d0d;
+      border-bottom: 1px solid #222;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-sizing: border-box;
+    }
+
+    .search-dropdown-panel.show {
+      max-height: 480px;
+    }
+
+    .search-input-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 20px 10px 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .search-panel-icon {
+      position: absolute;
+      left: 35px;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    #game-search-input {
+      width: 100%;
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 4px;
+      padding: 12px 45px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #game-search-input:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .search-close-icon {
+      position: absolute;
+      right: 35px;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .search-close-icon:hover {
+      color: #fff;
+    }
+
+    .search-results-container {
+      max-width: 800px;
+      margin: 0 auto;
+      max-height: 360px;
+      overflow-y: auto;
+      padding: 0 20px 20px 20px;
+      box-sizing: border-box;
+    }
+
+    .search-results-container::-webkit-scrollbar { width: 5px; }
+    .search-results-container::-webkit-scrollbar-track { background: #0d0d0d; }
+    .search-results-container::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+
+    .search-result-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #161616;
+      text-decoration: none;
+      transition: background 0.2s;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+
+    .search-result-row:hover {
+      background: rgba(255, 69, 0, 0.05);
+    }
+
+    .search-result-thumb {
+      width: 45px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 3px;
+      background: #161616;
+      border: 1px solid #222;
+    }
+
+    .search-result-info {
+      text-align: left;
+    }
+
+    .search-result-title {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 2px 0;
+    }
+
+    .search-result-meta {
+      font-size: 0.75rem;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    /* ---------------------------------------------------- */
+
+    /* Carousel System Layout */
+    .games-carousel-container { max-width: 1000px; margin: 0 auto; position: relative; padding: 0 10px; display: flex; justify-content: center; }
+    .games-carousel-window { width: auto; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; box-sizing: border-box; scrollbar-width: thin; scrollbar-color: #ff4500 #111; }
+    .games-carousel-window::-webkit-scrollbar { height: 6px; display: block; }
+    .games-carousel-window::-webkit-scrollbar-track { background: #111; border-radius: 4px; }
+    .games-carousel-window::-webkit-scrollbar-thumb { background: #ff4500; border-radius: 4px; }
+    .games-carousel-window::-webkit-scrollbar-thumb:hover { background: #ff6522; }
+    
+    .games-grid { display: flex !important; flex-direction: row !important; gap: 18px; width: max-content; margin: 0 auto !important; padding-top: 0 !important; }
+    .game-card-btn { background: #111; border: 2px solid #252525; border-radius: 8px; cursor: pointer; transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1); padding: 0; width: 160px; height: 230px; flex-shrink: 0; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+    .game-card-btn:hover { border-color: #555; transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.6); }
+    .game-card-btn.active { border-color: #ff4500; box-shadow: 0 0 15px rgba(255, 69, 0, 0.4); }
+    
+    .game-card-btn.in-development-card .game-boxart-img { filter: grayscale(0.5) sepia(0.3) brightness(0.6); }
+    .game-card-btn.in-development-card .game-thumbnail-wrapper::after {
+      content: "\f013"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.75); border: 2px solid #ffaa00; color: #ffaa00; width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 12px rgba(0,0,0,0.5); animation: spinGear 5s linear infinite; z-index: 5;
+    }
+    @keyframes spinGear { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    .game-card-btn.planned-card .game-boxart-img { filter: grayscale(1) brightness(0.4); }
+    .game-card-btn.planned-card::after {
+      content: "PLANNED"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg); background: rgba(180, 0, 0, 0.9); color: #fff; font-size: 0.75rem; font-weight: 900; padding: 4px 12px; border-radius: 3px; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.2); z-index: 4;
+    }
+
+    .game-card-btn.back-utility-card { background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%); border: 2px dashed #333; justify-content: center; align-items: center; color: #777; gap: 8px; }
+    .game-card-btn.back-utility-card i { font-size: 1.5rem; transition: transform 0.2s ease; }
+    .game-card-btn.back-utility-card:hover { border-color: #ff4500; color: #ffffff; }
+    .game-card-btn.back-utility-card:hover i { transform: translateX(-4px); }
+    .back-card-text { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+
+    .game-thumbnail-wrapper { width: 100%; height: 100%; position: relative; background: #161616; overflow: hidden; }
+    .game-boxart-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+    .game-card-btn:hover .game-boxart-img { transform: scale(1.05); }
+    .game-card-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%); padding: 30px 10px 12px 10px; text-align: center; z-index: 2; }
+    .game-card-overlay h3 { margin: 0; color: #ffffff; font-size: 0.95rem; font-weight: 600; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
+
+    /* Standardized Height Presentation Viewport */
+    .hub-preview-banner {
+      transition: background 0.4s ease; 
+      background-size: cover; 
+      background-position: center; 
+      padding: 45px 0;
+      min-height: 490px;
+      box-sizing: border-box;
+    }
+
+    .hero-inner-wrapper {
+      max-width: 1000px; 
+      margin: 0 auto; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 25px;
+      box-sizing: border-box;
+    }
+
+    .quote-row #preview-quote {
+      font-style: italic; 
+      color: #fff; 
+      border-left: 3px solid #ff4500; 
+      padding-left: 15px; 
+      margin: 0; 
+      font-size: 1.1rem; 
+      line-height: 1.5; 
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .media-row { display: grid; grid-template-columns: 55% minmax(0, 45%); gap: 30px; align-items: start; width: 100%; text-align: left; }
+    
+    .thumbnail-aspect-ratio-box {
+      width: 100%;
+      position: relative;
+      padding-top: 56.25%;
+      background-color: #000000;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    }
+    .thumbnail-aspect-ratio-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
+
+    .game-meta-details { display: flex; flex-direction: column; }
+    
+    #preview-title { margin: 0 0 10px 0; font-size: 2rem; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+    
+    .game-description { 
+      color: #ddd; 
+      line-height: 1.6; 
+      font-size: 0.95rem; 
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8); 
+      margin: 0 0 25px 0;
+      max-height: 165px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #ff4500 rgba(0,0,0,0.1);
+      text-align: justify;
+    }
+
+    .action-button-group { display: flex; gap: 12px; flex-wrap: wrap; width: 100%; }
+    
+    .btn { flex: 1; min-width: 180px; height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 4px; font-weight: 600; text-decoration: none; 
+      font-size: 0.9rem; transition: all 0.2s; white-space: nowrap; }
+    .affiliate-btn { background: #28a745; color: #fff; }
+    .affiliate-btn:hover { background: #218838; }
+    
+    .universe-btn { 
+      background: #ff4500; 
+      color: #fff; 
+      border: 1px solid #ff5511;
+      box-shadow: 0 0 12px rgba(255, 69, 0, 0.35);
+    }
+    .universe-btn:hover { 
+      background: #ff5714; 
+      box-shadow: 0 0 18px rgba(255, 69, 0, 0.6);
+    }
+    
+    .youtube-btn { background: #cc181e; color: #fff; }
+    .youtube-btn:hover { background: #b01016; }
+
+    .btn.disabled-action-btn {
+      background: #222 !important;
+      color: #555 !important;
+      border: 1px solid #2d2d2d !important;
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: none !important;
+    }
+
+    /* --- Harmonized Responsive Breakpoints --- */
+    
+    /* Laptop / Small Desktop Tier */
+    @media (max-width: 1024px) {
+      .media-row { gap: 20px; }
+      .games-carousel-container { max-width: 95%; }
+    }
+
+    /* Tablet Tier */
+    @media (max-width: 768px) {
+      .logo span { font-size: 1.3rem; }
+      #nav-brand-title { font-size: 1.7rem; }
+      .nav-links a { font-size: 1rem;  } 
+      
+      /* Shift preview from grid columns to a stacked column layout */
+      .media-row { grid-template-columns: 100% !important; gap: 20px; }
+      .hub-preview-banner { min-height: auto; padding: 30px 0; }
+      .hero-inner-wrapper { padding: 0 20px !important; }
+      
+      #carousel-section-title { font-size: 1.7rem !important; }
+      #preview-title { font-size: 1.7rem; text-align: center; }
+      .game-description { max-height: 200px; }
+      
+      /* Optimize action buttons for touch surfaces */
+      .action-button-group { flex-direction: column; width: 100%; gap: 10px; }
+      .btn { width: 100%; max-width: 100%; height: 46px; }
+    }
+
+    /* Mobile Phone Tier */
+    @media (max-width: 480px) {
+      .nav-links a { font-size: 1rem;  }
+      .game-card-btn {
+        width: 135px;   /* Adjust width for mobile screens here */
+        height: 200px;  /* Adjust height for mobile screens here */
+      }
+      
+      #carousel-section-title { font-size: 1.4rem !important; }
+      .quote-row #preview-quote { font-size: 0.95rem; padding-left: 10px; }
+      
+      .search-input-wrapper { padding: 15px 10px 10px 10px; }
+      .search-panel-icon { left: 25px; }
+      .search-close-icon { right: 25px; }
+      #game-search-input { padding: 12px 38px; font-size: 0.9rem; }
+    }
+  </style>
+
+  <script src="data/game-presentation-database.js"></script>
+
+  <script>
+    const header = document.getElementById('main-header');
+    const navbarLogo = document.getElementById('navbar-logo');
+    const navBrandLink = document.getElementById('nav-brand-link');
+    const previewTitle = document.getElementById('preview-title');
+    const previewQuote = document.getElementById('preview-quote');
+    const previewImage = document.getElementById('preview-image');
+    const previewDescription = document.getElementById('preview-description');
+    const previewBuyBtn = document.getElementById('preview-buy-btn');
+    const previewPageBtn = document.getElementById('preview-page-btn');
+    const previewYoutubeBtn = document.getElementById('preview-youtube-btn');
+    const dynamicHeroView = document.getElementById('dynamic-hero-view');
+    const gamesScrollWindow = document.getElementById('games-scroll-window');
+    const dynamicGamesGrid = document.getElementById('dynamic-games-grid');
+    const sectionTitle = document.getElementById('carousel-section-title');
+    const sectionSubtitle = document.getElementById('carousel-section-subtitle');
+
+    const previewQuoteRow = document.getElementById('preview-quote-row');
+    const previewSplitRow = document.getElementById('preview-split-row');
+    const previewInnerWrapper = document.getElementById('preview-inner-wrapper');
+
+    let currentViewState = "global";
+    let lastActiveGlobalKey = "";
+
+    /* --- Search Dropdown Event Handlers & Core Scripting --- */
+    const searchTrigger = document.getElementById('search-trigger');
+    const searchDropdown = document.getElementById('search-dropdown');
+    const searchInput = document.getElementById('game-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    const searchResultsDisplay = document.getElementById('search-results-display');
+
+    searchTrigger.onclick = (e) => {
+      e.stopPropagation();
+      searchDropdown.classList.toggle('show');
+      if (searchDropdown.classList.contains('show')) {
+        searchInput.focus();
+      }
+    };
+
+    document.addEventListener('click', (e) => {
+      if (!searchDropdown.contains(e.target) && !searchTrigger.contains(e.target)) {
+        searchDropdown.classList.remove('show');
+      }
+    });
+
+    searchClearBtn.onclick = () => {
+      searchInput.value = '';
+      searchResultsDisplay.innerHTML = '';
+      searchInput.focus();
+    };
+
+    // Global Key-Matching Engine
+    searchInput.oninput = function() {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResultsDisplay.innerHTML = '';
+
+      if (!query) return;
+
+      const database = window.GAME_PRESENTATION_DIRECTORY || {};
+      let matchedItemsHtml = '';
+
+      Object.keys(database).forEach(key => {
+        const game = database[key];
+        if (!game) return;
+
+        const hasSubProfiles = game.subProfiles && Array.isArray(game.subProfiles) && game.subProfiles.length > 0;
+        const parentNameMatches = (game.shortName && game.shortName.toLowerCase().includes(query)) || 
+                                  (game.name && game.name.toLowerCase().includes(query));
+
+        // Case A: Root game does NOT have sub-profiles -> normal match evaluation
+        if (!hasSubProfiles) {
+          if (parentNameMatches) {
+            matchedItemsHtml += buildSearchRowHtml(game.shortName || game.name, game.boxart, game.dedicatedPageUrl, game.status);
+          }
+        }
+
+        // Case B: Game HAS sub-profiles -> if parent matches OR sub-profile matches, return sub-profiles
+        if (hasSubProfiles) {
+          game.subProfiles.forEach(subProfile => {
+            const subNameMatches = subProfile.name && subProfile.name.toLowerCase().includes(query);
+            
+            // If user typed "Warcraft" (parent match) or "Arthas" (child match), display the sub-profile row
+            if (parentNameMatches || subNameMatches) {
+              matchedItemsHtml += buildSearchRowHtml(subProfile.name, subProfile.boxart, subProfile.dedicatedPageUrl, subProfile.status);
+            }
+          });
+        }
+      });
+
+      if (matchedItemsHtml) {
+        searchResultsDisplay.innerHTML = matchedItemsHtml;
+      } else {
+        searchResultsDisplay.innerHTML = `<p style="color: #555; font-size: 0.9rem; padding: 15px 10px; margin: 0;">No matching entries found for "${searchInput.value}"</p>`;
+      }
+    };
+
+    function buildSearchRowHtml(title, boxartImg, targetUrl, executionStatus) {
+      const statusStr = (executionStatus || 'completed').toLowerCase();
+      const visualThumb = boxartImg || 'assets/boxart/default-cover.png';
+      
+      if (statusStr === 'completed') {
+        return `
+          <a href="${targetUrl}" class="search-result-row">
+            <img src="${visualThumb}" class="search-result-thumb" alt="${title}">
+            <div class="search-result-info">
+              <h4 class="search-result-title">${title}</h4>
+              <span class="search-result-meta" style="color: var(--accent-gold);">Available Now</span>
+            </div>
+          </a>
+        `;
+      } else {
+        return `
+          <div class="search-result-row" style="cursor: not-allowed; opacity: 0.5;">
+            <img src="${visualThumb}" class="search-result-thumb" alt="${title}">
+            <div class="search-result-info">
+              <h4 class="search-result-title">${title}</h4>
+              <span class="search-result-meta">${statusStr}</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+    /* ---------------------------------------------------------------------- */
+
+    function renderGlobalCarousel(activeKeyToSelect) {
+      currentViewState = "global";
+      const database = window.GAME_PRESENTATION_DIRECTORY || {};
+      dynamicGamesGrid.innerHTML = '';
+
+      sectionTitle.textContent = "Games We've Covered";
+      sectionSubtitle.textContent = "Select a game below to see its profile.";
+
+      const keys = Object.keys(database);
+      if (keys.length === 0) return;
+
+      const targetActiveKey = activeKeyToSelect || keys[0];
+
+      keys.forEach((key) => {
+        const game = database[key];
+        const isActive = key === targetActiveKey ? 'active' : '';
+        
+        let statusClass = '';
+        if (game.status === 'in development') statusClass = 'in-development-card';
+        if (game.status === 'planned') statusClass = 'planned-card';
+
+        dynamicGamesGrid.innerHTML += `
+          <button class="game-card-btn ${isActive} ${statusClass}" data-game="${key}">
+            <div class="game-thumbnail-wrapper">
+              <img class="game-boxart-img" src="${game.boxart}" alt="${game.shortName} Cover">
+              <div class="game-card-overlay">
+                <h3>${game.shortName}</h3>
+              </div>
+            </div>
+          </button>
+        `;
+      });
+
+      attachGlobalCarouselEvents();
+      
+      const currentActive = document.querySelector('.game-card-btn.active');
+      if (currentActive) {
+        const key = currentActive.getAttribute('data-game');
+        lastActiveGlobalKey = key;
+        executeBaseDataLoad(key);
+      }
+    }
+
+    function attachGlobalCarouselEvents() {
+      const buttons = document.querySelectorAll('.game-card-btn');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          buttons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const gameKey = button.getAttribute('data-game');
+          lastActiveGlobalKey = gameKey;
+
+          const database = window.GAME_PRESENTATION_DIRECTORY || {};
+          const gameData = database[gameKey];
+
+          if (gameData && gameData.subProfiles && gameData.subProfiles.length > 0) {
+            renderSubCarousel(gameKey);
+          } else {
+            executeBaseDataLoad(gameKey);
+          }
+          centerActiveGameCard(button);
+        });
+      });
+    }
+
+    function renderSubCarousel(parentGameKey) {
+      currentViewState = "sub";
+      const database = window.GAME_PRESENTATION_DIRECTORY || {};
+      const gameData = database[parentGameKey];
+      if (!gameData) return;
+
+      dynamicGamesGrid.innerHTML = '';
+      sectionTitle.textContent = `${gameData.shortName}: Select Perspective`;
+      sectionSubtitle.textContent = "Choose a specific character chronicle or narrative focus below.";
+
+      const backCard = document.createElement('button');
+      backCard.className = "game-card-btn back-utility-card";
+      backCard.innerHTML = `<i class="fas fa-arrow-left"></i><span class="back-card-text">Return</span>`;
+      
+      backCard.onclick = () => {
+        const keys = Object.keys(database);
+        let fallbackKey = parentGameKey;
+        
+        if (gameData.subProfiles && gameData.subProfiles.length > 0) {
+          const currentIdx = keys.indexOf(parentGameKey);
+          if (currentIdx > 0) {
+            fallbackKey = keys[currentIdx - 1];
+          } else {
+            fallbackKey = keys.find(k => k !== parentGameKey && (!database[k].subProfiles || database[k].subProfiles.length === 0)) || keys[0];
+          }
+        }
+
+        renderGlobalCarousel(fallbackKey);
+        setTimeout(() => {
+          const activeCard = document.querySelector(`.game-card-btn[data-game="${fallbackKey}"]`);
+          if (activeCard) centerActiveGameCard(activeCard);
+        }, 50);
+      };
+      dynamicGamesGrid.appendChild(backCard);
+
+      gameData.subProfiles.forEach((sub, idx) => {
+        const isActive = idx === 0 ? 'active' : '';
+        
+        let subStatusClass = '';
+        if (sub.status === 'in development') subStatusClass = 'in-development-card';
+        if (sub.status === 'planned') subStatusClass = 'planned-card';
+
+        const subCard = document.createElement('button');
+        subCard.className = `game-card-btn ${isActive} ${subStatusClass}`;
+        subCard.setAttribute('data-sub-id', sub.id);
+        
+        subCard.innerHTML = `
+          <div class="game-thumbnail-wrapper">
+            <img class="game-boxart-img" src="${sub.boxart || gameData.boxart}" alt="${sub.name} Art">
+            <div class="game-card-overlay">
+              <h3>${sub.name}</h3>
+            </div>
+          </div>
+        `;
+
+        subCard.addEventListener('click', () => {
+          document.querySelectorAll('.game-card-btn').forEach(btn => btn.classList.remove('active'));
+          subCard.classList.add('active');
+          applyLayoutData(sub, parentGameKey);
+          centerActiveGameCard(subCard);
+        });
+
+        dynamicGamesGrid.appendChild(subCard);
+      });
+
+      applyLayoutData(gameData.subProfiles[0], parentGameKey);
+      gamesScrollWindow.scrollLeft = 0;
+    }
+
+    function executeBaseDataLoad(gameKey) {
+      const database = window.GAME_PRESENTATION_DIRECTORY || {};
+      const gameData = database[gameKey];
+      if (gameData) {
+        applyLayoutData(gameData, gameKey);
+      }
+    }
+
+    function applyLayoutData(data, coreLibraryKey) {
+      previewQuoteRow.style.display = "block";
+      previewSplitRow.style.display = "grid";
+      previewInnerWrapper.style.padding = "0 20px";
+
+      previewTitle.textContent = data.title || data.name;
+      
+      if (data.quote) {
+        let rawQuote = data.quote.trim();
+        if (rawQuote.startsWith("'") && rawQuote.endsWith("'")) {
+          rawQuote = rawQuote.slice(1, -1).trim();
+        }
+        if (rawQuote.startsWith('"') && rawQuote.endsWith('"')) {
+          previewQuote.textContent = rawQuote;
+        } else {
+          previewQuote.textContent = `${rawQuote}`;
+        }
+      } else {
+        previewQuote.textContent = '';
+      }
+      
+      previewImage.src = data.previewImg || '';
+      previewDescription.textContent = data.description || '';
+      
+      previewBuyBtn.href = data.buyUrl || '#';
+      previewPageBtn.href = data.dedicatedPageUrl || `${coreLibraryKey}.html`;
+      previewYoutubeBtn.href = data.youtubeUrl || '#';
+
+      previewBuyBtn.className = "btn affiliate-btn";
+      previewPageBtn.className = "btn universe-btn";
+      previewYoutubeBtn.className = "btn youtube-btn";
+
+      if (data.status === "in development") {
+        previewBuyBtn.classList.add("disabled-action-btn");
+        previewPageBtn.classList.add("disabled-action-btn");
+        previewYoutubeBtn.classList.add("disabled-action-btn");
+      }
+      else if (data.status === "planned") {
+        previewQuoteRow.style.display = "none";
+        previewSplitRow.style.display = "none";
+        previewInnerWrapper.style.padding = "80px 20px";
+        previewTitle.textContent = ""; 
+      }
+
+      if (data.bannerImg && dynamicHeroView) {
+        dynamicHeroView.style.background = `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('${data.bannerImg}') no-repeat center center/cover`;
+      }
+      header.style.backgroundColor = data.navBg || '#111';
+      navbarLogo.src = data.logo || 'assets/logo/logo-lorestage.png';
+    }
+
+    function centerActiveGameCard(activeBtn) {
+      const targetOffset = activeBtn.offsetLeft - (gamesScrollWindow.offsetWidth / 2) + (activeBtn.offsetWidth / 2);
+      gamesScrollWindow.scrollTo({ left: targetOffset, behavior: 'smooth' });
+    }
+
+    window.addEventListener('load', () => {
+      renderGlobalCarousel();
+    });
+  </script>
+</body>
+</html>

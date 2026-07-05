@@ -1,8 +1,9 @@
 /* ==========================================================================
-   OUTER ELEMENT CONTRAST & THEME OVERRIDES
+   LORESTAGE MODULAR GAME THEME OVERRIDES
+   Append new custom universe styles to the bottom of this file.
    ========================================================================== */
 
-/* --- 1. GLOBAL TEXT & NAV ARROW FIXES --- */
+/* --- GLOBAL THEMATIC DECORATION ELEMENTS --- */
 .carousel-wrapper.bioshock .book-counter,
 .carousel-wrapper.stalker .book-counter,
 .carousel-wrapper.arthas .book-counter,
@@ -12,186 +13,136 @@
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
 }
 
-/* High-visibility arrows flanking the console */
-.carousel-wrapper.bioshock .nav-arrow,
+.carousel-wrapper .nav-arrow,
 .carousel-wrapper.stalker .nav-arrow,
 .carousel-wrapper.arthas .nav-arrow,
 .carousel-wrapper.thrall .nav-arrow {
-  font-size: 3.5rem !important;
+  font-size: 3rem !important;
   opacity: 0.85;
   transition: opacity 0.2s, transform 0.2s, color 0.2s;
   z-index: 100;
 }
 
-.carousel-wrapper.bioshock .nav-arrow:hover,
-.carousel-wrapper.stalker .nav-arrow:hover,
-.carousel-wrapper.arthas .nav-arrow:hover,
-.carousel-wrapper.thrall .nav-arrow:hover {
-  opacity: 1;
-  transform: scale(1.1);
+/* --- GLOBAL BUY SYSTEM THEMATIC BASICS --- */
+.carousel-wrapper .category-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.carousel-wrapper .store-link {
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
+}
+
+.carousel-wrapper .brand-main-title {
+  color: var(--text-primary) !important;
+}
+
+.carousel-wrapper .brand-sub-action {
+  color: var(--text-secondary) !important;
+  opacity: 0.7;
+}
+
+.carousel-wrapper .icon-arrow {
+  color: var(--text-secondary) !important;
+  opacity: 0.5;
+}
+
+/* Universal Brand Logo Contrast Engine */
+.carousel-wrapper .store-link img,
+.carousel-wrapper .store-link svg,
+.carousel-wrapper .store-link .brand-icon {
+  filter: brightness(1.4) contrast(1.1) drop-shadow(0 1px 2px rgba(0,0,0,0.5)) !important;
+  transition: filter 0.2s ease !important;
+}
+
+/* Explicit fix for inherently dark logos (like Amazon / Kindle) to prevent them vanishing */
+.carousel-wrapper .store-link img[src*="amazon"],
+.carousel-wrapper .store-link img[src*="kindle"],
+.carousel-wrapper .store-link svg.amazon-icon {
+  filter: brightness(0) invert(1) brightness(1.8) contrast(1.2) !important;
+}
+
+.carousel-wrapper .store-link:hover img,
+.carousel-wrapper .store-link:hover svg {
+  filter: brightness(1.6) contrast(1.2) drop-shadow(0 2px 4px rgba(0,0,0,0.6)) !important;
 }
 
 
-/* --- 2. BIOSHOCK THEME (Rapture Sea-Teal & Art Deco Gold) --- */
-
+/* ==========================================================================
+   BIOSHOCK CONFIGURATIONS (Underwater Art Deco Theme)
+   ========================================================================== */
 .carousel-wrapper.bioshock {
-  /* Dynamic Variable Injections */
-  --carousel-bg: #031416 !important;             /* Deep solid sea floor dark teal */
-  --text-primary: #f4ecd8 !important;            /* High-contrast vintage cream for text */
-  --text-secondary: #cbd2c7 !important;          /* Clean parchment silver for body descriptions */
-  --accent-gold: #c39a4f !important;             /* Burnished bronze accent */
+  --carousel-bg: #031416 !important;
+  --text-primary: #f4ecd8 !important;
+  --text-secondary: #cbd2c7 !important;
+  --accent-gold: #c39a4f !important;
   --border-color: #1a4246 !important;
   --divider-style: 1px solid #1a4246 !important;
   --card-radius: 4px !important;
 }
-
-/* Header Text Indicators - Enhanced Visibility */
-.carousel-wrapper.bioshock .book-counter {
-  color: #5bfce5 !important; /* Upgraded to an ultra-bright glowing neon turquoise */
-  font-family: 'Cinzel', 'Copperplate', 'Times New Roman', serif;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  margin-bottom: 4px;
-}
-
-/* Target Layout Content Container Custom Fit */
+.carousel-wrapper.bioshock .book-counter { color: #5bfce5 !important; font-family: 'Cinzel', serif; }
 .carousel-wrapper.bioshock .carousel-content {
-  background-color: #031416 !important;
   border: 4px double #c39a4f !important;
   outline: 1px solid #c39a4f !important;
   outline-offset: -8px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(0, 0, 0, 0.8) !important;
-  padding: 24px !important;
-  
-  /* CRITICAL FIXED HEIGHT OVERRIDES */
-  height: 520px !important;
-  min-height: 520px !important;
-  max-height: 520px !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important; /* Strips out accidental layout breaks */
+  box-shadow: 0 12px 36px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.8) !important;
 }
-
-/* Panel Dimensions Normalization & Flex Control */
-.carousel-wrapper.bioshock .carousel-main-layout {
-  height: 100% !important;
-  max-height: 100% !important;
-  overflow: hidden !important;
-}
-
-.carousel-wrapper.bioshock .image-panel {
-  height: 100% !important;          
-  max-height: 100% !important;
-}
-
-.carousel-wrapper.bioshock .text-panel {
-  height: 100% !important;          
-  max-height: 100% !important;
-  overflow-y: auto !important;      /* Unlocks internal scrolling slider */
-  padding-right: 14px !important;   
-  box-sizing: border-box !important;
-}
-
-/* THEMED RAPTURE MECHANICAL SCROLLBAR OVERRIDES */
-.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar {
-  display: block !important;        
-  width: 6px !important;
-}
-.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar-track {
-  background: #021012 !important;   /* Deep sea gutter background track */
-  border-radius: 3px !important;
-}
-.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar-thumb {
-  background: #c39a4f !important;   /* Burnished bronze key slider */
-  border-radius: 3px !important;
-}
-.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar-thumb:hover {
-  background: #e5a93b !important;   /* Highlighted gold glow on track hover */
-}
-.carousel-wrapper.bioshock .text-panel {
-  scrollbar-width: thin !important;              
-  scrollbar-color: #c39a4f #021012 !important;   
-}
-
-/* Typography & Meta Overrides */
-.carousel-wrapper.bioshock h2 {
-  color: #e5a93b !important; /* Bright glowing gold title */
-  font-family: 'Cinzel', 'Copperplate', serif;
-  font-size: 1.9rem !important;
-  margin-bottom: 2px !important;
-}
-
-.carousel-wrapper.bioshock .author-name {
-  color: #eadecc !important; /* Soft linen color for high-readability */
-  font-size: 1rem !important;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.carousel-wrapper.bioshock .section-title {
-  color: #49dec9 !important; /* Crisp glowing neon teal subheaders */
-  font-family: 'Cinzel', 'Copperplate', serif;
-  margin-top: 14px !important;
-}
-
-/* Custom Theming for Store Headers (Physical Book, Audiobook, Ebook) */
-.carousel-wrapper.bioshock .category-label {
-  color: #c39a4f !important; /* Shifts utility white labels to Art Deco Gold */
-  font-family: 'Cinzel', 'Copperplate', serif;
-  font-size: 0.75rem !important;
-  letter-spacing: 1px;
-}
-
-/* Navigation Arrow Overrides - Enhanced Contrast */
-.carousel-wrapper.bioshock .nav-arrow {
-  color: #e5a93b !important; /* Matches bright active gold */
-  text-shadow: 0 0 15px rgba(229, 169, 59, 0.5), 2px 2px 5px rgba(0, 0, 0, 0.9) !important;
-}
-.carousel-wrapper.bioshock .nav-arrow:hover {
-  color: #5bfce5 !important; /* Flashes glowing neon turquoise on hover */
-}
-
-/* Inactive Dots turned into Art Deco Diamond Tracking Nodes */
-.carousel-wrapper.bioshock .dot {
-  background-color: rgba(255, 255, 255, 0.25) !important;
-  border: 1px solid #c39a4f !important;
-  width: 9px;
-  height: 9px;
-  border-radius: 0px !important;
-  transform: rotate(45deg);
-  margin: 0 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-}
-
-/* Active Diamond Indicator */
-.carousel-wrapper.bioshock .dot.active {
-  background-color: #e5a93b !important;
-  box-shadow: 0 0 12px #e5a93b, 0 0 4px #e5a93b !important;
-}
-
-/* Translucent Bottom Navigation Window */
+.carousel-wrapper.bioshock h2 { color: #e5a93b !important; font-family: 'Cinzel', serif; }
+.carousel-wrapper.bioshock .section-title,
+.carousel-wrapper.bioshock .category-label { color: #49dec9 !important; font-family: 'Cinzel', serif; }
+.carousel-wrapper.bioshock .text-panel { scrollbar-width: thin !important; scrollbar-color: #c39a4f #021012 !important; }
+.carousel-wrapper.bioshock .dot { border-radius: 0px !important; transform: rotate(45deg); border: 1px solid #c39a4f !important; }
+.carousel-wrapper.bioshock .dot.active { background-color: #e5a93b !important; box-shadow: 0 0 12px #e5a93b !important; }
 .carousel-wrapper.bioshock .thumbnail-slider-window {
   background: rgba(2, 13, 15, 0.85) !important;
   border: 2px solid #c39a4f !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7) !important;
-  border-radius: 6px;
+  scrollbar-color: #c39a4f #021012 !important;
+}
+.carousel-wrapper.bioshock .thumb-card { background: rgba(10, 25, 28, 0.6) !important; border: 1px solid rgba(195, 154, 79, 0.2) !important; }
+.carousel-wrapper.bioshock .thumb-card.active { border: 1px solid #e5a93b !important; background: rgba(195, 154, 79, 0.15) !important; }
+
+/* BioShock Glass/Submerged Polished Buttons */
+.carousel-wrapper.bioshock .store-link { 
+  border-radius: 2px !important; 
+  background: linear-gradient(135deg, rgba(8, 32, 36, 0.9) 0%, rgba(3, 18, 20, 0.95) 100%) !important;
+  box-shadow: inset 0 1px 3px rgba(91, 252, 229, 0.1), 0 2px 6px rgba(0,0,0,0.4) !important;
+}
+.carousel-wrapper.bioshock .store-link:hover { 
+  background: linear-gradient(135deg, rgba(14, 52, 58, 0.9) 0%, rgba(5, 26, 29, 0.95) 100%) !important;
+  border-color: #e5a93b !important;
+  box-shadow: inset 0 1px 6px rgba(229, 169, 59, 0.2), 0 4px 10px rgba(0,0,0,0.5) !important;
 }
 
-.carousel-wrapper.bioshock .thumb-card {
-  border-radius: 3px !important;
-  background: rgba(10, 25, 28, 0.6) !important;
-  border: 1px solid rgba(195, 154, 79, 0.2) !important;
-}
-.carousel-wrapper.bioshock .thumb-card.active {
-  border: 1px solid #e5a93b !important;
-  background: rgba(195, 154, 79, 0.15) !important;
-}
+/* Bioshock Navigation Arrow Color Override */
+.carousel-wrapper.bioshock .nav-arrow { color: var(--accent-gold) !important; }
+.carousel-wrapper.bioshock .nav-arrow:hover { color: #e5a93b !important; text-shadow: 0 0 10px rgba(229, 169, 59, 0.6); }
+
+/* Bioshock Scrollbar Custom Enforcements */
+.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar, 
+.carousel-wrapper.bioshock .thumbnail-slider-window::-webkit-scrollbar,
+.carousel-wrapper.bioshock .purchase-column::-webkit-scrollbar,
+.carousel-wrapper.bioshock .details-column::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
+.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar-button,
+.carousel-wrapper.bioshock .thumbnail-slider-window::-webkit-scrollbar-button { display: none !important; }
+.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar-track, 
+.carousel-wrapper.bioshock .thumbnail-slider-window::-webkit-scrollbar-track,
+.carousel-wrapper.bioshock .purchase-column::-webkit-scrollbar-track,
+.carousel-wrapper.bioshock .details-column::-webkit-scrollbar-track { background: #021012 !important; }
+.carousel-wrapper.bioshock .text-panel::-webkit-scrollbar-thumb, 
+.carousel-wrapper.bioshock .thumbnail-slider-window::-webkit-scrollbar-thumb,
+.carousel-wrapper.bioshock .purchase-column::-webkit-scrollbar-thumb,
+.carousel-wrapper.bioshock .details-column::-webkit-scrollbar-thumb { background-color: #c39a4f !important; border-radius: 2px !important; }
 
 
-/* --- 3. S.T.A.L.K.E.R. THEME (Anomalous Amber & Industrial Steel) --- */
-
+/* ==========================================================================
+   S.T.A.L.K.E.R. CONFIGURATIONS (Industrial Gritty Exclusion Zone Theme)
+   ========================================================================== */
 .carousel-wrapper.stalker {
-  /* Dynamic Variable Injections */
-  --carousel-bg: rgba(24, 25, 21, 0.9) !important;
+  --carousel-bg: rgba(14, 16, 15, 0.94) !important;
   --text-primary: #cbd2c7 !important;
   --text-secondary: #8a9286 !important;
   --accent-gold: #e67e22 !important;
@@ -199,457 +150,175 @@
   --divider-style: 1px dashed #384148 !important;
   --card-radius: 0px !important;
 }
-
-/* Header Text Indicators */
-.carousel-wrapper.stalker .book-counter {
-  color: #e67e22 !important;
-  font-family: monospace;
-}
-
-/* Main Box Layout Fitting - Terminal Frame Update */
+.carousel-wrapper.stalker .book-counter { color: #e67e22 !important; font-family: monospace; }
 .carousel-wrapper.stalker .carousel-content {
-  background-color: rgba(14, 16, 15, 0.94) !important; /* Slightly darker, green-tinted charcoal */
-  border: 2px solid #505c66 !important; /* Heavy sheet steel trim */
-  outline: 1px solid #1c2124 !important;
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.9), 
-    inset 0 0 50px rgba(0, 0, 0, 0.95),
-    0 0 15px rgba(230, 126, 34, 0.15) !important; /* Subtle radioactive amber external aura */
-  margin: 0 auto;
-  border-radius: 0px !important;
-  
-  /* CRITICAL FIXED HEIGHT OVERRIDES */
-  height: 520px !important;
-  min-height: 520px !important;
-  max-height: 520px !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important;       
+  border: 2px solid #505c66 !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.9), inset 0 0 50px rgba(0,0,0,0.95) !important;
 }
-
-/* Panel Dimensions Normalization & Flex Control */
-.carousel-wrapper.stalker .carousel-main-layout {
-  height: 100% !important;
-  max-height: 100% !important;
-  overflow: hidden !important;
-}
-
-.carousel-wrapper.stalker .image-panel {
-  height: 100% !important;
-}
-
-.carousel-wrapper.stalker .text-panel {
-  height: 100% !important;
-  max-height: 100% !important;
-  overflow-y: auto !important;      /* Unlocks internal vertical scrolling for Zone descriptions */
-  padding-right: 14px !important;
-  box-sizing: border-box !important;
-}
-
-/* INDUSTRIAL CONTAMINATED ZONE SCROLLBAR OVERRIDES */
-.carousel-wrapper.stalker .text-panel::-webkit-scrollbar {
-  display: block !important;
-  width: 6px !important;
-}
-.carousel-wrapper.stalker .text-panel::-webkit-scrollbar-track {
-  background: #11120f !important;   /* Rust-tinted dark track channel */
-  border-radius: 0px !important;
-}
-.carousel-wrapper.stalker .text-panel::-webkit-scrollbar-thumb {
-  background: #384148 !important;   /* Cold sheet steel control handle */
-  border-radius: 0px !important;
-}
-.carousel-wrapper.stalker .text-panel::-webkit-scrollbar-thumb:hover {
-  background: #e67e22 !important;   /* Flashes warning amber on mouse context hover */
-}
-.carousel-wrapper.stalker .text-panel {
-  scrollbar-width: thin !important;
+.carousel-wrapper.stalker h2 { font-family: 'Courier New', monospace; }
+.carousel-wrapper.stalker .section-title,
+.carousel-wrapper.stalker .category-label { color: #e67e22 !important; font-family: monospace; }
+.carousel-wrapper.stalker .text-panel { scrollbar-width: thin !important; scrollbar-color: #384148 #11120f !important; }
+.carousel-wrapper.stalker .dot { border-radius: 0px !important; background-color: #222521 !important; border: 1px solid #384148 !important; }
+.carousel-wrapper.stalker .dot.active { background-color: #e67e22 !important; box-shadow: 0 0 8px #e67e22 !important; }
+.carousel-wrapper.stalker .thumbnail-slider-window {
+  background: rgba(14, 16, 15, 0.9) !important;
+  border: 1px solid #384148 !important;
   scrollbar-color: #384148 #11120f !important;
 }
+.carousel-wrapper.stalker .thumb-card { background: #11120f !important; border: 1px solid #2d302a !important; }
+.carousel-wrapper.stalker .thumb-card.active { border: 1px solid #e67e22 !important; }
 
-/* Typography Overrides */
-.carousel-wrapper.stalker h2 {
-  color: #cbd2c7 !important;
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
+/* S.T.A.L.K.E.R. Heavy Molded Plastic Equipment Treatment */
+.carousel-wrapper.stalker .store-link { 
+  background: linear-gradient(to bottom, #242927 0%, #171a19 6%, #0f1110 100%) !important;
+  border: 1px solid #2c343a !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 2px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.5) !important;
 }
-.carousel-wrapper.stalker .section-title {
-  color: #e67e22 !important;
-  font-family: monospace;
-}
-
-/* Nav Arrow Styling overrides - High Visibility Industrial Brackets */
-.carousel-wrapper.stalker .nav-arrow {
-  color: #e67e22 !important; /* Switch base color to warning amber */
-  background: rgba(17, 18, 15, 0.75) !important; /* Dark protective bunker backing */
-  border: 1px solid #384148 !important; /* Steel frame */
-  width: 50px !important;
-  height: 50px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 0px !important; /* Keep it strictly angular */
-  font-size: 2.2rem !important; /* Tailored size for the box containment */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+.carousel-wrapper.stalker .store-link:hover { 
+  background: linear-gradient(to bottom, #313835 0%, #202422 6%, #151817 100%) !important;
+  border-color: #e67e22 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 0 8px rgba(230, 126, 34, 0.25) !important;
 }
 
-.carousel-wrapper.stalker .nav-arrow:hover {
-  color: #f1c40f !important; /* Flash bright radiation yellow on hover */
-  border-color: #e67e22 !important; /* Steel glows amber */
-  background: #1a1c18 !important;
-  transform: scale(1.05);
-}
+/* S.T.A.L.K.E.R. Navigation Arrow Color Override */
+.carousel-wrapper.stalker .nav-arrow { color: var(--accent-gold) !important; }
+.carousel-wrapper.stalker .nav-arrow:hover { color: #ff9433 !important; text-shadow: 0 0 10px rgba(230, 126, 34, 0.6); }
 
-/* Inactive Tracking Points */
-.carousel-wrapper.stalker .dot {
-  background-color: #222521 !important;
-  border: 1px solid #384148 !important;
-  border-radius: 0px !important; /* Angular grids, no circles */
-  width: 7px;
-  height: 7px;
-  margin: 0 5px;
-}
-
-/* Active Radiation Spike Indicator */
-.carousel-wrapper.stalker .dot.active {
-  background-color: #e67e22 !important; /* Standard Warning Amber */
-  border-color: #f1c40f !important;
-  box-shadow: 0 0 8px #e67e22, 0 0 3px #f1c40f !important;
-}
-
-/* Industrial Bottom Navigation Slider Window */
-.carousel-wrapper.stalker .thumbnail-slider-window {
-  background: rgba(2, 13, 15, 0.85) !important;
-  border: 1px solid #384148 !important;
-  border-radius: 4px;
-}
-
-/* Weathered Uniform Grid System for EVERY External Store Button & Thumbnail Card */
-.carousel-wrapper.stalker .thumb-card {
-  border-radius: 0px !important;
-  background: #11120f !important;
-  border: 1px solid #2d302a !important;
-}
-
-.carousel-wrapper.stalker .thumb-card.active {
-  border: 1px solid #e67e22 !important;
-} 
+/* S.T.A.L.K.E.R. Scrollbar Custom Enforcements */
+.carousel-wrapper.stalker .text-panel::-webkit-scrollbar, 
+.carousel-wrapper.stalker .thumbnail-slider-window::-webkit-scrollbar,
+.carousel-wrapper.stalker .purchase-column::-webkit-scrollbar,
+.carousel-wrapper.stalker .details-column::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
+.carousel-wrapper.stalker .text-panel::-webkit-scrollbar-button,
+.carousel-wrapper.stalker .thumbnail-slider-window::-webkit-scrollbar-button { display: none !important; }
+.carousel-wrapper.stalker .text-panel::-webkit-scrollbar-track, 
+.carousel-wrapper.stalker .thumbnail-slider-window::-webkit-scrollbar-track,
+.carousel-wrapper.stalker .purchase-column::-webkit-scrollbar-track,
+.carousel-wrapper.stalker .details-column::-webkit-scrollbar-track { background: #11120f !important; }
+.carousel-wrapper.stalker .text-panel::-webkit-scrollbar-thumb, 
+.carousel-wrapper.stalker .thumbnail-slider-window::-webkit-scrollbar-thumb,
+.carousel-wrapper.stalker .purchase-column::-webkit-scrollbar-thumb,
+.carousel-wrapper.stalker .details-column::-webkit-scrollbar-thumb { background-color: #384148 !important; border-radius: 0px !important; }
 
 
-/* --- 4. WARCRAFT: ARTHAS THEME (Lordaeron Gold & Frostmourne Ice-Blue) --- */
-
+/* ==========================================================================
+   ARTHAS CONFIGURATIONS (Scourge Frozen Blue Theme)
+   ========================================================================== */
 .carousel-wrapper.arthas {
-  /* Dynamic Variable Injections */
-  --carousel-bg: #09121e !important;             /* Cold, deep Scourge citadel dark blue */
-  --text-primary: #f5eedc !important;            /* Clean royal parchment for headers */
-  --text-secondary: #a3b0c2 !important;          /* Frosted silver-blue for descriptions */
-  --accent-gold: #f39c12 !important;             /* Lordaeron Paladin gold */
-  --border-color: #1b324a !important;            /* Glacial ice shard borders */
+  --carousel-bg: rgba(6, 13, 23, 0.95) !important;
+  --text-primary: #f5eedc !important;
+  --text-secondary: #a3b0c2 !important;
+  --accent-gold: #f39c12 !important;
+  --border-color: #1b324a !important;
   --divider-style: 1px solid #1b324a !important;
-  --card-radius: 4px !important;                 /* Styled structural corners */
+  --card-radius: 4px !important;
 }
-
-/* Header Text Indicators - Runic Monospace Counter */
-.carousel-wrapper.arthas .book-counter {
-  color: #4deeea !important; /* Glowing Frozen Throne cyan neon */
-  font-family: 'Courier New', monospace;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 2.5px;
-  text-shadow: 0 0 10px rgba(77, 238, 234, 0.4);
-  margin-bottom: 4px;
-}
-
-/* Main Box Layout Fitting - The Frozen Throne Ice Block */
-.carousel-wrapper.arthas .carousel-content {
-  background-color: rgba(6, 13, 23, 0.95) !important;
-  border: 3px double #f39c12 !important; /* Royal Lordaeron trim holding back the frost */
-  box-shadow: 
-    0 12px 36px rgba(0, 0, 0, 0.9), 
-    inset 0 0 50px rgba(16, 42, 67, 0.8),
-    0 0 20px rgba(77, 238, 234, 0.1) !important; /* Ghostly Frostmourne aura */
-  padding: 24px !important;
-  
-  /* CRITICAL FIXED HEIGHT OVERRIDES */
-  height: 520px !important;
-  min-height: 520px !important;
-  max-height: 520px !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important; 
-}
-
-/* Panel Dimensions Normalization & Flex Control */
-.carousel-wrapper.arthas .carousel-main-layout {
-  height: 100% !important;
-  max-height: 100% !important;
-  overflow: hidden !important;
-}
-
-.carousel-wrapper.arthas .image-panel {
-  height: 100% !important;          
-}
-
-.carousel-wrapper.arthas .text-panel {
-  height: 100% !important;          
-  max-height: 100% !important;
-  overflow-y: auto !important;      
-  padding-right: 14px !important;   
-  box-sizing: border-box !important;
-}
-
-/* SCOURGE CITADEL GLACIAL SCROLLBAR */
-.carousel-wrapper.arthas .text-panel::-webkit-scrollbar {
-  display: block !important;        
-  width: 6px !important;
-}
-.carousel-wrapper.arthas .text-panel::-webkit-scrollbar-track {
-  background: #040910 !important;   /* Pitch black obsidian track */
-  border-radius: 3px !important;
-}
-.carousel-wrapper.arthas .text-panel::-webkit-scrollbar-thumb {
-  background: #1b324a !important;   /* Frozen iron handle */
-  border-radius: 3px !important;
-}
-.carousel-wrapper.arthas .text-panel::-webkit-scrollbar-thumb:hover {
-  background: #4deeea !important;   /* Glows frozen blue on mouse hover */
-}
-.carousel-wrapper.arthas .text-panel {
-  scrollbar-width: thin !important;              
-  scrollbar-color: #1b324a #040910 !important;   
-}
-
-/* Typography & Meta Overrides */
-.carousel-wrapper.arthas h2 {
-  color: #f39c12 !important; /* Radiant Paladin Gold Title */
-  font-family: 'Cinzel', 'Georgia', serif;
-  font-size: 1.9rem !important;
-  margin-bottom: 2px !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-}
-
-.carousel-wrapper.arthas .author-name {
-  color: #bdcddb !important; /* Pale, spectral silver for the author */
-  font-size: 1rem !important;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.carousel-wrapper.arthas .section-title {
-  color: #4deeea !important; /* Glowing frost-blue for subheaders ("Why It Matters") */
-  font-family: 'Cinzel', 'Georgia', serif;
-  letter-spacing: 1px;
-  margin-top: 14px !important;
-}
-
-/* Store Link Header Sub-labels */
-.carousel-wrapper.arthas .category-label {
-  color: #a3b0c2 !important; 
-  font-family: monospace;
-  font-size: 0.75rem !important;
-}
-
-/* Navigation Arrow Overrides - Frozen Ice Shards */
-.carousel-wrapper.arthas .nav-arrow {
-  color: #1b324a !important; /* Dark ice color to pop nicely against light backgrounds */
-  text-shadow: 0 0 10px rgba(77, 238, 234, 0.6), 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
-}
-.carousel-wrapper.arthas .nav-arrow:hover {
-  color: #4deeea !important; /* Flashes bright runic blue when active */
-  transform: scale(1.1);
-}
-
-/* Navigation Tracking Dots */
-.carousel-wrapper.arthas .dot {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid #1b324a !important;
-  width: 8px;
-  height: 8px;
-  margin: 0 5px;
-}
-
-/* Active Ice Rune tracking Node */
-.carousel-wrapper.arthas .dot.active {
-  background-color: #4deeea !important;
-  box-shadow: 0 0 10px #4deeea, 0 0 3px #4deeea !important;
-}
-
-/* Translucent Bottom Navigation Bar Slider */
+.carousel-wrapper.arthas .book-counter { color: #4deeea !important; font-family: monospace; }
+.carousel-wrapper.arthas .carousel-content { border: 3px double #f39c12 !important; box-shadow: 0 12px 36px rgba(0,0,0,0.9), inset 0 0 50px rgba(16, 42, 67, 0.8) !important; }
+.carousel-wrapper.arthas h2 { color: #f39c12 !important; font-family: 'Cinzel', serif; }
+.carousel-wrapper.arthas .section-title,
+.carousel-wrapper.arthas .category-label { color: #4deeea !important; font-family: 'Cinzel', serif; }
+.carousel-wrapper.arthas .text-panel { scrollbar-width: thin !important; scrollbar-color: #1b324a #040910 !important; }
+.carousel-wrapper.arthas .dot { border-radius: 0px !important; border: 1px solid #1b324a !important; }
+.carousel-wrapper.arthas .dot.active { background-color: #4deeea !important; box-shadow: 0 0 10px #4deeea !important; }
 .carousel-wrapper.arthas .thumbnail-slider-window {
   background: rgba(4, 9, 16, 0.85) !important;
   border: 2px solid #1b324a !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8) !important;
-  border-radius: 4px;
+  scrollbar-color: #1b324a #040910 !important;
+}
+.carousel-wrapper.arthas .thumb-card { background: rgba(6, 13, 23, 0.7) !important; border: 1px solid rgba(77, 238, 234, 0.1) !important; }
+.carousel-wrapper.arthas .thumb-card.active { border: 1px solid #4deeea !important; }
+
+/* Arthas Dark Runic Stone Button Style */
+.carousel-wrapper.arthas .store-link { 
+  background: linear-gradient(135deg, #091420 0%, #03080f 100%) !important;
+  border: 1px solid #15273b !important;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.6) !important;
+}
+.carousel-wrapper.arthas .store-link:hover { 
+  background: linear-gradient(135deg, #0e2033 0%, #06101c 100%) !important;
+  border-color: #4deeea !important;
+  box-shadow: 0 0 10px rgba(77, 238, 234, 0.25), inset 0 0 4px rgba(77, 238, 234, 0.1) !important;
 }
 
-/* Bottom Gallery Mini Thumb Cards */
-.carousel-wrapper.arthas .thumb-card {
-  border-radius: 2px !important;
-  background: rgba(6, 13, 23, 0.7) !important;
-  border: 1px solid rgba(77, 238, 234, 0.1) !important;
-}
-.carousel-wrapper.arthas .thumb-card.active {
-  border: 1px solid #4deeea !important; /* Glowing frost rim for active card */
-  background: rgba(77, 238, 234, 0.05) !important;
-  box-shadow: 0 0 8px rgba(77, 238, 234, 0.3);
-}
+/* Arthas Navigation Arrow Color Override */
+.carousel-wrapper.arthas .nav-arrow { color: #4deeea !important; }
+.carousel-wrapper.arthas .nav-arrow:hover { color: #ffffff !important; text-shadow: 0 0 12px rgba(77, 238, 234, 0.8); }
+
+/* Arthas Scrollbar Custom Enforcements */
+.carousel-wrapper.arthas .text-panel::-webkit-scrollbar, 
+.carousel-wrapper.arthas .thumbnail-slider-window::-webkit-scrollbar,
+.carousel-wrapper.arthas .purchase-column::-webkit-scrollbar,
+.carousel-wrapper.arthas .details-column::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
+.carousel-wrapper.arthas .text-panel::-webkit-scrollbar-button,
+.carousel-wrapper.arthas .thumbnail-slider-window::-webkit-scrollbar-button { display: none !important; }
+.carousel-wrapper.arthas .text-panel::-webkit-scrollbar-track, 
+.carousel-wrapper.arthas .thumbnail-slider-window::-webkit-scrollbar-track,
+.carousel-wrapper.arthas .purchase-column::-webkit-scrollbar-track,
+.carousel-wrapper.arthas .details-column::-webkit-scrollbar-track { background: #040910 !important; }
+.carousel-wrapper.arthas .text-panel::-webkit-scrollbar-thumb, 
+.carousel-wrapper.arthas .thumbnail-slider-window::-webkit-scrollbar-thumb,
+.carousel-wrapper.arthas .purchase-column::-webkit-scrollbar-thumb,
+.carousel-wrapper.arthas .details-column::-webkit-scrollbar-thumb { background-color: #1b324a !important; border-radius: 3px !important; }
 
 
-/* --- 5. WARCRAFT: THRALL THEME (Horde Red & Shamanistic Elemental Green) --- */
-
+/* ==========================================================================
+   THRALL CONFIGURATIONS (Horde Primal Crimson/Earthy Theme)
+   ========================================================================== */
 .carousel-wrapper.thrall {
-  /* Dynamic Variable Injections */
-  --carousel-bg: #1c1412 !important;             /* Deep weathered volcanic earth charcoal */
-  --text-primary: #f2e6d0 !important;            /* Clean rough parchment for readability */
-  --text-secondary: #bfae99 !important;          /* Weathered stone grey-brown for body copy */
-  --accent-gold: #b83823 !important;             /* Deep, iconic Horde Crimson */
-  --border-color: #4a3c31 !important;            /* Rugged iron and wood border tones */
+  --carousel-bg: rgba(24, 18, 15, 0.96) !important;
+  --text-primary: #f2e6d0 !important;
+  --text-secondary: #bfae99 !important;
+  --accent-gold: #b83823 !important;
+  --border-color: #4a3c31 !important;
   --divider-style: 1px dashed #4a3c31 !important;
-  --card-radius: 0px !important;                 /* Brutalist, unyielding block cuts */
+  --card-radius: 0px !important;
 }
-
-/* Header Text Indicators - Elemental Shaman Counter */
-.carousel-wrapper.thrall .book-counter {
-  color: #2ecc71 !important; /* Vibrant ancestral spirit/earth-magic green glow */
-  font-family: 'Courier New', monospace;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 2.5px;
-  text-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
-  margin-bottom: 4px;
-}
-
-/* Main Box Layout Fitting - Orgrimmar Fortress Iron Frame */
-.carousel-wrapper.thrall .carousel-content {
-  background-color: rgba(24, 18, 15, 0.96) !important;
-  border: 3px solid #b83823 !important; /* Heavy Horde Crimson structural trim */
-  box-shadow: 
-    0 12px 36px rgba(0, 0, 0, 0.95), 
-    inset 0 0 50px rgba(0, 0, 0, 0.9),
-    0 0 15px rgba(184, 56, 35, 0.15) !important; /* Subdued fiery aura */
-  padding: 24px !important;
-  
-  /* CRITICAL FIXED HEIGHT OVERRIDES */
-  height: 520px !important;
-  min-height: 520px !important;
-  max-height: 520px !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important; 
-}
-
-/* Panel Dimensions Normalization & Flex Control */
-.carousel-wrapper.thrall .carousel-main-layout {
-  height: 100% !important;
-  max-height: 100% !important;
-  overflow: hidden !important;
-}
-
-.carousel-wrapper.thrall .image-panel {
-  height: 100% !important;          
-}
-
-.carousel-wrapper.thrall .text-panel {
-  height: 100% !important;          
-  max-height: 100% !important;
-  overflow-y: auto !important;      
-  padding-right: 14px !important;   
-  box-sizing: border-box !important;
-}
-
-/* BLACKROCK FOUNDRY INDUSTRIAL SCROLLBAR */
-.carousel-wrapper.thrall .text-panel::-webkit-scrollbar {
-  display: block !important;        
-  width: 6px !important;
-}
-.carousel-wrapper.thrall .text-panel::-webkit-scrollbar-track {
-  background: #110b0a !important;   /* Slag dark underground track channel */
-  border-radius: 0px !important;
-}
-.carousel-wrapper.thrall .text-panel::-webkit-scrollbar-thumb {
-  background: #4a3c31 !important;   /* Rough iron handle */
-  border-radius: 0px !important;
-}
-.carousel-wrapper.thrall .text-panel::-webkit-scrollbar-thumb:hover {
-  background: #b83823 !important;   /* Glows hot crimson forge red on mouse hover */
-}
-.carousel-wrapper.thrall .text-panel {
-  scrollbar-width: thin !important;              
-  scrollbar-color: #4a3c31 #110b0a !important;   
-}
-
-/* Typography & Meta Overrides */
-.carousel-wrapper.thrall h2 {
-  color: #b83823 !important; /* Proud Horde Crimson Title */
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  font-size: 2rem !important;
-  font-weight: 900;
-  letter-spacing: 1px;
-  margin-bottom: 2px !important;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
-}
-
-.carousel-wrapper.thrall .author-name {
-  color: #d1c2ad !important; /* Earthy clay tone for the author */
-  font-size: 1rem !important;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.carousel-wrapper.thrall .section-title {
-  color: #2ecc71 !important; /* Ancestral green for subheaders ("Why It Matters") */
-  font-family: 'Impact', sans-serif;
-  font-weight: normal;
-  letter-spacing: 1.5px;
-  margin-top: 14px !important;
-}
-
-/* Store Link Header Sub-labels */
-.carousel-wrapper.thrall .category-label {
-  color: #bfae99 !important; 
-  font-family: monospace;
-  font-size: 0.75rem !important;
-}
-
-/* Navigation Arrow Overrides - Earthen Slabs */
-.carousel-wrapper.thrall .nav-arrow {
-  color: #4a3c31 !important; /* Dark iron/wood tone to contrast outdoor wallpapers */
-  text-shadow: 0 0 10px rgba(184, 56, 35, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
-}
-.carousel-wrapper.thrall .nav-arrow:hover {
-  color: #b83823 !important; /* Ignites to bright Horde Red when hovering */
-  transform: scale(1.1);
-}
-
-/* Navigation Tracking Dots */
-.carousel-wrapper.thrall .dot {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  border: 1px solid #4a3c31 !important;
-  width: 8px;
-  height: 8px;
-  border-radius: 0px !important; /* Strictly blocky grid structure */
-  margin: 0 5px;
-}
-
-/* Active Elemental Tracking Node */
-.carousel-wrapper.thrall .dot.active {
-  background-color: #2ecc71 !important;
-  box-shadow: 0 0 10px #2ecc71, 0 0 3px #2ecc71 !important;
-}
-
-/* Translucent Bottom Navigation Bar Slider Window */
+.carousel-wrapper.thrall .book-counter { color: #2ecc71 !important; font-family: monospace; }
+.carousel-wrapper.thrall .carousel-content { border: 3px solid #b83823 !important; box-shadow: 0 12px 36px rgba(0,0,0,0.95), inset 0 0 50px rgba(0,0,0,0.9) !important; }
+.carousel-wrapper.thrall h2 { color: #b83823 !important; font-family: 'Impact', sans-serif; }
+.carousel-wrapper.thrall .section-title,
+.carousel-wrapper.thrall .category-label { color: #2ecc71 !important; font-family: 'Cinzel', sans-serif; letter-spacing: 1px; }
+.carousel-wrapper.thrall .text-panel { scrollbar-width: thin !important; scrollbar-color: #4a3c31 #110b0a !important; }
+.carousel-wrapper.thrall .dot { border-radius: 0px !important; border: 1px solid #4a3c31 !important; }
+.carousel-wrapper.thrall .dot.active { background-color: #2ecc71 !important; box-shadow: 0 0 10px #2ecc71 !important; }
 .carousel-wrapper.thrall .thumbnail-slider-window {
   background: rgba(17, 11, 10, 0.9) !important;
   border: 2px solid #4a3c31 !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85) !important;
-  border-radius: 0px;
+  scrollbar-color: #4a3c31 #110b0a !important;
+}
+.carousel-wrapper.thrall .thumb-card { background: rgba(24, 18, 15, 0.8) !important; border: 1px solid rgba(74, 60, 49, 0.4) !important; }
+.carousel-wrapper.thrall .thumb-card.active { border: 1px solid #b83823 !important; }
+
+/* Thrall Forged Iron Plate Armor Treatment */
+.carousel-wrapper.thrall .store-link { 
+  background: linear-gradient(180deg, #1f1714 0%, #120e0c 100%) !important;
+  border: 1px solid #3d3128 !important;
+  box-shadow: inset 0 1px 2px rgba(255, 230, 200, 0.05), 0 2px 5px rgba(0,0,0,0.7) !important;
+}
+.carousel-wrapper.thrall .store-link:hover { 
+  background: linear-gradient(180deg, #2b201c 0%, #1a1412 100%) !important;
+  border-color: #b83823 !important;
+  box-shadow: inset 0 0 5px rgba(184, 56, 35, 0.2), 0 3px 8px rgba(0,0,0,0.8) !important;
 }
 
-/* Bottom Gallery Mini Thumb Cards */
-.carousel-wrapper.thrall .thumb-card {
-  border-radius: 0px !important;
-  background: rgba(24, 18, 15, 0.8) !important;
-  border: 1px solid rgba(74, 60, 49, 0.4) !important;
-}
-.carousel-wrapper.thrall .thumb-card.active {
-  border: 1px solid #b83823 !important; /* Bold crimson frame for the active card */
-  background: rgba(184, 56, 35, 0.05) !important;
-  box-shadow: 0 0 8px rgba(184, 56, 35, 0.4);
-}
+/* Thrall Navigation Arrow Color Override */
+.carousel-wrapper.thrall .nav-arrow { color: var(--accent-gold) !important; }
+.carousel-wrapper.thrall .nav-arrow:hover { color: #ff4a2b !important; text-shadow: 0 0 10px rgba(184, 56, 35, 0.6); }
+
+/* Thrall Scrollbar Custom Enforcements */
+.carousel-wrapper.thrall .text-panel::-webkit-scrollbar, 
+.carousel-wrapper.thrall .thumbnail-slider-window::-webkit-scrollbar,
+.carousel-wrapper.thrall .purchase-column::-webkit-scrollbar,
+.carousel-wrapper.thrall .details-column::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
+.carousel-wrapper.thrall .text-panel::-webkit-scrollbar-button,
+.carousel-wrapper.thrall .thumbnail-slider-window::-webkit-scrollbar-button { display: none !important; }
+.carousel-wrapper.thrall .text-panel::-webkit-scrollbar-track, 
+.carousel-wrapper.thrall .thumbnail-slider-window::-webkit-scrollbar-track,
+.carousel-wrapper.thrall .purchase-column::-webkit-scrollbar-track,
+.carousel-wrapper.thrall .details-column::-webkit-scrollbar-track { background: #110b0a !important; }
+.carousel-wrapper.thrall .text-panel::-webkit-scrollbar-thumb, 
+.carousel-wrapper.thrall .thumbnail-slider-window::-webkit-scrollbar-thumb,
+.carousel-wrapper.thrall .purchase-column::-webkit-scrollbar-thumb,
+.carousel-wrapper.thrall .details-column::-webkit-scrollbar-thumb { background-color: #4a3c31 !important; border-radius: 0px !important; }

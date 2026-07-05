@@ -1,54 +1,44 @@
 <style>
-  /* ==========================================================================
-     GLOBAL BASE THEME (CORE STRUCTURAL DEFAULT FALLBACKS ONLY)
-     ========================================================================== */
   :root {
-    --carousel-bg: #ffffff;
-    --panel-shadow: 0 1px 3px rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
-    --text-primary: #202124;
-    --text-secondary: #5f6368;
-    --text-muted: #70757a;
-    --accent-gold: #946a31;
-    --accent-hover: #1a73e8;
-    --border-color: #dadce0;
-    --divider-style: 1px solid #eaeaea;
-    --card-radius: 8px;
-    --thumb-bg: #12161a;
-    --thumb-border: 2px solid #232930;
-    --thumb-text: #f8f9fa;
-    --thumb-text-muted: #9aa0a6;
-    --thumb-active-border: #e5a93b;
-    --slider-window-bg: transparent;
-    --slider-window-border: none;
+    --carousel-bg: #1a1a1a;
+    --panel-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --text-primary: #ffffff;
+    --text-secondary: #aaaaaa;
+    --text-muted: #777777;
+    --accent-gold: #ff4500;
+    --accent-hover: #e03d00;
+    --border-color: #333333;
+    --divider-style: 1px solid #222222;
+    --card-radius: 6px;
+    --thumb-bg: #111111;
+    --thumb-border: 1px solid #222222;
+    --thumb-text: #ffffff;
+    --thumb-text-muted: #888888;
+    --thumb-active-border: #ff4500;
+    --slider-window-bg: rgba(0, 0, 0, 0.2);
+    --slider-window-border: 1px solid #222222;
     --text-shadow-style: none;
-    --dot-inactive-opacity: 1;
+    --dot-inactive-opacity: 0.4;
     --dot-shadow: none;
   }
 
-  /* ==========================================================================
-     CORE INTERFACE SYSTEM LAYOUT
-     ========================================================================== */
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    margin: 0;
-    padding: 10px;
-    background-color: transparent;
-  }
-
   .carousel-wrapper {
-    max-width: 1050px;
+    max-width: 1500px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    box-sizing: border-box;
+    padding: 0 10px;
   }
 
   .top-indicator-panel {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 6px;
+    align-items: stretch;
+    width: 100%;
+    gap: 8px;
   }
 
   .book-counter {
@@ -57,31 +47,31 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--text-muted);
-    text-shadow: var(--text-shadow-style);
   }
 
   .indicator-dots {
     display: flex;
     gap: 6px;
-    max-width: 100%;
-    overflow-x: auto;
+    width: 100%;
+    justify-content: center;
+    overflow-x: hidden;
     padding: 4px 0;
   }
 
   .dot {
     width: 8px;
     height: 8px;
-    background-color: #dadce0;
+    background-color: #444444;
     opacity: var(--dot-inactive-opacity);
     border-radius: 50%;
-    transition: background-color 0.2s, opacity 0.2s;
+    transition: background-color 0.2s, opacity 0.2s, transform 0.2s;
     flex-shrink: 0;
+    cursor: pointer;
   }
 
   .dot.active {
     background-color: var(--accent-gold) !important;
     opacity: 1 !important;
-    box-shadow: var(--dot-shadow);
   }
 
   .carousel-container {
@@ -89,23 +79,27 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    gap: 10px;
+    gap: 12px;
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .nav-arrow {
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 2.2rem;
     cursor: pointer;
-    color: #5f6368;
-    padding: 5px;
+    color: #888888;
+    padding: 10px;
     transition: color 0.2s, transform 0.2s;
     user-select: none;
     z-index: 10;
+    flex-shrink: 0;
   }
 
   .nav-arrow:hover {
-    color: var(--accent-hover);
+    color: var(--text-primary);
     transform: scale(1.1);
   }
 
@@ -114,23 +108,30 @@
     border-radius: var(--card-radius);
     box-shadow: var(--panel-shadow);
     padding: 24px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 26% minmax(0, 74%); 
+    grid-template-columns: 28% minmax(0, 72%); 
     gap: 24px;
     align-items: start;
-    height: 450px; 
+    height: 480px; 
     overflow: hidden;
     transition: background-color 0.3s ease, border-radius 0.3s ease;
+  }
+
+  .carousel-wrapper[data-carousel-type="games-covered"] .carousel-content {
+    grid-template-columns: 100% !important;
+    height: 400px;
   }
 
   .image-panel {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px; 
+    height: 100%; 
     width: 100%;
+    overflow: hidden;
   }
 
   .carousel-image {
@@ -138,321 +139,222 @@
     height: 100%;
     object-fit: contain;
     border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     display: none;
   }
 
-  .carousel-image.active {
-    display: block;
-  }
-
-  .text-panel {
-    width: 100%;
-    height: 400px;
-    overflow-y: auto;
-    padding-right: 8px;
-    box-sizing: border-box;
-  }
-
-  .description-text {
-    display: none;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
+  .carousel-image.active { display: block; }
+  
+  .text-panel { width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; }
+  .description-text { display: none; width: 100%; box-sizing: border-box; height: 100%; }
+  
   .description-text.active {
     display: grid;
-    grid-template-columns: 50% minmax(0, 50%);
+    grid-template-columns: 52% minmax(0, 48%);
     gap: 24px;
+    height: 100%;
   }
 
-  .details-column {
-    display: flex;
-    flex-direction: column;
+  .carousel-wrapper[data-carousel-type="videos"] .description-text.active {
+    grid-template-columns: 100% !important;
   }
 
-  .details-column h2 {
-    margin-top: 0;
-    color: var(--text-primary);
-    font-size: 1.6rem;
-    margin-bottom: 4px;
-  }
+  .details-column { display: flex; flex-direction: column; height: 100%; overflow-y: auto; padding-right: 8px; }
+  .purchase-column { border-left: var(--divider-style); padding-left: 20px; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; height: 100%; overflow-y: auto; padding-right: 4px; }
 
-  .author-name {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 16px;
-  }
+  .details-column h2 { margin-top: 0; color: var(--text-primary); font-size: 1.7rem; margin-bottom: 4px; line-height: 1.2; }
+  .author-name { color: var(--text-secondary); font-size: 0.95rem; font-weight: 500; margin-bottom: 16px; }
+  .section-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-primary); margin-bottom: 6px; margin-top: 12px; }
+  .details-column p { color: var(--text-secondary); line-height: 1.5; font-size: 0.9rem; margin-top: 0; margin-bottom: 14px; text-align: justify;}
 
-  .section-title {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-    margin-top: 0;
-  }
-
-  .details-column p {
-    color: var(--text-secondary);
-    line-height: 1.45;
-    font-size: 0.9rem;
-    margin-top: 0;
-    margin-bottom: 16px;
-    white-space: normal;
-    word-break: break-word;
-  }
-
-  .purchase-column {
-    border-left: var(--divider-style);
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    box-sizing: border-box;
-  }
-
-  .purchase-category {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .category-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-  }
-
-  .store-grid-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .youtube-action-container { margin-top: auto; padding-top: 14px; }
+  .yt-watch-btn {
+    display: inline-flex;
+    align-items: center;
     gap: 8px;
-    width: 100%;
-  }
-
-  .store-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 10px;
-    background: #f8f9fa;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    color: #3c4043;
+    background-color: #cc0000;
+    color: #ffffff;
     text-decoration: none;
-    box-sizing: border-box;
-    transition: background-color 0.15s, border-color 0.15s;
-  }
-
-  .store-link:hover {
-    background: #f1f3f4;
-    border-color: #bdc1c6;
-  }
-
-  .brand-left-zone {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    overflow: hidden;
-  }
-
-  .brand-logo-img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-
-  .brand-text-block {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .brand-main-title {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #202124;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .brand-sub-action {
-    font-size: 0.68rem;
-    color: #70757a;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-top: 1px;
-  }
-
-  .icon-arrow {
-    font-size: 0.75rem;
-    color: #bdc1c6;
+    padding: 10px 20px;
     font-weight: bold;
-    flex-shrink: 0;
-    margin-left: 4px;
-  }
-
-  .disclaimer-banner {
-    font-size: 0.72rem;
-    color: var(--text-secondary);
-    text-align: center;
-    background: rgba(0, 0, 0, 0.05);
-    padding: 6px;
     border-radius: 4px;
-    margin-top: 4px;
-    line-height: 1.3;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
   }
+  .yt-watch-btn:hover { background-color: #ff0000; }
 
-  /* ==========================================================================
-     THUMBNAIL NAVIGATION BANNER SLIDER
-     ========================================================================== */
+  .purchase-category { display: flex; flex-direction: column; gap: 6px; }
+  .store-grid-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+  
+  .store-link {
+    display: flex; align-items: center; justify-content: space-between; padding: 8px 10px;
+    background: #222222; border: 1px solid var(--border-color); border-radius: 4px;
+    color: #ffffff; text-decoration: none; box-sizing: border-box; transition: background 0.15s;
+  }
+  .store-link:hover { background: #2a2a2a; }
+  
+  .store-link.disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+    opacity: 0.25 !important;
+    background: rgba(0, 0, 0, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+  }
+  .store-link.disabled .icon-arrow { display: none !important; }
+
+  .brand-left-zone { display: flex; align-items: center; gap: 8px; overflow: hidden; }
+  .brand-logo-img { width: 16px; height: 16px; object-fit: contain; flex-shrink: 0; }
+  .brand-text-block { display: flex; flex-direction: column; overflow: hidden; }
+  .brand-main-title { font-size: 0.75rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand-sub-action { font-size: 0.62rem; color: #888888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .icon-arrow { font-size: 0.7rem; color: #666666; }
+  .disclaimer-banner { font-size: 0.68rem; color: var(--text-secondary); text-align: center; background: rgba(255, 255, 255, 0.05); padding: 6px; border-radius: 4px; margin-top: auto; }
+
+  .details-column::-webkit-scrollbar, .purchase-column::-webkit-scrollbar { width: 4px; }
+  .details-column::-webkit-scrollbar-thumb, .purchase-column::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+
   .thumbnail-slider-window {
     width: 100%;
-    overflow-x: auto; 
+    overflow-x: auto;
     padding: 10px;
+    min-height: 90px;
     box-sizing: border-box;
-    scrollbar-width: thin; 
+    scrollbar-width: thin;
     scrollbar-color: var(--accent-gold) var(--thumb-bg);
     background: var(--slider-window-bg);
     border: var(--slider-window-border);
-    border-radius: 6px;
-    transition: background-color 0.3s, border 0.3s;
-  }
-
-  .thumbnail-slider-window::-webkit-scrollbar {
-    height: 6px;
-  }
-  .thumbnail-slider-window::-webkit-scrollbar-track {
-    background: var(--thumb-bg);
-    border-radius: 10px;
-  }
-  .thumbnail-slider-window::-webkit-scrollbar-thumb {
-    background: var(--accent-gold);
-    border-radius: 10px;
-  }
-  .thumbnail-slider-window::-webkit-scrollbar-thumb:hover {
-    background: #b5833f;
-  }
-
-  .thumbnail-navigation-track {
-    display: flex;
-    gap: 10px;
-    width: max-content; 
-  }
-
-  .thumb-card {
-    width: 180px; 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--thumb-bg); 
-    border: var(--thumb-border); 
     border-radius: var(--card-radius);
-    padding: 6px 10px;
-    cursor: pointer;
-    user-select: none;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    transition: border-color 0.2s, background-color 0.2s, border-radius 0.2s;
   }
-
-  .thumb-card:hover {
-    background: rgba(255, 255, 255, 0.05);
+  .thumbnail-slider-window::-webkit-scrollbar { height: 6px; }
+  .thumbnail-slider-window::-webkit-scrollbar-track { background: var(--thumb-bg); }
+  .thumbnail-slider-window::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 2px; }
+  .thumbnail-slider-window::-webkit-scrollbar-button { display: none; }
+  .thumbnail-navigation-track { display: flex; gap: 10px; width: max-content; }
+  
+  .thumb-card {
+    width: 180px; display: flex; align-items: center; gap: 10px; background: var(--thumb-bg); 
+    border: var(--thumb-border); border-radius: var(--card-radius); padding: 6px 10px; cursor: pointer; user-select: none; box-sizing: border-box; flex-shrink: 0;
   }
+  .thumb-img { width: 28px; height: 40px; object-fit: cover; border-radius: 2px; background: #222; }
+  .thumb-meta { display: flex; flex-direction: column; overflow: hidden; }
+  .thumb-title { color: var(--thumb-text); font-size: 0.8rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .thumb-author { color: var(--thumb-text-muted); font-size: 0.7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-  .thumb-card.active {
-    border-color: var(--thumb-active-border) !important; 
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 8px rgba(229, 169, 59, 0.2); 
-  }
-
-  .thumb-img {
-    width: 28px;
-    height: 42px;
-    object-fit: cover;
-    border-radius: 2px;
-    background: #232930;
-  }
-
-  .thumb-meta {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .thumb-title {
-    color: var(--thumb-text);
-    font-size: 0.8rem;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .thumb-card.active .thumb-title {
-    color: var(--accent-gold);
-  }
-
-  .thumb-author {
-    color: var(--thumb-text-muted);
-    font-size: 0.7rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-top: 1px;
-  }
-
-  /* ==========================================================================
-     RESPONSIVE LAYOUT OVERRIDES
-     ========================================================================== */
+  /* --- FIXED MOBILE RESPONSIVE ENGINE (Locks height and allows scrollbars) --- */
   @media (max-width: 850px) {
-    .carousel-content {
-      grid-template-columns: 100%;
-      gap: 20px;
-      height: auto; 
-      overflow: visible;
+    .carousel-wrapper {
+      padding: 0 2px !important; /* Reduces side padding to maximize width */
     }
-    .text-panel {
-      height: auto;
-      overflow-y: visible;
+
+    .carousel-content { 
+      grid-template-columns: 100% !important; 
+      gap: 14px; 
+      height: 620px !important; /* Locks structural frame height on mobile devices */
+      max-height: 80vh;
+      overflow: hidden !important; 
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
     }
-    .description-text.active {
-      grid-template-columns: 100%;
-      gap: 20px;
+    
+    .image-panel { 
+      height: 160px !important; /* Shrinks book cover size to let text fit cleanly below it */
+      flex-shrink: 0;
     }
-    .purchase-column {
-      border-left: none;
-      padding-left: 0;
-      border-top: var(--divider-style);
-      padding-top: 16px;
+
+    .nav-arrow {
+      font-size: 1.25rem !important; /* Drops size down from 2.2rem */
+      padding: 2px !important;      /* Shrinks bounding box padding */
+      margin: 0.2px 
     }
-    .store-grid-row {
-      grid-template-columns: 1fr; 
+    
+    .text-panel { 
+      flex-grow: 1;
+      height: calc(100% - 174px) !important; 
+      overflow: hidden !important; 
     }
+    
+    .description-text.active { 
+      grid-template-columns: 100% !important; 
+      height: 100% !important; 
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .details-column { 
+      flex-grow: 1;
+      height: 55% !important;
+      overflow-y: auto !important; 
+      padding-right: 6px !important;
+      font-size: 1.15rem !important; /* Shrinks the main title font */
+      margin-bottom: 2px !important;
+    }
+
+    .details-column h2 {
+      font-size: 1.15rem !important; /* Shrinks the main title font */
+      margin-bottom: 2px !important;
+    }
+
+    .author-name {
+      font-size: 0.80rem !important;
+      margin-bottom: 8px !important;
+    }
+
+    .section-title {
+      font-size: 0.72rem !important; /* Smaller summary title font */
+      margin-top: 8px !important;
+      margin-bottom: 4px !important;
+    }
+
+    .details-column p {
+      font-size: 0.7rem !important; /* Smaller summary content font */
+      line-height: 1.4 !important;
+      margin-bottom: 8px !important;
+      text-align: justify;
+    }
+    
+    .purchase-column { 
+      height: 45% !important;
+      overflow-y: auto !important;
+      border-left: none !important; 
+      padding-left: 0 !important; 
+      border-top: var(--divider-style) !important; 
+      padding-top: 12px !important; 
+      padding-right: 6px !important;
+    }
+    
+    .store-grid-row { grid-template-columns: 1fr 1fr !important; }
+
+    .disclaimer-banner {
+      position: relative !important; /* Changes from sticky to prevent blocking links */
+      bottom: auto !important;
+      background: rgba(255, 255, 255, 0.03) !important;
+      margin-top: 16px !important;   /* Pushes it cleanly under the store grid */
+      padding: 8px !important;
+      border-top: none !important;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .store-grid-row { grid-template-columns: 1fr !important; }
+    .thumb-card { width: 140px; }
+    .thumb-author { display: none; }
   }
 </style>
 
-<div class="carousel-wrapper">
+<div class="carousel-wrapper" id="lorestage-carousel-component" data-carousel-type="reading">
   <div class="top-indicator-panel">
-    <div class="book-counter" id="slide-counter">Loading...</div>
+    <div class="book-counter" id="slide-counter">Loading Engine...</div>
     <div class="indicator-dots" id="dots-container"></div>
   </div>
 
   <div class="carousel-container">
-    <button class="nav-arrow prev-btn" onclick="changeSlide(-1)">❮</button>
-    <div class="carousel-content">
+    <button class="nav-arrow prev-btn" id="carousel-prev-trigger">❮</button>
+    <div class="carousel-content" id="carousel-main-content-box">
       <div class="image-panel" id="main-image-viewport"></div>
       <div class="text-panel" id="main-text-viewport"></div>
     </div>
-    <button class="nav-arrow next-btn" onclick="changeSlide(1)">❯</button>
+    <button class="nav-arrow next-btn" id="carousel-next-trigger">❯</button>
   </div>
 
   <div class="thumbnail-slider-window" id="slider-window">
@@ -461,124 +363,213 @@
 </div>
 
 <script>
+(function() {
   let currentSlide = 0;
-  let imgViewport, txtViewport, thumbTrack, sliderWindow, dotsContainer, counterText;
+  let activeDatabase = [];
+  let carouselType = "reading";
 
-  function initializeCarouselDOM() {
-    imgViewport = document.getElementById('main-image-viewport');
-    txtViewport = document.getElementById('main-text-viewport');
-    thumbTrack = document.getElementById('thumb-track');
-    sliderWindow = document.getElementById('slider-window');
-    dotsContainer = document.getElementById('dots-container');
-    counterText = document.getElementById('slide-counter');
+  const wrapper = document.getElementById('lorestage-carousel-component');
+  const imgViewport = document.getElementById('main-image-viewport');
+  const txtViewport = document.getElementById('main-text-viewport');
+  const thumbTrack = document.getElementById('thumb-track');
+  const sliderWindow = document.getElementById('slider-window');
+  const dotsContainer = document.getElementById('dots-container');
+  const counterText = document.getElementById('slide-counter');
+  
+  const prevBtn = document.getElementById('carousel-prev-trigger');
+  const nextBtn = document.getElementById('carousel-next-trigger');
+
+  // Helper macro to evaluate if links are valid destinations or unassigned template strings
+  function getLinkProps(url) {
+    if (!url || url === '#' || url.trim() === '' || url.includes('${')) {
+      return { href: 'javascript:void(0);', target: '', class: 'store-link disabled' };
+    }
+    return { href: url, target: 'target="_blank"', class: 'store-link' };
+  }
+
+  function buildCarouselDOM() {
+    carouselType = wrapper.getAttribute('data-carousel-type') || "reading";
+    
+    if (carouselType === "videos") {
+      activeDatabase = window.videosDatabase || [];
+    } else if (carouselType === "games-covered") {
+      activeDatabase = window.gamesCoveredDatabase || [];
+    } else {
+      activeDatabase = window.bookDatabase || [];
+    }
 
     imgViewport.innerHTML = '';
     txtViewport.innerHTML = '';
     thumbTrack.innerHTML = '';
     dotsContainer.innerHTML = '';
+    currentSlide = 0;
 
-    if (!window.bookDatabase || window.bookDatabase.length === 0) {
-      counterText.innerText = "No books configured for this page.";
+    if (activeDatabase.length === 0) {
+      counterText.innerText = "No database items assigned to this engine component wrapper loop.";
+      sliderWindow.style.display = "none";
       return;
+    } else {
+      sliderWindow.style.display = "block";
     }
 
-    window.bookDatabase.forEach((book, idx) => {
+    const themeKey = window.currentReadingThemeClass || 
+                     (typeof ACTIVE_GAME_KEY !== 'undefined' ? ACTIVE_GAME_KEY : '') || 
+                     (typeof ACTIVE_GAME !== 'undefined' ? ACTIVE_GAME : '');
+
+    if (carouselType === "reading" && themeKey) {
+      wrapper.className = `carousel-wrapper ${themeKey}`;
+    } else {
+      wrapper.className = "carousel-wrapper"; 
+    }
+
+    activeDatabase.forEach((item, idx) => {
       const img = document.createElement('img');
       img.className = `carousel-image ${idx === 0 ? 'active' : ''}`;
-      img.src = book.cover;
-      img.alt = book.title;
+      img.src = item.cover || item.boxArt;
+      img.alt = item.title;
       imgViewport.appendChild(img);
 
       const dot = document.createElement('div');
+      img.onerror = function() {
+        this.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23222'/><text x='50%2s' y='50%2s' dominant-baseline='middle' text-anchor='middle' fill='%23444' font-size='12'>Missing Art</text></svg>";
+      };
       dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+      dot.onclick = () => jumpToSlide(idx);
       dotsContainer.appendChild(dot);
 
-      const textBlock = document.createElement('div');
-      textBlock.className = `description-text ${idx === 0 ? 'active' : ''}`;
-      textBlock.innerHTML = `
-        <div class="details-column">
-          <h2>${book.title}</h2>
-          <div class="author-name">${book.author}</div>
-          <h3 class="section-title">Summary</h3>
-          <p>${book.summary}</p>
-          <h3 class="section-title">Why it matters</h3>
-          <p>${book.whyMatters}</p>
-        </div>
-        <div class="purchase-column">
-          <div class="purchase-category">
-            <span class="category-label">Physical Book</span>
-            <div class="store-grid-row">
-              <a href="${book.links.amazon || '#'}" target="_blank" class="store-link">
-                <div class="brand-left-zone">
-                  <img class="brand-logo-img" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="Amazon">
-                  <div class="brand-text-block"><span class="brand-main-title">Amazon</span><span class="brand-sub-action">View Link</span></div>
-                </div><span class="icon-arrow">↗</span>
-              </a>
-              <a href="${book.links.bookshop || '#'}" target="_blank" class="store-link">
-                <div class="brand-left-zone">
-                  <img class="brand-logo-img" src="https://cdn.prod.website-files.com/6267f35934aa8b1795cf1a9f/63d1aa1cfa703d3dbec99f92_Indie-BoundB-p-500.png" alt="Bookshop">
-                  <div class="brand-text-block"><span class="brand-main-title">Bookshop</span><span class="brand-sub-action">Independent</span></div>
-                </div><span class="icon-arrow">↗</span>
-              </a>
+      if (carouselType !== "games-covered") {
+        const textBlock = document.createElement('div');
+        textBlock.className = `description-text ${idx === 0 ? 'active' : ''}`;
+        
+        if (carouselType === "videos") {
+          textBlock.innerHTML = `
+            <div class="details-column">
+              <h2>${item.title}</h2>
+              <div class="author-name">${item.runtime || ''} Runtime Profile</div>
+              <h3 class="section-title">Video Synopsis</h3>
+              <p>${item.description}</p>
+              <div class="youtube-action-container">
+                <a href="${item.youtubeUrl || '#'}" target="_blank" class="yt-watch-btn">
+                  <i class="fab fa-youtube"></i> Watch Video on YouTube
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="purchase-category">
-            <span class="category-label">Audiobook</span>
-            <div class="store-grid-row">
-              <a href="${book.links.audible || '#'}" target="_blank" class="store-link">
-                <div class="brand-left-zone">
-                  <img class="brand-logo-img" src="https://www.audible.com/favicon.ico" alt="Audible">
-                  <div class="brand-text-block"><span class="brand-main-title">Audible</span><span class="brand-sub-action">Listen Here</span></div>
-                </div><span class="icon-arrow">↗</span>
-              </a>
-              <a href="${book.links.libro || '#'}" target="_blank" class="store-link">
-                <div class="brand-left-zone">
-                  <img class="brand-logo-img" src="https://play-lh.googleusercontent.com/112ykr4YU-5DmErxanxd888hMMegxD_hL5g4EskcDuyAMr8lKZ4oxpK68SgQrO7Co-M" alt="Libro.fm">
-                  <div class="brand-text-block"><span class="brand-main-title">Libro.fm</span><span class="brand-sub-action">Local Stores</span></div>
-                </div><span class="icon-arrow">↗</span>
-              </a>
+          `;
+        } else {
+          // Compute real-time link assignments to prevent broken routes
+          const amzn = getLinkProps(item.links?.amazon);
+          const bshp = getLinkProps(item.links?.bookshop);
+          const audl = getLinkProps(item.links?.audible);
+          const lbro = getLinkProps(item.links?.libro);
+          const kndl = getLinkProps(item.links?.kindle);
+          const kobo = getLinkProps(item.links?.kobo);
+
+          textBlock.innerHTML = `
+            <div class="details-column">
+              <h2>${item.title}</h2>
+              <div class="author-name">By ${item.author}</div>
+              <h3 class="section-title">Summary</h3>
+              <p>${item.summary}</p>
+              <h3 class="section-title">Why it matters</h3>
+              <p>${item.whyMatters}</p>
             </div>
-          </div>
-          <div class="purchase-category">
-            <span class="category-label">Ebook</span>
-            <div class="store-grid-row">
-              <a href="${book.links.kindle || '#'}" target="_blank" class="store-link">
-                <div class="brand-left-zone">
-                  <img class="brand-logo-img" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="Kindle">
-                  <div class="brand-text-block"><span class="brand-main-title">Kindle</span><span class="brand-sub-action">Digital Copy</span></div>
-                </div><span class="icon-arrow">↗</span>
-              </a>
-              <a href="${book.links.kobo || '#'}" target="_blank" class="store-link">
-                <div class="brand-left-zone">
-                  <img class="brand-logo-img" src="https://kobowritinglife.zendesk.com/hc/en-us/article_attachments/360091438051" alt="Kobo">
-                  <div class="brand-text-block"><span class="brand-main-title">Kobo</span><span class="brand-sub-action">eReader</span></div>
-                </div><span class="icon-arrow">↗</span>
-              </a>
+            <div class="purchase-column">
+              
+              <div class="purchase-category">
+                <span class="category-label">Physical Book</span>
+                <div class="store-grid-row">
+                  <a href="${amzn.href}" ${amzn.target} class="${amzn.class}">
+                    <div class="brand-left-zone">
+                      <img class="brand-logo-img" src="../assets/icons/amazon.png" alt="Amazon">
+                      <div class="brand-text-block"><span class="brand-main-title">Amazon</span><span class="brand-sub-action">View Link</span></div>
+                    </div><span class="icon-arrow">↗</span>
+                  </a>
+                  <a href="${bshp.href}" ${bshp.target} class="${bshp.class}">
+                    <div class="brand-left-zone">
+                      <img class="brand-logo-img" src="../assets/icons/bookshop.png" alt="Bookshop">
+                      <div class="brand-text-block"><span class="brand-main-title">Bookshop</span><span class="brand-sub-action">Independent</span></div>
+                    </div><span class="icon-arrow">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="purchase-category">
+                <span class="category-label">Audiobook</span>
+                <div class="store-grid-row">
+                  <a href="${audl.href}" ${audl.target} class="${audl.class}">
+                    <div class="brand-left-zone">
+                      <img class="brand-logo-img" src="../assets/icons/audible.png" alt="Audible">
+                      <div class="brand-text-block"><span class="brand-main-title">Audible</span><span class="brand-sub-action">Listen Here</span></div>
+                    </div><span class="icon-arrow">↗</span>
+                  </a>
+                  <a href="${lbro.href}" ${lbro.target} class="${lbro.class}">
+                    <div class="brand-left-zone">
+                      <img class="brand-logo-img" src="../assets/icons/librofm.png" alt="Libro.fm">
+                      <div class="brand-text-block"><span class="brand-main-title">Libro.fm</span><span class="brand-sub-action">Local Stores</span></div>
+                    </div><span class="icon-arrow">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="purchase-category">
+                <span class="category-label">Ebook</span>
+                <div class="store-grid-row">
+                  <a href="${kndl.href}" ${kndl.target} class="${kndl.class}">
+                    <div class="brand-left-zone">
+                      <img class="brand-logo-img" src="../assets/icons/amazon-kindle.png" alt="Kindle">
+                      <div class="brand-text-block"><span class="brand-main-title">Kindle</span><span class="brand-sub-action">Digital Copy</span></div>
+                    </div><span class="icon-arrow">↗</span>
+                  </a>
+                  <a href="${kobo.href}" ${kobo.target} class="${kobo.class}">
+                    <div class="brand-left-zone">
+                      <img class="brand-logo-img" src="../assets/icons/kobo.png" alt="Kobo">
+                      <div class="brand-text-block"><span class="brand-main-title">Kobo</span><span class="brand-sub-action">eReader</span></div>
+                    </div><span class="icon-arrow">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="disclaimer-banner">We are applying for partner status across platforms, stay tuned. Using these links supports the channel at no extra cost to you!</div>
             </div>
-          </div>
-          <div class="disclaimer-banner">Using links supports the channel at no extra cost to you!</div>
-        </div>
-      `;
-      txtViewport.appendChild(textBlock);
+          `;
+        }
+        txtViewport.appendChild(textBlock);
+      }
 
       const thumb = document.createElement('div');
       thumb.className = `thumb-card ${idx === 0 ? 'active' : ''}`;
       thumb.onclick = () => jumpToSlide(idx);
+      
+      const subtitleLabel = item.author || item.gameSeries || "Lorestage System";
       thumb.innerHTML = `
-        <img class="thumb-img" src="${book.cover}" alt="Thumb ${idx + 1}">
+        <img class="thumb-img" src="${item.cover || item.boxArt}" alt="Thumb ${idx + 1}">
         <div class="thumb-meta">
-          <span class="thumb-title">${idx + 1}. ${book.title}</span>
-          <span class="thumb-author">${book.author}</span>
+          <span class="thumb-title">${idx + 1}. ${item.title}</span>
+          <span class="thumb-author">${subtitleLabel}</span>
         </div>
       `;
       thumbTrack.appendChild(thumb);
     });
 
-    counterText.innerText = `Book 1 of ${window.bookDatabase.length}`;
+    if (carouselType === "games-covered") {
+      txtViewport.style.display = "none";
+    } else {
+      txtViewport.style.display = "block";
+    }
+
+    updateCounterText();
+  }
+
+  function updateCounterText() {
+    let label = "Item";
+    if (carouselType === "reading") label = "Book";
+    if (carouselType === "videos") label = "Video Video";
+    if (carouselType === "games-covered") label = "Universe Portfolio";
+    counterText.innerText = `${label} ${currentSlide + 1} of ${activeDatabase.length}`;
   }
 
   function adjustThumbnailScrollPosition() {
-    const thumbs = document.querySelectorAll('.thumb-card');
+    const thumbs = thumbTrack.querySelectorAll('.thumb-card');
     if (thumbs.length === 0 || !sliderWindow) return;
     const currentThumb = thumbs[currentSlide];
     const windowWidth = sliderWindow.offsetWidth;
@@ -587,23 +578,23 @@
   }
 
   function updateInterfaceElements() {
-    const images = document.querySelectorAll('.carousel-image');
-    const texts = document.querySelectorAll('.description-text');
-    const thumbs = document.querySelectorAll('.thumb-card');
-    const dots = document.querySelectorAll('.dot');
+    const images = imgViewport.querySelectorAll('.carousel-image');
+    const texts = txtViewport.querySelectorAll('.description-text');
+    const thumbs = thumbTrack.querySelectorAll('.thumb-card');
+    const dots = dotsContainer.querySelectorAll('.dot');
 
     images.forEach((img, idx) => img.classList.toggle('active', idx === currentSlide));
     texts.forEach((txt, idx) => txt.classList.toggle('active', idx === currentSlide));
     thumbs.forEach((tmb, idx) => tmb.classList.toggle('active', idx === currentSlide));
     dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentSlide));
 
-    counterText.innerText = `Book ${currentSlide + 1} of ${window.bookDatabase.length}`;
+    updateCounterText();
     adjustThumbnailScrollPosition();
   }
 
   function changeSlide(direction) {
-    if (!window.bookDatabase) return;
-    currentSlide = (currentSlide + direction + window.bookDatabase.length) % window.bookDatabase.length;
+    if (activeDatabase.length === 0) return;
+    currentSlide = (currentSlide + direction + activeDatabase.length) % activeDatabase.length;
     updateInterfaceElements();
   }
 
@@ -612,5 +603,9 @@
     updateInterfaceElements();
   }
 
-  initializeCarouselDOM();
+  prevBtn.onclick = () => changeSlide(-1);
+  nextBtn.onclick = () => changeSlide(1);
+
+  window.loadLorestageCarouselEngine = buildCarouselDOM;
+})();
 </script>

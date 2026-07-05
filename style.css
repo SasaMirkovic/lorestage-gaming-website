@@ -1,0 +1,605 @@
+/* --- Reset & Base Styles --- */
+html {
+  overflow-y: scroll; /* Forces the vertical scrollbar track to stay visible permanently, preventing layout width shifts */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* --- Navigation Bar --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  
+  /* Smooth color morphing transition when shifting game zones */
+  transition: background-color 0.5s ease; 
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Links and Search combined on the right side */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #cccccc;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: #ffffff;
+}
+
+.search-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #cccccc;
+  transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+  color: #ffffff;
+}
+
+/* --- Isolated Standalone Banner Area (Home) --- */
+.standalone-hero-banner {
+  width: 100%;
+  height: 40vh; 
+  min-height: 250px;
+  background: url('assets/banner/lorestage-banner.png') no-repeat center top/cover;
+}
+
+/* --- Clean Welcome Intro Segment Underneath (Home) --- */
+#hero-intro {
+  background-color: #121212;
+  padding: 1rem 1rem 1rem 1rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #aaaaaa;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff4500;
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #e03d00;
+  transform: translateY(-2px);
+}
+
+/* --- Content Sections --- */
+.content-section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-section.bg-dark {
+  background-color: #1a1a1a;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #aaaaaa;
+  margin-bottom: 0.5rem !important;
+}
+
+/* --- Responsive Video Library Carousel System --- */
+.carousel-container {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ff4500 #1a1a1a;
+}
+
+/* Customize webkit scrollbars for visual consistency */
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel-container::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+.carousel-container::-webkit-scrollbar-thumb {
+  background-color: #ff4500;
+  border-radius: 4px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  text-align: left;
+}
+
+.carousel-card {
+  flex: 0 0 360px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #000;
+}
+
+.video-thumbnail iframe,
+.thumbnail-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.thumbnail-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #333;
+  background: linear-gradient(45deg, #222, #050505);
+}
+
+.card-info {
+  padding: 1.5rem;
+}
+
+.card-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.card-info p {
+  font-size: 0.95rem;
+  color: #aaaaaa;
+  line-height: 1.4;
+}
+
+/* --- Games Selection Hub Grid & Interactive Elements --- */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 2rem;
+}
+
+.game-card-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+.game-grid-card {
+  background-color: #1a1a1a;
+  border: 1px solid #2d2d2d;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  transition: border-color 0.3s, transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.game-grid-card i {
+  font-size: 2.5rem;
+  color: #ff4500;
+  margin-bottom: 1rem;
+}
+
+.game-grid-card h3 {
+  font-size: 1.5rem;
+}
+
+.game-grid-card:hover {
+  border-color: #ff4500;
+  transform: scale(1.03);
+}
+
+/* Highlight style rule when a specific Hub button is activated */
+.game-card-btn.active .game-grid-card {
+  border-color: #ff4500;
+  background-color: #222222;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+  transform: scale(1.02);
+}
+
+/* Action button configurations inside preview modules */
+.action-button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.universe-btn { 
+  background: #ff4500; 
+  color: #fff; 
+  border: 1px solid #ff6522; 
+  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+}
+.universe-btn:hover { 
+  background: #ff6522; 
+  box-shadow: 0 6px 16px rgba(255, 69, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.universe-btn i {
+  margin-right: 8px;
+}
+
+/* --- Dedicated Game Custom Banner --- */
+.game-custom-banner {
+  height: 45vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('assets/banner/lorestage-banner.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  border-bottom: 3px solid #ff4500;
+}
+
+.banner-quote-overlay blockquote {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 2rem;
+  max-width: 800px;
+  text-align: center;
+  color: #e5e5e5;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* --- Media Row Splits (Video + Buy Side-by-Side) --- */
+.game-media-layout {
+  text-align: left !important;
+}
+
+.media-row {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 500px;
+  padding-top: 28.125%; /* Adjusted balance for split columns */
+  min-height: 315px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.game-meta-details {
+  flex: 1 1 400px;
+}
+
+.game-meta-details h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.game-description {
+  color: #cccccc;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.affiliate-btn {
+  background-color: #248a3d;
+}
+.affiliate-btn:hover {
+  background-color: #1e7232;
+}
+.affiliate-btn i {
+  margin-right: 8px;
+}
+
+/* --- Placeholder Blocks --- */
+.project-placeholder-box {
+  background-color: #111;
+  border: 2px dashed #333;
+  border-radius: 8px;
+  padding: 4rem 2rem;
+}
+.placeholder-icon-tray {
+  color: #444;
+}
+.placeholder-icon-tray i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #000000;
+  text-align: center;
+  padding: 2rem;
+  color: #777777;
+  font-size: 0.9rem;
+  border-top: 1px solid #1a1a1a;
+}
+
+/* --- Mobile Responsiveness Adjustments --- */
+@media (max-width: 900px) {
+  .media-row {
+    flex-direction: column;
+  }
+  .video-container {
+    width: 100%;
+    flex: none;
+  }
+  .game-meta-details {
+    width: 100%;
+    flex: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Restructured navbar so elements wrap over instead of dropping off screen */
+  .navbar {
+    padding: 1rem;
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  .nav-right-group {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .standalone-hero-banner {
+    height: 25vh;
+  }
+  
+  .banner-quote-overlay blockquote {
+    font-size: 1.4rem;
+  }
+  
+  .carousel-card {
+    flex: 0 0 290px;
+  }
+}
+
+/* --- About Page Specific Layouts --- */
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Section Dividers ("Team" & "Assistants") */
+.section-divider {
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.section-divider h2 {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ff4500; 
+  margin-bottom: 0.5rem;
+}
+
+.divider-line {
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff4500;
+}
+
+/* Alternating Content Blocks */
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 6rem;
+}
+
+.about-row.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.about-image {
+  flex: 1 1 50%;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2d2d2d;
+  display: block;
+}
+
+.about-text {
+  flex: 1 1 50%;
+  text-align: left;
+}
+
+.about-subtitle {
+  display: block;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888888;
+  margin-bottom: 0.5rem;
+}
+
+.about-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* 3-Column Assistants Layout */
+.assistants-gallery-section {
+  margin-bottom: 4rem;
+}
+
+.assistants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 2.5rem;
+}
+
+.assistant-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2d2d2d;
+}
+
+.gallery-footer-meta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.gallery-footer-meta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Overrides for About Layouts */
+@media (max-width: 850px) {
+  .about-row, 
+  .about-row.row-reverse {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 4rem;
+  }
+  
+  .about-image, 
+  .about-text {
+    flex: 1 1 100%;
+  }
+
+  .assistants-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+}
