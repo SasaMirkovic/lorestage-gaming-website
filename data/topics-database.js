@@ -32,7 +32,7 @@ window.LORESTAGE_TOPICS_DIRECTORY = {
   "consciousness": {
     name: "Consciousness",
     symbol: "fas fa-brain", // Mind/Intellect icon
-    description: "From the birth of consciousness as a world-shaping awakening to questions of AI, the self, and the Ultimate Intelligence.",
+    description: "From the birth of consciousness as a world-shaping awakening, to questions of AI, the self, and the Ultimate Intelligence.",
     linkedGames: ["thrall", "stalker", "masseffect"]
   },
   "myth": {
@@ -56,7 +56,7 @@ window.LORESTAGE_TOPICS_DIRECTORY = {
   "knowledge": {
     name: "Knowledge",
     symbol: "fas fa-book-open", // Open book icon
-    description: "To know is to be human. Yet we often conflate knowledge with understanding, and the two are not equivalent.",
+    description: "To know is to be human, yet we often conflate knowledge with understanding, and the two are not equivalent.",
     linkedGames: ["stalker", "kotor"]
   },
   "ideology": {
@@ -74,7 +74,7 @@ window.LORESTAGE_TOPICS_DIRECTORY = {
   "utopia-dystopia": {
     name: "Utopia & Dystopia",
     symbol: "fas fa-city", // Citadels or mega-structures
-    description: "From grand visions to nightmarish realizations. The question of what happens when what we can envision confronts messy reality.",
+    description: "From grand visions to nightmarish realizations, the question of what happens when what we can envision confronts messy reality.",
     linkedGames: ["stalker", "bioshock", "bioshock2"]
   },
   "free-will-determinism": {
