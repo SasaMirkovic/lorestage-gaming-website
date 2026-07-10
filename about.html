@@ -45,7 +45,8 @@
 
   <main class="about-container">
     
-    <div class="section-divider">
+    <!-- Added inline style here to reduce space below navigation bar -->
+    <div class="section-divider" style="margin-top: 0px;">
       <h2>Team</h2>
       <span class="divider-line"></span>
     </div>
@@ -57,8 +58,10 @@
       <div class="about-text">
         <span class="about-subtitle">Creator & Voice</span>
         <h3>Sasha D. Mirkovich</h3>
+        <!-- Smaller text block for native language -->
+        <span class="native-subtitle">Саша Д. Мирковић</span>
         <p class="about-description">
-          Diving deep into the architectural structures of fallen utopias and existential dread within gaming narratives. Our mission is to dissect the hidden philosophy, symbolism, and scripts that turn standard game designs into timeless interactive literature.
+         Sasha created Lorestage Gaming – Игроказ as a reflection of a childhood ambition: exploring the stories, ideas, and philosophies hidden within video games. Holding master's degrees in Sociology and Computer Science, he works as a Data Analyst / Engineer, bringing together analytical thinking and a passion for narrative. Some of his favourite games include S.T.A.L.K.E.R. trilogy, Mass Effect trilogy, Star Wars KOTOR series, Medieval II: Total War, Crash Bandicoot 3, and MediEvil, while his favorite console remains the original PlayStation.
         </p>
       </div>
     </section>
@@ -70,8 +73,10 @@
       <div class="about-text">
         <span class="about-subtitle">Video Editing</span>
         <h3>Sunchitsa Tomych Mirkovich</h3>
+        <!-- Smaller text block for native language -->
+        <span class="native-subtitle">Сунчица Томић Мирковић</span>
         <p class="about-description">
-          Every video analysis and written editorial is built with precise attention to mood and visual presentation. By fusing dark, atmospheric gaming aesthetics with rigorous research, we create experiences that resonate with true lore enthusiasts.
+          As passionate about gaming as she is about literature, Sunchitsa primarily works as a video editor and discussion partner, questioning, and helping expand Sasha's ideas. She holds a master's degree in Zoology, specializing in ichthyology and genetics, bringing a natural-science perspective to the team's discussions. Some of her favourite games include Skyrim, WarCraft III, Heroes of Might & Magic III, Hogwarts Legacy, the Assassin's Creed series, and Castlevania: Lords of Shadow 1 and 2, while her favourite console is the PlayStation 3.
         </p>
       </div>
     </section>
@@ -84,13 +89,25 @@
     <section class="assistants-gallery-section">
       <div class="assistants-grid">
         <div class="assistant-card">
-          <img src="assets/about/about-lyuni.png" alt="Lyuni">
+          <img src="assets/about/about-lyuny.png" alt="Lyuny">
+          <div class="assistant-name-tag">
+            <div class="primary-name">Chiкa Lyuny</div>
+            <div class="secondary-name">Чика Љуни</div>
+          </div>
         </div>
         <div class="assistant-card">
           <img src="assets/about/about-prkacha.png" alt="Prkacha">
+          <div class="assistant-name-tag">
+            <div class="primary-name">Prkacha</div>
+            <div class="secondary-name">Пркача</div>
+          </div>
         </div>
         <div class="assistant-card">
           <img src="assets/about/about-googy.png" alt="Googy">
+          <div class="assistant-name-tag">
+            <div class="primary-name">Googy</div>
+            <div class="secondary-name">Гуги</div>
+          </div>
         </div>
       </div>
       
@@ -107,6 +124,44 @@
   </footer>
 
   <style>
+    /* --- New Additions & Modifications --- */
+    
+    /* Justify description text */
+    .about-description {
+      text-align: justify;
+    }
+
+    /* Style for native language text underneath names */
+    .native-subtitle {
+      display: block;
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: -8px;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    /* Assistant name layout elements */
+    .assistant-card {
+      text-align: center;
+    }
+
+    .assistant-name-tag {
+      margin-top: 10px;
+    }
+
+    .assistant-name-tag .primary-name {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .assistant-name-tag .secondary-name {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 2px;
+    }
+
     /* --- Incorporated Dropdown Search Component Styles --- */
     :root {
       --accent-gold: #ff4500;
