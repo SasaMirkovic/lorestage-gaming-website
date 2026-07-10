@@ -8,7 +8,7 @@ window.GAME_PRESENTATION_DIRECTORY = {
     footnotes: "assets/games/footnotes/bioshock-footnotes.png",
     symbolismDeck: "assets/games/symbolism deck/bioshock-tarrot.png",
     boxart: "assets/games/box art/bioshock-box.png",
-    quote: '"In the end, what separates a philosopher from an ideologue? Ideas? Reason? No! A philosopher questions, an ideologue declares!" - Sasha D. Mirkovich',
+    quote: '"In the end, what separates a philosopher from an ideologue? Reason? Ideas? No! A philosopher questions, an ideologue declares!" - Sasha D. Mirkovich',
     previewImg: "assets/games/thumbnail/bioshock-thumbnail.png",
     youtubeUrl: "https://www.youtube.com/watch?v=HtbBg3JrgII", 
     description: "From the foundations of Objectivism and the connection between Ayn Rand and Andrew Ryan, we explore self-made men, rationality, and identity, asking whether confidence in objective truth leaves room for uncertainty, disagreement, and adaptation.",
