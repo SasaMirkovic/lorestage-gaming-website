@@ -87,7 +87,7 @@ window.LORESTAGE_TOPICS_DIRECTORY = {
     name: "Faith",
     symbol: "fas fa-pray", // Spiritual connection icon
     description: "The psychological power of spiritual belief is undeniable, yet it is tested by suffering, evil, and the silence of the divine.",
-    linkedGames: ["arthas"]
+    linkedGames: ["arthas", "stalker"]
   },
   "memory": {
     name: "Memory",

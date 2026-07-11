@@ -109,6 +109,10 @@ window.GAME_PRESENTATION_DIRECTORY = {
       {
         id: "utopia-dystopia",
         reason: "Does reality corrupt ideals, or reveal them?"
+      },
+      {
+        id: "faith",
+        reason: "How does the Monolith reflect the three temptations of Christ?"
       }
     ]
   },
