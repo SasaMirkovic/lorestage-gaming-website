@@ -5,9 +5,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Most well-known novel by Ayn Rand. It celebrates individualism, reason, and rational self-interest. Rand creates a decaying world ruled by collectivist ideas and dependent “parasites”, from which the productive elite retreats into an Objectivist enclave called Galt’s Gulch.",
     cover: "assets/books/atlas-shrugged.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4vqqVXw", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/44r45E3", libro: "#", kindle: "https://amzn.to/44UvcYm", kobo: "#" 
     }
   },
   "the-fountainhead": {
@@ -16,9 +16,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "First novel by Ayn Rand to achieve major success. It can be viewed as a spiritual precursor to Atlas Shrugged. What A Happy Death was to The Stranger, The Fountainhead is to Atlas Shrugged, but with an inversion: while Camus stripped his later work down stylistically, Rand expanded hers, adding greater scale and literary flair.",
     cover: "assets/books/the-fountainhead.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4f6doOB", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3TuaQmc", libro: "#", kindle: "https://amzn.to/4wBCRqn", kobo: "#" 
     }
   },
   "the-virtue-of-selfishness": {
@@ -27,9 +27,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A collection of Ayn Rand’s essays, dealing with the basics of Objectivism, rational self-interest, collectivism, egoism, altruism, etc.",
     cover: "assets/books/the-virtue-of-selfishness.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4aO0Gms", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3RrZ5w2", libro: "#", kindle: "https://amzn.to/3TuicGi", kobo: "#" 
     }
   },
   "anthem": {
@@ -38,9 +38,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A dystopian novel by Ayn Rand, set in an unspecified future. We see humanity in a kind of Dark Ages, in which reason, individuality and scientific research are either forbidden or strictly controlled. However, human nature shows itself through the protagonist, who starts conducting scientific research in secret.",
     cover: "assets/books/anthem.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4w1bvtZ", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4w1bw11", libro: "#", kindle: "https://amzn.to/4bjyibY", kobo: "#" 
     }
   },
   "bioshock-rapture": {
@@ -49,9 +49,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "This novel tells the story of Rapture, from its inception, to the beginning of its downfall. We follow Andrew Ryan, Bill McDonagh and other characters as they construct the wonder that is Rapture. Besides Ryan, McDonagh is in the spotlight, and we get to understand both the positive and negative sides of Andrew’s ideology. He values talent, hard work and dedication, offering opportunities to people like Bill who may never have received them elsewhere.",
     cover: "assets/books/bioshock-rapture.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4youErp", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4wDQXYn", libro: "#", kindle: "https://amzn.to/4aO0TWM", kobo: "#" 
     }
   },
   "bioshock-and-philosophy": {
@@ -60,9 +60,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A collection of essays on various topics related to BioShock, BioShock 2 and BioShock Infinite. Different authors explore themes such as Ryan’s vision of utopia, the relationship between Eleanor and Delta, and Infinite’s multiverse. Although not focused exclusively on the first BioShock, it should be remembered that all games are interconnected, and the book offers a broader overview of the series.",
     cover: "assets/books/bioshock-and-philosophy.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4whyiC1", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/3T0mpBu", kobo: "#" 
     }
   },
   "descartes-error": {
@@ -71,9 +71,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A book by Portuguese neurobiologist delves deeply into the structure of human mind, and its place within the whole of human organism. Starting with a fascinating story of Phineas Gage, Damasio guides us through his personal journey in uncovering the neurological foundations behind human action.",
     cover: "assets/books/descartes-error.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4pqHW2n", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/4yiUNaP", kobo: "#" 
     }
   },
   "thinking-fast-and-slow": {
@@ -82,9 +82,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Based on decades of empirical research, Daniel Kahneman proposes a model of the mind composed of two interacting systems. S1 as an intuitive, quick and automated way of making decisions, and S2 as a slow, analytical and deliberate process of understanding. Both systems are essential to human cognition, but each comes with trade-offs.",
     cover: "assets/books/thinking-fast-and-slow.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4f9TjXB", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4yiA32S", libro: "#", kindle: "https://amzn.to/4ftyU18", kobo: "#" 
     }
   },
   "noise": {
@@ -93,9 +93,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "In contrast to the expectation that identical inputs should produce identical outcomes, this book focuses on variability in human judgment. The authors ask how different people, given the same information, can arrive at entirely different conclusions, or why the same person, under different circumstances yet facing the same facts, may reach different decisions. Rather than concentrating only on bias, the book explores the hidden problem of inconsistency that shapes much of human judgment.",
     cover: "assets/books/noise.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4yjaWx3", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3SNmkBd", libro: "#", kindle: "https://amzn.to/4eVi3Em", kobo: "#" 
     }
   },
   "determined": {
@@ -104,9 +104,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "In Determined, Robert Sapolsky deconstructs arguments for free will, pointing to the ways in which biology and socialization shape the neural and environmental foundations of human behavior. Drawing from neuroscience, genetics, and psychology, he argues that our actions emerge from a complex chain of influences extending far beyond conscious choice.",
     cover: "assets/books/determined.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4f8D6SG", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4vK4uwN", libro: "#", kindle: "https://amzn.to/4gEeofv", kobo: "#" 
     }
   },
   "equal-is-unfair": {
@@ -115,9 +115,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The book argues that the pursuit of equality through government intervention can undermine the principles of freedom and merit. They examine ways in which equality pursuing policies may instead produce distortions that lead to an increasingly unfair social environment.",
     cover: "assets/books/equal-is-unfair.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4pdowxO", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3RcJ7Wp", libro: "#", kindle: "https://amzn.to/4vqUIiG", kobo: "#" 
     }
   },
   "power-a-radical-view": {
@@ -126,9 +126,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Lukes introduces the idea of a third dimension of power. In contrast to the first dimension, which focuses on observable decision-making, and the second, which deals with agenda setting, the author explores the level that shapes beliefs, preferences, and perceptions themselves, raising questions about ideology and the formation of human desires.",
     cover: "assets/books/power-a-radical-view.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4fcLn8k", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/4vrj63N", kobo: "#" 
     }
   },
   "nudge": {
@@ -137,9 +137,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Building on the ideas of behavioral economics, Thaler and Sunstein argue for a model of libertarian paternalism. Although sounding like an oxymoron, authors argue for a model of libertarian paternalism. Although the term may sound like an oxymoron, the authors attempt to show how small adjustments in choice architecture can help individuals navigate the heuristics and cognitive shortcuts that characterize human thinking.",
     cover: "assets/books/nudge.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4wAOrlo", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/44YA1jm", libro: "#", kindle: "https://amzn.to/3RwHd39", kobo: "#" 
     }
   },
   "ideology-and-utopia": {
@@ -148,9 +148,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Mannheim’s essays in the field of sociology of knowledge, in which he argued that the term ideology must be broadened. In contrast to reducing ideology to deliberate obscuring of facts, Mannheim suggests that every worldview is shaped by the social and historical context in which it develops, and that understanding ideology requires taking these conditions into account.",
     cover: "assets/books/ideology-and-utopia.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4aMRRcu", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/3RynQGS", kobo: "#" 
     }
   },
   "the-wisdom-of-crowds": {
@@ -159,9 +159,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Surowiecki builds a counterargument to the idea of exceptional few in the field of decision making. Presenting 3 aspects of collective intelligence, cognition, collaboration and coordination, author pictures the hidden logic behind the success of market coordination or democratic elections, which produce knowledge that no single person holds.",
     cover: "assets/books/the-wisdom-of-crowds.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4yiOsfu", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3Rc1ZVE", libro: "#", kindle: "https://amzn.to/4whyxgp", kobo: "#" 
     }
   },
   "outliers": {
@@ -170,9 +170,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Dealing with the question of greatness, Gladwell provides an argument which takes into account individual talent, hard work and dedication, but frames it within broader social context as well as opportunities which had nothing to do with individual qualities. Neither fully focused on the individual, nor on context, Gladwell presents a complex symbiosis between the two.",
     cover: "assets/books/outliers.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/3SVRoi5", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4vUpstz", libro: "#", kindle: "https://amzn.to/4yiUZXB", kobo: "#" 
     }
   },
   "the-logic-of-collective-action": {
@@ -181,9 +181,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The author examines the problem of collective behavior, asking why individuals often fail to act in pursuit of shared interests. Challenging the assumption that common goals automatically produce cooperation, Olson explores problems such as free-riding and the conditions under which collective action becomes possible.",
     cover: "assets/books/the-logic-of-collective-action.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/44XlXXh", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/4aMS8w2", kobo: "#" 
     }
   },
   "the-sociological-imagination": {
@@ -192,9 +192,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Bridging the gap between private and social, Mills argues for a different approach in sociology, which views challenges faced by individuals as a part of a broader social context. If a couple gets a divorce it truly is their private issue, but if 50% of all marriages end in divorce, it becomes evident that something larger than individual circumstances is at play.",
     cover: "assets/books/the-sociological-imagination.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4yhIRGk", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4pluPzE", libro: "#", kindle: "https://amzn.to/4h5ZjDp", kobo: "#" 
     }
   },
   "oblomov": {
@@ -203,9 +203,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The story of Ilya Ilyich Oblomov, a man of considerable potentials, who remains unable to take any action in fear of life’s challenges. Through him Goncharov builds a portrait of the superfluous man, as we follow Ilya bear with “epic” tasks, such as the struggle of moving from his bed to a chair.",
     cover: "assets/books/oblomov.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4faiAAW", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4fdGfke", libro: "#", kindle: "https://amzn.to/4ymhc7m", kobo: "#" 
     }
   },
   "demons": {
@@ -214,9 +214,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "In this novel Dostoyevsky paints a picture of the changes faced by a small community, induced by the appearance of educated youth, bearers of radical ideas on social questions. Influencing the deconstruction of traditional values, these “evil spirits” or “demons” set in motion a process that gradually consumes the whole community.",
     cover: "assets/books/demons.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4fwe55b", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/44qq4Ln", kobo: "#" 
     }
   },
   "notes-from-underground": {
@@ -225,9 +225,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Dealing with human consciousness, Dostoyevsky explores it through an unnamed protagonist living in isolation, unable or unwilling to reconcile himself with the society around him. Gradually consumed by his own thoughts and contradictions, he descends into an “underground” of existence.",
     cover: "assets/books/notes-from-underground.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4f9DsZn", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/3RzVTOZ", kobo: "#" 
     }
   },
   "utopia": {
@@ -236,9 +236,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Political satire by Thomas More presents a story of an almost perfect society through the mouth of a traveler named Raphael. Reflecting on contemporary England and inspired by Platonic ideas, he offers an insight into a mysterious country built upon a radically different social order.",
     cover: "assets/books/utopia.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/453Upzv", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3Ryokga", libro: "#", kindle: "https://amzn.to/4wHsBgo", kobo: "#" 
     }
   },
   "timaeus-and-critias": {
@@ -247,9 +247,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "In these dialogues, Plato explores the origins and structure of the universe, from the ordering of the cosmos to the place of humanity within it. The work also contains his famous account of Atlantis, a powerful island civilization said to have been founded by descendants of Poseidon before eventually sinking beneath the sea.",
     cover: "assets/books/timaeus-and-critias.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4bB7WCk", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3RrZXki", libro: "#", kindle: "https://amzn.to/4aPL4if", kobo: "#" 
     }
   },
   "logans-run": {
@@ -258,9 +258,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "In this dystopian novel, people live seemingly happy lives, but with one condition: existence is capped at 21 years, after which individuals are taken to the “Sleepshop.” Logan, initially an enforcer of the system, becomes a runner trying to escape, as the human will to survive asserts itself.",
     cover: "assets/books/logans-run.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4vZI4s0", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4faiRns", libro: "#", kindle: "https://amzn.to/4wy789p", kobo: "#" 
     }
   },
   "roadside-picnic": {
