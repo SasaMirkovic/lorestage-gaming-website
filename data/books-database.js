@@ -485,9 +485,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The novel by Christie Golden follows the story of Arthas, familiar to players through the campaign of WarCraft 3. Yet it is more than a simple retelling in a different medium, as Golden expands upon key moments and relationships, including Arthas’ interactions with Uther, Jaina, and Muradin, as well as pivotal events such as the Culling of Stratholme.",
     cover: "assets/books/arthas-rise-of-the-lich-king.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4h9N8FJ", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4guGhq9", libro: "#", kindle: "https://amzn.to/4yhoZDh", kobo: "#" 
     }
   },
   "diplomacy": {
@@ -496,9 +496,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A history of modern diplomacy, informed by the firsthand experience of one of its most prominent practitioners, Henry Kissinger. The book provides insight into the ways diplomatic strategy shaped the modern world, arguing that the United States has consistently pursued a distinct and influential approach to international relations.",
     cover: "assets/books/diplomacy.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/3STC6uk", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/44rzE0w", libro: "#", kindle: "https://amzn.to/4518eyK", kobo: "#" 
     }
   },
   "faust": {
@@ -507,9 +507,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Faust is a dramatic poem that follows the human quest for knowledge, meaning, and fulfillment. A brilliant but deeply dissatisfied scholar makes a pact with Mephistopheles, trading his soul in exchange for unlimited earthly experience and the chance to transcend the limits of human understanding.",
     cover: "assets/books/faust.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/44sqIrJ", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4wzHfpO", libro: "#", kindle: "https://amzn.to/4vrPWl8", kobo: "#" 
     }
   },
   "macbeth": {
@@ -518,9 +518,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "One of the most well-known plays by Shakespeare, Macbeth is the story of a man willing to commit murder in order to become king. A Scottish general, driven by prophecy and his wife's manipulation, murders his sovereign and ascends to the throne. His growing paranoia soon plunges both himself and the kingdom into violence, bloodshed, and civil war.",
     cover: "assets/books/macbeth.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4wDcL6j", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4vuOG0K", libro: "#", kindle: "https://amzn.to/4wINyri", kobo: "#" 
     }
   },
   "maps-of-meaning": {
@@ -529,9 +529,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Maps of Meaning explores the role of archetypes, myths, and culture in human life. Viewing them as tools through which people orient themselves in the world, Peterson argues that myths and archetypes are not merely products of fantasy, but rather symbolic maps that help humanity understand what is and, more importantly, how to act within it.",
     cover: "assets/books/maps-of-meaning.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4bG8ruW", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4wFdYdt", libro: "#", kindle: "https://amzn.to/4w7hNIE", kobo: "#" 
     }
   },
   "phenomenology-of-spirit": {
@@ -540,9 +540,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Phenomenology of Spirit is a philosophical work in which Hegel traces the development of consciousness from immediate sensory experience toward what he calls “absolute knowing.” In his view, human freedom is not a starting point but an achievement: it emerges through a long process of struggle, contradiction, and retrospective self-understanding.",
     cover: "assets/books/phenomenology-of-spirit.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4eY4J1Z", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4yhp6ib", libro: "#", kindle: "https://amzn.to/4yi68rD", kobo: "#" 
     }
   },
   "the-once-and-future-king": {
@@ -551,9 +551,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A classic fantasy epic that follows the life of the legendary King Arthur. Spanning his orphaned youth to his eventual downfall, it explores both the triumphs of Camelot and the tragic collapse of Arthur’s idealistic attempt to use 'Might for Right'.",
     cover: "assets/books/the-once-and-future-king.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4yhp89N", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4ps2jw7", libro: "#", kindle: "https://amzn.to/4eZLMvN", kobo: "#" 
     }
   },
   "the-prince": {
@@ -562,9 +562,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The Prince is a revolutionary work on politics and power that helped shift political thought from the realm of ideals to that of practical statecraft. Drawing on historical examples and his own experience, Machiavelli examines the methods through which rulers acquire, maintain, and secure power, often challenging conventional moral expectations in the process.",
     cover: "assets/books/the-prince.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/3SSw8db", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4halto5", libro: "#", kindle: "https://amzn.to/4fbhnt9", kobo: "#" 
     }
   },
   "the-road-to-wigan-pier": {
@@ -573,9 +573,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The Road to Wigan Pier is George Orwell’s account of working-class life in industrial northern England. Drawing on his own observations, he bears witness not only to the squalor and harsh physical conditions endured by workers, but also to the psychological burden of living in a society where meaningful improvement often feels distant or uncertain.",
     cover: "assets/books/the-road-to-wigan-pier.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4fbd6G9", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3SZpIcb", libro: "#", kindle: "https://amzn.to/4gTcnfB", kobo: "#" 
     }
   },
   "toward-a-marxist-humanism": {
@@ -584,7 +584,7 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Toward a Marxist Humanism is a collection of writings by the Polish philosopher Leszek Kolakowski. In these essays, he engages with “revisionist” Marxism, advocating for a form of socialism grounded in democratic reform, individual moral responsibility, and critical rationality, while rejecting dogmatic and authoritarian interpretations of Marxist thought.",
     cover: "assets/books/toward-a-marxist-humanism.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4pmOZt4", 
       bookshop: "", 
       audible: "#", libro: "#", kindle: "#", kobo: "#" 
     }
@@ -595,9 +595,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A collection of Carl Jung’s writings on dreams and their interpretation. Jung argues that dreams are not random images, but a symbolic language through which the unconscious communicates with consciousness. Through their analysis, we gain insight into the hidden dimensions of the psyche and the process of psychological development.",
     cover: "assets/books/dreams.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4bDKmou", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/44taAGx", libro: "#", kindle: "https://amzn.to/4gAFYdu", kobo: "#" 
     }
   },
   "lord-of-the-clans": {
@@ -606,9 +606,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "This book depicts the death of Thrall's parents and his rise from a gladiator to a leader. Raised within Human society, Thrall slowly comes to know his people and the lethargy that befell them after they were cut off from Fel magic and imprisoned by Humans. In learning their history, he discovers his own place within it.",
     cover: "assets/books/lord-of-the-clans.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/3ReG9Rp", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4w04Zn4", libro: "#", kindle: "https://amzn.to/4vTlHoa", kobo: "#" 
     }
   },
   "rise-of-the-horde": {
@@ -617,9 +617,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Depicting life on Draenor, the novel follows the relationship between Durotan, Thrall's father, and Orgrim, the future leader of the Horde. We are introduced to the world of the Orcs before their corruption and witness the gradual rise of Gul'dan and fel magic. By the end, we witness the destruction of the Draenei and the complete transformation of the old world.",
     cover: "assets/books/rise-of-the-horde.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4bnL1dH", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4w11zQY", libro: "#", kindle: "https://amzn.to/4aK9Jow", kobo: "#" 
     }
   },
   "the-great-code": {
@@ -628,7 +628,7 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The Great Code explores the Bible as the central imaginative and symbolic framework of Western civilization. Frye examines its myths, metaphors, and narrative structures, arguing that they have profoundly shaped Western literature, art, and cultural imagination.",
     cover: "assets/books/the-great-code.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4yffbcY", 
       bookshop: "", 
       audible: "#", libro: "#", kindle: "#", kobo: "#" 
     }
@@ -639,9 +639,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Influential study of comparative mythology and narrative structure. Drawing on mythological traditions from around the world, Campbell outlines the concept of the “Hero’s Journey” - a universal pattern of departure, initiation, and return that structures many of humanity’s foundational stories. He also describes the “cosmogonic cycle,” the recurring mythic pattern of world creation, destruction, and renewal. Through these frameworks, Campbell argues that myth reflects a shared structure of human experience expressed through symbolic storytelling.",
     cover: "assets/books/the-hero-with-a-thousand-faces.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/3R5T3kI", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/3R3GS7X", libro: "#", kindle: "https://amzn.to/4w2wOeF", kobo: "#" 
     }
   },
   "the-idea-of-the-holy": {
@@ -650,9 +650,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Through this book Rudolf Otto argues that the core of religion lies in the experience of the numinous, a profound feeling of awe, wonder, and trembling before something wholly other. Behind every conception of the divine stands what Otto calls the mysterium tremendum, an overwhelming and terrifying mystery that confronts us with realities beyond ordinary understanding. In its presence, we become acutely aware of our own smallness and limitations.",
     cover: "assets/books/the-idea-of-the-holy.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4pfreD0", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/4hfi1bI", kobo: "#" 
     }
   },
   "psychology-and-alchemy": {
@@ -661,9 +661,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "A study of the relationship between alchemy, dreams, and the unconscious. Jung argues that the symbols found in alchemical writings and those appearing in dreams emerge from the same source - the collective unconscious. Through their interpretation, he explores the process of psychological transformation and the development of the individual toward wholeness.",
     cover: "assets/books/psychology-and-alchemy.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4fxeyUH", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "#", libro: "#", kindle: "https://amzn.to/4fgCVVy", kobo: "#" 
     }
   },
   "the-origins-and-history-of-consciousness": {
@@ -672,9 +672,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "Neumann argues that the development of consciousness can be understood through a sequence of universal myths and archetypes. The process begins and ends with the symbol of the Ouroboros, the tail-eating serpent. Between these two poles stand the myths of World Creation, the Great Mother, the separation of the World Parents, the birth of the Hero, the slaying of the Dragon, the rescue of the Captive, and the transformation and deification of the Hero. Throughout this journey, the Hero represents the gradual emergence and development of ego-consciousness.",
     cover: "assets/books/the-origins-and-history-of-consciousness.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/4fieTth", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/4gAGeJu", libro: "#", kindle: "https://amzn.to/4gAxR0y", kobo: "#" 
     }
   },
   "the-odyssey": {
@@ -683,9 +683,9 @@ const MASTER_BOOK_DIRECTORY = {
     summary: "The Odyssey is an ancient Greek epic poem that follows the journey of Odysseus as he attempts to return home after the Trojan War. His voyage is shaped by trials, divine interventions, and encounters with both monstrous and seductive forces that test his identity, endurance, and wisdom. At the same time, the poem also depicts the struggle to restore order in Ithaca, where his household awaits his return. Through its structure, the epic explores themes of exile, longing, cunning intelligence, and the reconstruction of identity through hardship and return.",
     cover: "assets/books/the-odyssey.jpg",
     links: { 
-      amazon: "", 
+      amazon: "https://amzn.to/3QPK5bd", 
       bookshop: "", 
-      audible: "#", libro: "#", kindle: "#", kobo: "#" 
+      audible: "https://amzn.to/44qV1PG", libro: "#", kindle: "https://amzn.to/3RbCOSX", kobo: "#" 
     }
   }
 };
