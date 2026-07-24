@@ -395,6 +395,13 @@
     .btn-additional { background-color: var(--game-quote-color); color: #121212; }
     .btn-additional:hover { background-color: var(--game-quote-color); filter: brightness(1.15); }
 
+    /* Custom Disabled Button State */
+    .btn.disabled-btn {
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     .game-long-description {
       border-top: 1px solid #2d2d2d;
       padding-top: 2rem;
@@ -845,7 +852,7 @@
             <a id="link-recommended-reading" onclick="scrollToShelfCleanly()" class="btn btn-reading">
               <i class="fas fa-book-open"></i> Recommended Reading
             </a>
-            <a id="link-additional-content" href="javascript:void(0);" class="btn btn-additional">
+            <a id="link-additional-content" href="javascript:void(0);" target="_blank" class="btn btn-additional">
               <i class="fas fa-plus-circle"></i> Additional Content
             </a>
           </div>
@@ -1035,9 +1042,30 @@
       document.getElementById('hero-game-quote').textContent = targetGameData.quote || "";
       document.getElementById('profile-thumb-img').src = "../" + (targetGameData.previewImg || targetGameData.boxart || "");
       
-      document.getElementById('link-buy-game').href = targetGameData.purchaseUrl || targetGameData.buyUrl || "javascript:void(0);";
+      // Update links with disable logic
+      const buyLinkStr = targetGameData.purchaseUrl || targetGameData.buyUrl;
+      const buyBtn = document.getElementById('link-buy-game');
+      if (buyLinkStr) {
+        buyBtn.href = buyLinkStr;
+        buyBtn.classList.remove('disabled-btn');
+      } else {
+        buyBtn.href = "javascript:void(0);";
+        buyBtn.removeAttribute('target');
+        buyBtn.classList.add('disabled-btn');
+      }
+
       document.getElementById('link-watch-video').href = targetGameData.analysisVideoUrl || targetGameData.youtubeUrl || "javascript:void(0);";
-      document.getElementById('link-additional-content').href = targetGameData.additionalContentUrl || targetGameData.moreUrl || "javascript:void(0);";
+      
+      const additionalLinkStr = targetGameData.additionalContentUrl || targetGameData.moreUrl;
+      const addBtn = document.getElementById('link-additional-content');
+      if (additionalLinkStr) {
+        addBtn.href = additionalLinkStr;
+        addBtn.classList.remove('disabled-btn');
+      } else {
+        addBtn.href = "javascript:void(0);";
+        addBtn.removeAttribute('target');
+        addBtn.classList.add('disabled-btn');
+      }
 
       const topicsWrapper = document.getElementById('banner-topics-wrapper-target');
       if (topicsWrapper && targetGameData.topics && Array.isArray(targetGameData.topics)) {
