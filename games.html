@@ -22,7 +22,6 @@
   <header id="main-header" style="position: relative; z-index: 1000;">
     <nav class="navbar">
       <div class="logo">
-        <!-- Wrap the logo image and text inside a dynamic link -->
         <a id="nav-brand-link" href="games.html" style="display: flex; align-items: center; gap: inherit; text-decoration: none; color: inherit;">
           <img id="navbar-logo" src="assets/logo/logo-lorestage.png" alt="Lorestage Gaming Logo">
           <span>Lorestage Gaming - Игроказ</span>
@@ -105,7 +104,6 @@
   </footer>
 
   <style>
-    /* --- Incorporated Dropdown Search Component Styles --- */
     :root {
       --accent-gold: #ff4500;
     }
@@ -227,9 +225,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    /* ---------------------------------------------------- */
 
-    /* Carousel System Layout */
     .games-carousel-container { max-width: 1000px; margin: 0 auto; position: relative; padding: 0 10px; display: flex; justify-content: center; }
     .games-carousel-window { width: auto; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; box-sizing: border-box; scrollbar-width: thin; scrollbar-color: #ff4500 #111; }
     .games-carousel-window::-webkit-scrollbar { height: 6px; display: block; }
@@ -266,7 +262,6 @@
     .game-card-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%); padding: 30px 10px 12px 10px; text-align: center; z-index: 2; }
     .game-card-overlay h3 { margin: 0; color: #ffffff; font-size: 0.95rem; font-weight: 600; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
 
-    /* Standardized Height Presentation Viewport */
     .hub-preview-banner {
       transition: background 0.4s ease; 
       background-size: cover; 
@@ -347,30 +342,23 @@
     .youtube-btn { background: #cc181e; color: #fff; }
     .youtube-btn:hover { background: #b01016; }
 
-    .btn.disabled-action-btn {
-      background: #222 !important;
-      color: #555 !important;
-      border: 1px solid #2d2d2d !important;
-      cursor: not-allowed;
+    /* Matches game page disabled styling: faded original button color */
+    .btn.disabled-btn {
+      opacity: 0.4;
       pointer-events: none;
-      box-shadow: none !important;
+      cursor: not-allowed;
     }
 
-    /* --- Harmonized Responsive Breakpoints --- */
-    
-    /* Laptop / Small Desktop Tier */
     @media (max-width: 1024px) {
       .media-row { gap: 20px; }
       .games-carousel-container { max-width: 95%; }
     }
 
-    /* Tablet Tier */
     @media (max-width: 768px) {
       .logo span { font-size: 1.3rem; }
       #nav-brand-title { font-size: 1.7rem; }
       .nav-links a { font-size: 1rem;  } 
       
-      /* Shift preview from grid columns to a stacked column layout */
       .media-row { grid-template-columns: 100% !important; gap: 20px; }
       .hub-preview-banner { min-height: auto; padding: 30px 0; }
       .hero-inner-wrapper { padding: 0 20px !important; }
@@ -379,17 +367,15 @@
       #preview-title { font-size: 1.7rem; text-align: center; }
       .game-description { max-height: 200px; }
       
-      /* Optimize action buttons for touch surfaces */
       .action-button-group { flex-direction: column; width: 100%; gap: 10px; }
       .btn { width: 100%; max-width: 100%; height: 46px; }
     }
 
-    /* Mobile Phone Tier */
     @media (max-width: 480px) {
       .nav-links a { font-size: 1rem;  }
       .game-card-btn {
-        width: 135px;   /* Adjust width for mobile screens here */
-        height: 200px;  /* Adjust height for mobile screens here */
+        width: 135px;
+        height: 200px;
       }
       
       #carousel-section-title { font-size: 1.4rem !important; }
@@ -425,10 +411,29 @@
     const previewSplitRow = document.getElementById('preview-split-row');
     const previewInnerWrapper = document.getElementById('preview-inner-wrapper');
 
+    previewBuyBtn.addEventListener('click', (e) => {
+      if (previewBuyBtn.classList.contains('disabled-btn')) {
+        e.preventDefault();
+        return; 
+      }
+
+      if (previewBuyBtn.getAttribute('href') === '#') {
+        e.preventDefault(); 
+        console.log("Analytics Event Sent: Buy button clicked for " + previewTitle.textContent + " (New tab blocked because href is '#')");
+      } else {
+        console.log("Analytics Event Sent: Buy button clicked for " + previewTitle.textContent);
+      }
+
+      gtag('event', 'click', {
+        'event_category': 'affiliate',
+        'event_label': 'buy_game',
+        'game_title': previewTitle.textContent 
+      });
+    });
+
     let currentViewState = "global";
     let lastActiveGlobalKey = "";
 
-    /* --- Search Dropdown Event Handlers & Core Scripting --- */
     const searchTrigger = document.getElementById('search-trigger');
     const searchDropdown = document.getElementById('search-dropdown');
     const searchInput = document.getElementById('game-search-input');
@@ -455,7 +460,6 @@
       searchInput.focus();
     };
 
-    // Global Key-Matching Engine
     searchInput.oninput = function() {
       const query = searchInput.value.toLowerCase().trim();
       searchResultsDisplay.innerHTML = '';
@@ -473,19 +477,16 @@
         const parentNameMatches = (game.shortName && game.shortName.toLowerCase().includes(query)) || 
                                   (game.name && game.name.toLowerCase().includes(query));
 
-        // Case A: Root game does NOT have sub-profiles -> normal match evaluation
         if (!hasSubProfiles) {
           if (parentNameMatches) {
             matchedItemsHtml += buildSearchRowHtml(game.shortName || game.name, game.boxart, game.dedicatedPageUrl, game.status);
           }
         }
 
-        // Case B: Game HAS sub-profiles -> if parent matches OR sub-profile matches, return sub-profiles
         if (hasSubProfiles) {
           game.subProfiles.forEach(subProfile => {
             const subNameMatches = subProfile.name && subProfile.name.toLowerCase().includes(query);
             
-            // If user typed "Warcraft" (parent match) or "Arthas" (child match), display the sub-profile row
             if (parentNameMatches || subNameMatches) {
               matchedItemsHtml += buildSearchRowHtml(subProfile.name, subProfile.boxart, subProfile.dedicatedPageUrl, subProfile.status);
             }
@@ -526,7 +527,6 @@
         `;
       }
     }
-    /* ---------------------------------------------------------------------- */
 
     function renderGlobalCarousel(activeKeyToSelect) {
       currentViewState = "global";
@@ -695,7 +695,7 @@
       previewImage.src = data.previewImg || '';
       previewDescription.textContent = data.description || '';
       
-      previewBuyBtn.href = data.buyUrl || '#';
+      const hasBuyUrl = typeof data.buyUrl === 'string' && data.buyUrl.trim() !== '';
       previewPageBtn.href = data.dedicatedPageUrl || `${coreLibraryKey}.html`;
       previewYoutubeBtn.href = data.youtubeUrl || '#';
 
@@ -703,10 +703,21 @@
       previewPageBtn.className = "btn universe-btn";
       previewYoutubeBtn.className = "btn youtube-btn";
 
+      if (hasBuyUrl) {
+        previewBuyBtn.href = data.buyUrl;
+        previewBuyBtn.setAttribute('target', '_blank');
+        previewBuyBtn.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        previewBuyBtn.href = 'javascript:void(0);';
+        previewBuyBtn.removeAttribute('target');
+        previewBuyBtn.removeAttribute('rel');
+        previewBuyBtn.classList.add('disabled-btn');
+      }
+
       if (data.status === "in development") {
-        previewBuyBtn.classList.add("disabled-action-btn");
-        previewPageBtn.classList.add("disabled-action-btn");
-        previewYoutubeBtn.classList.add("disabled-action-btn");
+        previewBuyBtn.classList.add("disabled-btn");
+        previewPageBtn.classList.add("disabled-btn");
+        previewYoutubeBtn.classList.add("disabled-btn");
       }
       else if (data.status === "planned") {
         previewQuoteRow.style.display = "none";
