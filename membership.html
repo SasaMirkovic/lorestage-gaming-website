@@ -89,7 +89,7 @@
         </p>
 
         <div class="hero-btn-group" style="display: flex; justify-content: center; margin-bottom: 0;">
-          <a href="" target="_blank" class="btn" style="padding: 12px 28px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;">Explore Patreon</a>
+          <a id="explore-patreon-btn" href="javascript:void(0);" class="btn" style="padding: 12px 28px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;">Explore Patreon</a>
         </div>
       </div>
     </section>
@@ -331,6 +331,12 @@
     .search-result-title { color: #fff; font-size: 0.95rem; font-weight: 600; margin: 0 0 2px 0; }
     .search-result-meta { font-size: 0.75rem; color: #777; text-transform: uppercase; letter-spacing: 0.5px; }
 
+    .btn.disabled-btn {
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     /* --- Standardized Media Query Breakpoints --- */
     @media (max-width: 1024px) {
       .membership-grid-container { gap: 20px; }
@@ -353,6 +359,30 @@
 
   <script>
     (function() {
+      // --- PATREON LINK CONFIGURATION ---
+      const patreonUrl = '';
+
+      function configurePatreonButton() {
+        const patreonBtn = document.getElementById('explore-patreon-btn');
+        if (!patreonBtn) return;
+
+        const hasPatreonUrl = typeof patreonUrl === 'string' && patreonUrl.trim() !== '';
+
+        if (hasPatreonUrl) {
+          patreonBtn.href = patreonUrl;
+          patreonBtn.setAttribute('target', '_blank');
+          patreonBtn.setAttribute('rel', 'noopener noreferrer');
+          patreonBtn.classList.remove('disabled-btn');
+        } else {
+          patreonBtn.href = 'javascript:void(0);';
+          patreonBtn.removeAttribute('target');
+          patreonBtn.removeAttribute('rel');
+          patreonBtn.classList.add('disabled-btn');
+        }
+      }
+
+      configurePatreonButton();
+
       // --- CHRONICLE GROUP STATUS CONFIGURATIONS ---
       const readingCompanionStatus = 'developing';
       const footnotesStatus        = 'developing';
