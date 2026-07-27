@@ -248,7 +248,7 @@ window.GAME_PRESENTATION_DIRECTORY = {
     buyUrl: "",
     dedicatedPageUrl: "game pages/metro.html",
     additionalUrl: "",
-    navBg: "#0a1c24",
+    navBg: "#1c1b18",
     logo: "assets/logo/logo-lorestage-metro.png",
     bannerImg: "assets/banner/metro-banner.png",
     themeClass: "metro",
