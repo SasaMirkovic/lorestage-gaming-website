@@ -2,18 +2,23 @@
 window.GAME_PRESENTATION_DIRECTORY = {
   bioshock: {
     title: "BioShock",
+    title_srb: "BioShock",
     shortName: "BioShock",
+    shortName_srb: "BioShock",
     status: "completed",
     readingCompanion: "assets/games/reading companion/bioshock-reading.png",
     footnotes: "assets/games/footnotes/bioshock-footnotes.png",
     symbolismDeck: "assets/games/symbolism deck/bioshock-tarrot.png",
     boxart: "assets/games/box art/bioshock-box.png",
     quote: '"In the end, what separates a philosopher from an ideologue? Reason? Ideas? No! A philosopher questions, an ideologue declares!" - Sasha D. Mirkovich',
+    quote_srb: '"На крају, шта раздваја филозофа од идеолога? Разум? Идеје? Не! Филозоф преиспитује, идеолог проглашава!" — Саша Д. Мирковић',
     previewImg: "assets/games/thumbnail/bioshock-thumbnail.png",
     youtubeUrl: "https://www.youtube.com/watch?v=HtbBg3JrgII", 
     description: "From the foundations of Objectivism and the connection between Ayn Rand and Andrew Ryan, we explore self-made men, rationality, and identity, asking whether confidence in objective truth leaves room for uncertainty, disagreement, and adaptation.",
+    description_srb: "Од темеља објективизма и везе између Ајн Ранд и Ендруа Рајана истражујемо самостворене људе, рационалност и идентитет, питајући да ли поверење у објективну истину оставља простора за неизвесност, неслагање и прилагођавање.",
     buyUrl: "",
     dedicatedPageUrl: "game pages/bioshock.html",
+    dedicatedPageUrl_srb: "srb/game pages/bioshock.html",
     additionalUrl: "",
     navBg: "#0a1c24",
     logo: "assets/logo/logo-lorestage-bioshock.png",
@@ -29,48 +34,60 @@ window.GAME_PRESENTATION_DIRECTORY = {
     topics: [
       {
         id: "choice",
-        reason: "Can a choice made in desperation still be called a choice?"
+        reason: "Can a choice made in desperation still be called a choice?",
+        reason_srb: "Да ли се избор учињен из очаја и даље може назвати избором?"
       },
       {
         id: "power",
-        reason: "Is power exercised only through force, or also through non-decisions?"
+        reason: "Is power exercised only through force, or also through non-decisions?",
+        reason_srb: "Да ли се моћ остварује само силом, или и кроз неодлучивање?"
       },
       {
         id: "identity",
-        reason: "Does identity endure, or is it constantly becoming?"
+        reason: "Does identity endure, or is it constantly becoming?",
+        reason_srb: "Да ли идентитет траје, или се непрестано постаје?"
       },
       {
         id: "ideology",
-        reason: "Should philosophy only question, or may it also declare?"
+        reason: "Should philosophy only question, or may it also declare?",
+        reason_srb: "Треба ли филозофија само да преиспитује, или сме и да проглашава?"
       },
       {
         id: "society",
-        reason: "When does the accumulation of individual choices become a social phenomenon?"
+        reason: "When does the accumulation of individual choices become a social phenomenon?",
+        reason_srb: "Када нагомилавање појединачних избора постаје друштвени феномен?"
       },
       {
         id: "utopia-dystopia",
-        reason: "What happens when pure categories meet messy reality?"
+        reason: "What happens when pure categories meet messy reality?",
+        reason_srb: "Шта се дешава када чисте категорије сретну неуредну стварност?"
       },
       {
         id: "free-will-determinism",
-        reason: "How much freedom remains within biological and social constraint?"
+        reason: "How much freedom remains within biological and social constraint?",
+        reason_srb: "Колико слободе остаје унутар биолошких и друштвених ограничења?"
       }
     ]
   },
   stalker: {
     title: "S.T.A.L.K.E.R.",
+    title_srb: "S.T.A.L.K.E.R.",
     shortName: "Stalker",
+    shortName_srb: "Стакер",
     status: "completed",
     readingCompanion: "assets/games/reading companion/stalker-reading.png",
     footnotes: "assets/games/footnotes/stalker-footnotes.png",
     symbolismDeck: "assets/games/symbolism deck/stalker-tarrot.png",
     boxart: "assets/games/box art/stalker-box.png",
     quote: '"Once the colorful lie dissipates and the synthetic meaning evaporates, every soul is left alone before the abyss, battered by rain and winds." - Sasha D. Mirkovich',
+    quote_srb: '"Када шарена лаж испари и синтетички смисао се расточи, свака душа остаје сама пред безданом, бичена кишом и ветровима." — Саша Д. Мирковић',
     previewImg: "assets/games/thumbnail/stalker-thumbnail.png",
     youtubeUrl: "https://www.youtube.com/watch?v=Q_B8ewvhyjQ",
     description: "Combining the Zone from the book with the one from the film, we explore questions of meaning, life, and humanity's place in the Universe. Journey through the history of the USSR and Russian philosophy, where scientific ambition confronts questions of transcendence.",
+    description_srb: "Спајајући Зону из књиге са оном из филма, истражујемо питања смисла, живота и места човечанства у свемиру. Путујемо кроз историју СССР-а и руску филозофију, где се научна амбиција суочава са питањима трансценденције.",
     buyUrl: "",
     dedicatedPageUrl: "game pages/stalker.html",
+    dedicatedPageUrl_srb: "srb/game pages/stalker.html",
     additionalUrl: "",
     navBg: "#1c2213",
     logo: "assets/logo/logo-lorestage-stalker.png",
@@ -86,58 +103,72 @@ window.GAME_PRESENTATION_DIRECTORY = {
     topics: [
       {
         id: "transcendence-evolution",
-        reason: "Should Humanity expand through space, or can we transcend material limits?"
+        reason: "Should Humanity expand through space, or can we transcend material limits?",
+        reason_srb: "Треба ли се човечанство ширити кроз свемир, или можемо да превазиђемо материјална ограничења?"
       },
       {
         id: "cosmic-mystery-horror",
-        reason: "What becomes of our meaning when confronted with higher forms of existence?"
+        reason: "What becomes of our meaning when confronted with higher forms of existence?",
+        reason_srb: "Шта бива са нашим смислом када се суочимо са вишим облицима постојања?"
       },
       {
         id: "power",
-        reason: "Can a visionary be a shepherd and whip the flock of common people on the path of progress?"
+        reason: "Can a visionary be a shepherd and whip the flock of common people on the path of progress?",
+        reason_srb: "Може ли визионар бити пастир и бичем терати стадо обичних људи путем напретка?"
       },
       {
         id: "consciousness",
-        reason: "Is there salvation in the unity of minds and a collective consciousness?"
+        reason: "Is there salvation in the unity of minds and a collective consciousness?",
+        reason_srb: "Има ли спасења у јединству умова и колективној свести?"
       },
       {
         id: "meaning",
-        reason: "Does one overcome alienation and emptiness through risk, belonging, or by becoming the creator?"
+        reason: "Does one overcome alienation and emptiness through risk, belonging, or by becoming the creator?",
+        reason_srb: "Да ли се отуђење и празнина превазилазе ризиком, припадањем, или тиме што постајемо стваралац?"
       },
       {
         id: "knowledge",
-        reason: "What is the difference between knowing and understanding?"
+        reason: "What is the difference between knowing and understanding?",
+        reason_srb: "Која је разлика између знања и разумевања?"
       },
       {
         id: "utopia-dystopia",
-        reason: "Does reality corrupt ideals, or reveal them?"
+        reason: "Does reality corrupt ideals, or reveal them?",
+        reason_srb: "Да ли стварност кварује идеале, или их открива?"
       },
       {
         id: "faith",
-        reason: "How does the Monolith reflect the three temptations of Christ?"
+        reason: "How does the Monolith reflect the three temptations of Christ?",
+        reason_srb: "Како Монолит одражава три Христова искушења?"
       }
     ]
   },
   warcraft3: {
     title: "Warcraft III",
+    title_srb: "Warcraft III",
     shortName: "Warcraft 3",
+    shortName_srb: "Warcraft 3",
     status: "completed",
     boxart: "assets/games/box art/warcraft-box.png",
     subProfiles: [
       {
         id: "arthas",
         name: "Arthas",
+        name_srb: "Артас",
         status: "completed",
         readingCompanion: "assets/games/reading companion/arthas-reading.png",
         footnotes: "",
         symbolismDeck: "assets/games/symbolism deck/arthas-tarrot.png",
         boxart: "assets/games/box art/frozen-throne-box.png",
         quote: '"There is no resurrection without death. No redemption without sacrifice. No birth without a creative union." - Sasha D. Mirkovich',
+        quote_srb: '"Нема васкрсења без смрти. Нема искупљења без жртве. Нема рођења без стваралачког сједињења." — Саша Д. Мирковић',
         previewImg: "assets/games/thumbnail/arthas-thumbnail.png",
         youtubeUrl: "https://www.youtube.com/watch?v=znTcv2AuWa8", 
         description: "Stepping beyond the familiar questions of good and evil, and of power and its corrupting influence, we follow the Shakespearean downfall of Prince Arthas Menethil, exploring the questions of consistency, the necessity of action, and the nature of motivation.",
+        description_srb: "Корак даље од уобичајених питања добра и зла, и моћи и њене погубне силе, пратимо шекспировски пад принца Артаса Менетила, истражујући доследност, нужност деловања и природу мотивације.",
         buyUrl: "",
         dedicatedPageUrl: "game pages/arthas.html",
+        dedicatedPageUrl_srb: "srb/game pages/arthas.html",
         additionalUrl: "",
         navBg: "#012d4b",
         logo: "assets/logo/logo-lorestage-arthas.png",
@@ -153,36 +184,44 @@ window.GAME_PRESENTATION_DIRECTORY = {
         topics: [
           {
             id: "choice",
-            reason: "Epitomized by the Culling of Stratholme, the central question remains: can a paladin be pragmatic?"
+            reason: "Epitomized by the Culling of Stratholme, the central question remains: can a paladin be pragmatic?",
+            reason_srb: "Оличено у Чишћењу Стратхолма, средишње питање остаје: може ли паладин бити прагматичан?"
           },
           {
             id: "archetype",
-            reason: "Why does Medivh's appearance herald the collapse of the existing order?"
+            reason: "Why does Medivh's appearance herald the collapse of the existing order?",
+            reason_srb: "Зашто Медивов долазак најављује слом постојећег поретка?"
           },
           {
             id: "power",
-            reason: "Do all who claim to act for the People ultimately seek power?"
+            reason: "Do all who claim to act for the People ultimately seek power?",
+            reason_srb: "Да ли сви који тврде да делују за Народ на крају траже моћ?"
           },
           {
             id: "faith",
-            reason: "To have faith means not to question - but what is the price of consistency?"
+            reason: "To have faith means not to question - but what is the price of consistency?",
+            reason_srb: "Веровати значи не преиспитивати — али која је цена доследности?"
           }
         ]
       },
       {
         id: "thrall",
         name: "Thrall",
+        name_srb: "Трал",
         status: "completed",
         footnotes: "",
         symbolismDeck: "assets/games/symbolism deck/thrall-tarrot.png",
         readingCompanion: "assets/games/reading companion/thrall-reading.png",
         boxart: "assets/games/box art/reign-of-chaos-box.png",
         quote: '"Heroic deeds of previous times can only have meaning as long as they are framed by the great ideas of exploration, questioning, and unification." - Sasha D. Mirkovich',
+        quote_srb: '"Херојска дела минулих времена имају смисао само док су уоквирена великим идејама истраживања, преиспитивања и сједињавања." — Саша Д. Мирковић',
         previewImg: "assets/games/thumbnail/thrall-thumbnail.png",
         youtubeUrl: "https://www.youtube.com/watch?v=KR1IIq_pcY0", 
         description: "Looking at the story from an allegorical perspective, we dissect the Exodus of the Horde and show how it utilizes the symbolism of the Ouroboros, the pre-cosmogonic dragon of chaos, while presenting Thrall's awakening as the birth of consciousness: a world-shaping event.",
+        description_srb: "Посматрајући причу алегоријски, рашчлањујемо Излазак Хорде и показујемо како користи симболику Уробороса, предкосмичког змаја хаоса, док Тралово буђење представља као рођење свести: догађај који обликује свет.",
         buyUrl: "",
         dedicatedPageUrl: "game pages/thrall.html",
+        dedicatedPageUrl_srb: "srb/game pages/thrall.html",
         additionalUrl: "",
         navBg: "#29120c",
         logo: "assets/logo/logo-lorestage-thrall.png",
@@ -198,15 +237,18 @@ window.GAME_PRESENTATION_DIRECTORY = {
         topics: [
           {
             id: "archetype",
-            reason: "Why do the Night Elves become the serpent-like Naga in the ocean depths?"
+            reason: "Why do the Night Elves become the serpent-like Naga in the ocean depths?",
+            reason_srb: "Зашто Ноћни вилењаци у океанским дубинама постају змијолике Наге?"
           },
           {
             id: "consciousness",
-            reason: "Does the awakening of the Self signal the birth of the World?"
+            reason: "Does the awakening of the Self signal the birth of the World?",
+            reason_srb: "Да ли буђење Себства најављује рођење Света?"
           },
           {
             id: "myth",
-            reason: "Why must a hero leave home to become a savior?"
+            reason: "Why must a hero leave home to become a savior?",
+            reason_srb: "Зашто јунак мора да напусти дом да би постао спаситељ?"
           }
         ]
       }
@@ -214,19 +256,24 @@ window.GAME_PRESENTATION_DIRECTORY = {
   },
   bioshock2: {
     title: "BioShock 2",
+    title_srb: "BioShock 2",
     shortName: "BioShock 2",
+    shortName_srb: "BioShock 2",
     status: "in development",
     boxart: "assets/games/box art/bioshock2-box.png",
     quote: 'Currently in development. Stay tuned....',
+    quote_srb: 'Тренутно у изради. Останите уз нас....',
     previewImg: "assets/games/thumbnail/bioshock2-thumbnail.png",
     youtubeUrl: "", 
     description: "UNDER CONSTRUCTION - STAY TUNED.",
+    description_srb: "У ИЗРАДИ — ОСТАНИТЕ УЗ НАС.",
     buyUrl: "",
-    dedicatedPageUrl: "game pages/bioshock2.html",
+    dedicatedPageUrl: "game pages/bioshock.html",
+    dedicatedPageUrl_srb: "srb/game pages/bioshock.html",
     additionalUrl: "",
     navBg: "#0a1c24",
     logo: "assets/logo/logo-lorestage-bioshock.png",
-    bannerImg: "assets/banner/bioshock2-banner.png",
+    bannerImg: "assets/banner/bioshock-banner.png",
     themeClass: "bioshock2",
     quoteColor: "#00b3cc",
     cardTitleColor: "",
@@ -238,15 +285,20 @@ window.GAME_PRESENTATION_DIRECTORY = {
   },
   metro: {
     title: "Metro",
+    title_srb: "Метро",
     shortName: "Metro",
+    shortName_srb: "Метро",
     status: "planned",
     boxart: "assets/games/box art/metro-box.png",
     quote: 'Currently in development. Stay tuned....',
+    quote_srb: 'Тренутно у изради. Останите уз нас....',
     previewImg: "assets/games/thumbnail/metro-thumbnail.png",
     youtubeUrl: "", 
     description: "UNDER CONSTRUCTION - STAY TUNED.",
+    description_srb: "У ИЗРАДИ — ОСТАНИТЕ УЗ НАС.",
     buyUrl: "",
     dedicatedPageUrl: "game pages/metro.html",
+    dedicatedPageUrl_srb: "srb/game pages/metro.html",
     additionalUrl: "",
     navBg: "#1c1b18",
     logo: "assets/logo/logo-lorestage-metro.png",
@@ -262,15 +314,20 @@ window.GAME_PRESENTATION_DIRECTORY = {
   },
   kotor: {
     title: "Knights of the Old Republic",
+    title_srb: "Витезови Старе Републике",
     shortName: "KOTOR",
+    shortName_srb: "KOTOR",
     status: "planned",
     boxart: "assets/games/box art/kotor2-box.png",
     quote: 'Is a man not entitled to the sweat of his brow? No, says the man in Washington, it belongs to the poor.',
+    quote_srb: 'Зар човек није властан над знојем свога чела? Не, каже човек из Вашингтона, то припада сиромашнима.',
     previewImg: "assets/games/thumbnail/kotor-thumbnail.png",
     youtubeUrl: "", 
     description: "Explore the decayed remnants of Rapture, an underwater Objectivist utopia built by Andrew Ryan. We analyze the hubris of unregulated science, the architectural Art Deco symbolism, and the tragic loss of human choice.",
+    description_srb: "Истражујемо остатке Раптуре, подводне објективистичке утопије коју је саградио Ендру Рајан. Анализирамо охолост нерегулисане науке, симболику арт декоа и трагични губитак људског избора.",
     buyUrl: "",
     dedicatedPageUrl: "game pages/bioshock.html",
+    dedicatedPageUrl_srb: "srb/game pages/bioshock.html",
     additionalUrl: "",
     navBg: "#111c13",
     logo: "assets/logo/logo-lorestage-kotor.png",
@@ -286,7 +343,9 @@ window.GAME_PRESENTATION_DIRECTORY = {
   },
   masseffect: {
     title: "Mass Effect",
+    title_srb: "Mass Effect",
     shortName: "Mass Effect",
+    shortName_srb: "Mass Effect",
     status: "planned",
     boxart: "assets/games/box art/mass-effect-box.png",
     quote: 'Is a man not entitled to the sweat of his brow? No, says the man in Washington, it belongs to the poor.',
@@ -299,6 +358,84 @@ window.GAME_PRESENTATION_DIRECTORY = {
     navBg: "#081424",
     logo: "assets/logo/logo-lorestage-mass-effect.png",
     bannerImg: "assets/banner/mass-effect-banner.png",
+    themeClass: "masseffect",
+    quoteColor: "#38bdf8",
+    cardTitleColor: "",
+    cardBackTextColor: "",
+    accentColor: "#e11d48",
+    quoteFont: "'Arial', sans-serif",
+    videoTitleColor: "#ffffff",
+    videoTitleFont: "'Century Gothic', sans-serif"
+  },
+  fallout3: {
+    title: "Fallout 3",
+    title_srb: "Fallout 3",
+    shortName: "Fallout 3",
+    shortName_srb: "Fallout 3",
+    status: "planned",
+    boxart: "assets/games/box art/fallout3-box.png",
+    quote: 'Is a man not entitled to the sweat of his brow? No, says the man in Washington, it belongs to the poor.',
+    previewImg: "assets/games/thumbnail/fallout3-thumbnail.png",
+    youtubeUrl: "", 
+    description: "Explore the decayed remnants of Rapture, an underwater Objectivist utopia built by Andrew Ryan. We analyze the hubris of unregulated science, the architectural Art Deco symbolism, and the tragic loss of human choice.",
+    buyUrl: "",
+    dedicatedPageUrl: "game pages/bioshock.html",
+    additionalUrl: "",
+    navBg: "#081424",
+    logo: "assets/logo/logo-lorestage-fallout3.png",
+    bannerImg: "assets/banner/fallout3-banner.png",
+    themeClass: "masseffect",
+    quoteColor: "#38bdf8",
+    cardTitleColor: "",
+    cardBackTextColor: "",
+    accentColor: "#e11d48",
+    quoteFont: "'Arial', sans-serif",
+    videoTitleColor: "#ffffff",
+    videoTitleFont: "'Century Gothic', sans-serif"
+  },
+  callofcthulhu: {
+    title: "Call of Cthulhu: Dark Corners of the Earth",
+    title_srb: "Call of Cthulhu",
+    shortName: "Call of Cthulhu",
+    shortName_srb: "Call of Cthulhu",
+    status: "planned",
+    boxart: "assets/games/box art/call-of-cthulhu-box.png",
+    quote: 'Is a man not entitled to the sweat of his brow? No, says the man in Washington, it belongs to the poor.',
+    previewImg: "assets/games/thumbnail/call-of-cthulhu-thumbnail.png",
+    youtubeUrl: "", 
+    description: "Explore the decayed remnants of Rapture, an underwater Objectivist utopia built by Andrew Ryan. We analyze the hubris of unregulated science, the architectural Art Deco symbolism, and the tragic loss of human choice.",
+    buyUrl: "",
+    dedicatedPageUrl: "game pages/bioshock.html",
+    additionalUrl: "",
+    navBg: "#081424",
+    logo: "assets/logo/logo-lorestage-call-of-cthulhu.png",
+    bannerImg: "assets/banner/call-of-cthulhu-banner.png",
+    themeClass: "masseffect",
+    quoteColor: "#38bdf8",
+    cardTitleColor: "",
+    cardBackTextColor: "",
+    accentColor: "#e11d48",
+    quoteFont: "'Arial', sans-serif",
+    videoTitleColor: "#ffffff",
+    videoTitleFont: "'Century Gothic', sans-serif"
+  },
+  deadspace: {
+    title: "Dead Space",
+    title_srb: "Dead Space",
+    shortName: "Dead Space",
+    shortName_srb: "Dead Space",
+    status: "planned",
+    boxart: "assets/games/box art/dead-space-box.png",
+    quote: 'Is a man not entitled to the sweat of his brow? No, says the man in Washington, it belongs to the poor.',
+    previewImg: "assets/games/thumbnail/dead-space-thumbnail.png",
+    youtubeUrl: "", 
+    description: "Explore the decayed remnants of Rapture, an underwater Objectivist utopia built by Andrew Ryan. We analyze the hubris of unregulated science, the architectural Art Deco symbolism, and the tragic loss of human choice.",
+    buyUrl: "",
+    dedicatedPageUrl: "game pages/bioshock.html",
+    additionalUrl: "",
+    navBg: "#081424",
+    logo: "assets/logo/logo-lorestage-dead-space.png",
+    bannerImg: "assets/banner/dead-space-banner.png",
     themeClass: "masseffect",
     quoteColor: "#38bdf8",
     cardTitleColor: "",
